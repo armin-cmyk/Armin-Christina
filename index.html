@@ -19,9 +19,16 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Inter", system_ui, sans-serif;
-            background: url('/hero-resort.jpg') no-repeat center center fixed;
+            background: url('/hero-resort.jpg') no-repeat center center;
             background-size: cover;
+            background-attachment: scroll;
             color: var(--text);
+        }
+
+        @media (min-width: 768px) {
+            body {
+                background-attachment: fixed;
+            }
         }
         
         .heading-font {
