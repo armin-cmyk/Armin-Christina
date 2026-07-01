@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armin &amp; Christina • August 5, 2026 • Secrets Moxché</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap');
+        
+        :root {
+            --bg: #0a0a0a;
+            --text: #f1f1f1;
+            --accent: #7fb3a8;
+            --glass: rgba(0, 0, 0, 0.35);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Inter", system_ui, sans-serif;
+            background: url('images/hero-resort.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text);
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-feature-settings: "tnum";
+        }
+
+        .apple-section {
+            scroll-margin-top: 80px;
+        }
+
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(12px) saturate(150%);
+            -webkit-backdrop-filter: blur(12px) saturate(150%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-glass {
+            background: rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(6px) saturate(110%);
+            -webkit-backdrop-filter: blur(6px) saturate(110%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        details summary {
+            list-style: none;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary i.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            .section-header {
+                font-size: 1.65rem;
+            }
+            .glass {
+                backdrop-filter: blur(8px) saturate(130%);
+            }
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+        }
+
+        .section-header {
+            font-size: 1.875rem;
+            letter-spacing: -0.04em;
+            font-weight: 500;
+        }
+        
+        @media (min-width: 768px) {
+            .section-header {
+                font-size: 2.25rem;
+            }
+        }
+
+        .apple-card {
+            transition: transform 0.2s cubic-bezier(0.23, 1.0, 0.32, 1), 
+                        box-shadow 0.2s cubic-bezier(0.23, 1.0, 0.32, 1);
+        }
+        
+        .apple-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-link {
+            transition: opacity 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        .liquid-button {
+            transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .liquid-button:hover {
+            transform: scale(1.02);
+        }
+
+        .clean-accordion {
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .dark .clean-accordion {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.23, 1.0, 0.32, 1), 
+                        padding 0.4s cubic-bezier(0.23, 1.0, 0.32, 1);
+        }
+
+        .accordion-content.open {
+            max-height: 1200px;
+            padding-top: 0.75rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-[var(--bg)] text-[var(--text)]">
+
+
+
+    <!-- HERO - Apple style with liquid glass -->
+    <header class="hero-bg h-[80dvh] min-h-[520px] flex items-center justify-center text-white relative">
+        <div class="hero-glass rounded-3xl px-8 py-10 md:px-12 md:py-14 text-center max-w-2xl mx-4">
+            <div class="inline-block px-4 py-1 rounded-full bg-black/20 backdrop-blur text-[10px] tracking-[3px] mb-6 border border-white/20">
+                AUGUST 5, 2026
+            </div>
+            
+            <h1 class="heading-font text-6xl md:text-[76px] tracking-[-3.5px] leading-none mb-4" style="text-shadow: 0 2px 10px rgba(0,0,0,0.6);">
+                Armin &amp; Christina
+            </h1>
+            
+            <p class="text-2xl md:text-[28px] text-white/95 tracking-tight" style="text-shadow: 0 1px 6px rgba(0,0,0,0.5);">
+                Secrets Moxché Playa del Carmen
+            </p>
+        </div>
+    </header>
+
+    <!-- SHORT INTRO -->
+    <div class="max-w-3xl mx-auto px-6 py-12 sm:py-16 text-center">
+        <div class="glass rounded-3xl px-6 py-8 sm:px-8">
+            <p class="text-[17px] leading-relaxed">Welcome to Mexico.</p>
+            <p class="mt-3 text-[15px] text-[var(--text)]/70">We can’t wait to celebrate with you here on this beautiful coast.</p>
+        </div>
+    </div>
+
+    <!-- CONTENT SECTIONS - Apple style -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-16 sm:space-y-20 pb-16 sm:pb-20">
+
+        <!-- Restaurants -->
+        <details class="apple-section glass rounded-3xl overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">WHERE TO EAT</div>
+                    <h2 class="section-header heading-font">Restaurants &amp; Dining</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <p class="text-sm text-[var(--text)]/70 mb-4">All-inclusive. Reservations recommended for most à la carte dinners (via concierge or World of Hyatt app).</p>
+                
+                <div class="space-y-3 text-sm">
+                    <div><span class="font-medium">Market Cafe</span> — International buffet<br><span class="text-xs">Dress: Casual | Hours: Breakfast, lunch &amp; dinner</span></div>
+                    <div><span class="font-medium">Dos Almas</span> — Authentic Mexican (tacos, moles, tequila/mezcal bar)<br><span class="text-xs">Dress: Casual Elegance (long pants &amp; collared shirt for men) | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
+                    <div><span class="font-medium">Ember</span> — Steakhouse &amp; open-fire grill<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
+                    <div><span class="font-medium">Allora</span> — Italian (pasta, pizza, classics)<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
+                    <div><span class="font-medium">Suki</span> — Asian &amp; hibachi<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
+                    <div><span class="font-medium">Bisou</span> — French (elegant, tasting menus)<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
+                    <div><span class="font-medium">Seasoul</span> — Fresh seafood (beachfront, open-air)<br><span class="text-xs">Dress: Casual Elegance | Hours: Lunch &amp; dinner</span></div>
+                    <div><span class="font-medium">Bamboo</span> — Casual lunch &amp; vegan options<br><span class="text-xs">Dress: Casual | Hours: Lunch</span></div>
+                    <div><span class="font-medium">Barefoot Grill</span> — Beachside casual grill<br><span class="text-xs">Dress: Casual | Hours: Lunch</span></div>
+                    <div><span class="font-medium">Coco Cafe</span> — Café, coffee, snacks &amp; 24-hour bites<br><span class="text-xs">Dress: Casual | Hours: 24 hours</span></div>
+                    <div><span class="font-medium">Tanoshii</span> — Japanese small plates<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
+                    <div><span class="font-medium">Observatory</span> — Rooftop elevated dining (Preferred Club)<br><span class="text-xs">Dress: Casual | Hours: Lunch &amp; dinner</span></div>
+                    <div><span class="font-medium">Seaside Beach Club</span> — Beach club casual dining<br><span class="text-xs">Dress: Casual | Hours: Daytime</span></div>
+                </div>
+                <p class="mt-3 text-xs text-[var(--text)]/60">Casual Elegance: long pants &amp; collared shirts for men (no shorts/sleeveless). Full menus in the World of Hyatt app.</p>
+            </div>
+        </details>
+
+        <!-- Wedding Day Schedule -->
+        <details class="apple-section glass rounded-3xl overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">THE DAY</div>
+                    <h2 class="section-header heading-font">Wedding Day Schedule</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <div class="text-xs text-[var(--text)]/70 mb-4">Arrive by 4:50 PM at the rooftop for the 5:00 PM ceremony. Cocktail hour follows. No bridal party or tosses.</div>
+                
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">4:50 PM</span> <span>Arrive at rooftop ceremony area</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">5:00 PM</span> <span>Ceremony (Rooftop)</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">~5:30 PM</span> <span>Cocktail hour</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">~6:30 PM</span> <span>Reception entrance</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">~6:35 PM</span> <span>First Dance</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">~7:00 PM</span> <span>Dinner served</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">7:30 PM</span> <span>Toasts</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">7:45 PM</span> <span>Cake cutting</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">8:00 PM onward</span> <span>Open dancing</span></div>
+                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">9:30 PM</span> <span>Reception ends</span></div>
+                </div>
+                
+                <div class="mt-5 pt-4 border-t border-[var(--glass-border)] text-xs text-[var(--text)]/70">
+                    After reception we’ll be hanging out at the resort bars.
+                </div>
+            </div>
+        </details>
+
+        <!-- Attire & Practical Tips -->
+        <details class="apple-section glass rounded-3xl overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">WHAT TO WEAR</div>
+                    <h2 class="section-header heading-font">Attire &amp; Practical Tips</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <ul class="space-y-3 text-sm">
+                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Classy attire — no loud colors</li>
+                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Bring bug spray</li>
+                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Sunscreen and sunglasses (rooftop sun exposure)</li>
+                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Light layer for after sunset</li>
+                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Comfortable shoes for walking and dancing</li>
+                </ul>
+                <div class="mt-5 pt-4 border-t border-[var(--glass-border)] text-xs text-[var(--text)]/70">
+                    Drinks and most items during the event are included.
+                </div>
+            </div>
+        </details>
+
+        <!-- Ceremony Details -->
+        <details class="apple-section glass rounded-3xl overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">CEREMONY DETAILS</div>
+                    <h2 class="section-header heading-font">Sky Rooftop Gazebo</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <div class="mb-6">
+                    <div class="font-medium mb-1">Location</div>
+                    <div class="text-[var(--text)]/90">Sky Rooftop Gazebo – 10th floor, highest point of the resort with panoramic Caribbean views.</div>
+                </div>
+
+                <div class="mb-6">
+                    <div class="font-medium mb-1">How to Get There</div>
+                    <div class="text-sm text-[var(--text)]/85">From the main lobby: Take the elevators to the 10th floor. Follow signs to the Sky Rooftop Gazebo (next to Sky Salon).</div>
+                    <div class="mt-1 text-sm text-[var(--text)]/85">From pools or beach areas: Ask any staff member – they’ll point you to the rooftop elevators or direct you. It’s the top level with the best ocean views.</div>
+                    <div class="mt-1 text-xs text-[var(--text)]/60">Allow 5–10 minutes from most areas. Arrive by 4:50 PM.</div>
+                </div>
+
+                <div class="mb-6">
+                    <div class="font-medium mb-2">Seating &amp; Etiquette</div>
+                    <ul class="list-disc pl-4 space-y-1 text-sm text-[var(--text)]/85">
+                        <li>Open seating</li>
+                        <li>Please silence phones – no pictures or videos during the ceremony (professional photos will be shared later)</li>
+                        <li>Cocktail hour begins right after the ceremony (~5:30 PM)</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <div class="font-medium mb-2">Rooftop Tips</div>
+                    <ul class="list-disc pl-4 space-y-1 text-sm text-[var(--text)]/85">
+                        <li>August is hot and humid (85–90°F / 29–32°C). Brief showers possible but usually quick.</li>
+                        <li>Sunset views are beautiful around 7:00–7:30 PM.</li>
+                        <li>It can be sunny and breezy – sunscreen and sunglasses recommended.</li>
+                        <li>Light layer for after sunset.</li>
+                        <li>Comfortable shoes (some walking involved).</li>
+                    </ul>
+                </div>
+
+                <div class="mb-6">
+                    <div class="font-medium mb-1">After the Reception</div>
+                    <div class="text-sm text-[var(--text)]/85">Reception ends at 9:30 PM. We’ll be hanging out at the bars around the resort — feel free to join us!</div>
+                </div>
+
+                <div>
+                    <div class="font-medium mb-1">Need Help?</div>
+                    <div class="text-sm text-[var(--text)]/85">Speak to the concierge or any staff member – they have all the wedding details.</div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Transportation -->
+        <details class="apple-section glass rounded-3xl overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">GETTING HERE</div>
+                    <h2 class="section-header heading-font">Transportation</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <div class="font-medium mb-2">Amstar Airport Transfers</div>
+                <p class="text-sm text-[var(--text)]/85">Official partner for Secrets resorts. Private or shared rides from Cancun Airport (CUN).</p>
+                <a href="https://www.amstardmc.com/en/destinations/mexico/cancun/cancun-airport-transportation/" target="_blank" 
+                   class="inline-flex items-center mt-3 text-sm font-medium text-[var(--accent)]">Book or view options →</a>
+                
+                <div class="mt-5 pt-4 border-t border-[var(--glass-border)] text-xs text-[var(--text)]/70">
+                    Ask the front desk if you need a ride during your stay.
+                </div>
+            </div>
+        </details>
+
+        <!-- Resort Map -->
+        <details class="apple-section glass rounded-3xl overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">NAVIGATION</div>
+                    <h2 class="section-header heading-font">Resort Map</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <p class="text-sm text-[var(--text)]/70 mb-4">Full resort map of Secrets Moxché Playa del Carmen. The entire property from beach to rooftop.</p>
+                
+                <img src="images/resort-map.jpg" alt="Full Resort Map - Secrets Moxché Playa del Carmen" class="w-full rounded-2xl mb-4">
+
+                <div class="grid grid-cols-1 gap-2 text-xs">
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Sky Rooftop Gazebo</span> — Ceremony location (10th floor, highest point with panoramic views)</div>
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Observatory</span> — Rooftop dining &amp; lounge (Preferred Club)</div>
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Main Lagoon Pool</span> — Large central pool with swim-up bars</div>
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Cenote Pools</span> — Man-made cenote-style pools</div>
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Beach &amp; Seaside</span> — Seasoul, Barefoot Grill, private beach access</div>
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Dining Area</span> — Market Cafe, Dos Almas, Ember, Allora, Suki, Bisou, Seasoul, Bamboo, Tanoshii</div>
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Secrets Spa</span> — Full spa, hydrotherapy, fitness center</div>
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Entertainment</span> — Theater, Gypsy Club speakeasy, sports bar, golf simulator</div>
+                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Lobby &amp; Preferred Club</span> — Arrival, rooftop pools &amp; lounge</div>
+                </div>
+                
+                <p class="mt-3 text-xs text-[var(--text)]/60">High-resolution full property map. Printed maps available at the front desk and concierge.</p>
+            </div>
+        </details>
+
+        <!-- Resort Amenities -->
+        <details class="apple-section glass rounded-3xl overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">THE RESORT</div>
+                    <h2 class="section-header heading-font">Amenities &amp; Facilities</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div class="glass rounded-2xl p-5">
+                        <div class="font-medium">Pools &amp; Beach</div>
+                        <div class="text-xs text-[var(--text)]/70 mt-1">7+ heated pools including large lagoon pool (10ft deep), 3 man-made cenote-style pools, rooftop infinity pools (Preferred Club), multiple swim-up bars, and pristine white-sand beach with calm Caribbean waters.</div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="font-medium">Secrets Spa by Pevonia</div>
+                        <div class="text-xs text-[var(--text)]/70 mt-1">16 treatment rooms + 5 VIP double rooms. Hydrotherapy circuit (hot/cold stations), sauna, steam room, couples massages, outdoor hydro pool with jets and waterfalls.</div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="font-medium">Fitness &amp; Sports</div>
+                        <div class="text-xs text-[var(--text)]/70 mt-1">Modern fitness center, tennis court, pickleball courts, archery, kayaking, golf simulator, billiards.</div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="font-medium">Entertainment &amp; Bars</div>
+                        <div class="text-xs text-[var(--text)]/70 mt-1">Theater with nightly shows, Gypsy Club speakeasy, sports bar, 8–9 bars total (including swim-up), cocktail classes, live music.</div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="font-medium">Other Highlights</div>
+                        <div class="text-xs text-[var(--text)]/70 mt-1">24-hour room service, shops, Wine Boutique, Preferred Club rooftop lounge &amp; private pool, lush gardens &amp; cenotes throughout the property.</div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <div class="font-medium">All-Inclusive Perks</div>
+                        <div class="text-xs text-[var(--text)]/70 mt-1">Unlimited gourmet dining &amp; premium drinks, WiFi, non-motorized water sports, daily activities, and entertainment.</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Share Photos -->
+        <details class="apple-section glass rounded-3xl overflow-hidden">
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">MEMORIES</div>
+                    <h2 class="section-header heading-font">Share Your Photos</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <p class="text-[15px]">Use <span class="font-medium">#ArminAndChristina2026</span></p>
+                <p class="mt-1 text-sm text-[var(--text)]/80">Upload to the shared album.</p>
+                
+                <a href="#" onclick="alert('Replace this with the real shared album link'); return false" 
+                   class="mt-5 inline-flex items-center px-5 py-2.5 rounded-full bg-[var(--accent)] text-white text-sm font-medium liquid-button">
+                    Open Shared Album
+                </a>
+                
+                <p class="mt-4 text-xs text-[var(--text)]/60">Professional photos will be shared after the wedding.</p>
+            </div>
+        </details>
+
+        <!-- Quick Essentials -->
+        <details class="apple-section glass rounded-3xl overflow-hidden" open>
+            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
+                <div>
+                    <div class="uppercase text-xs tracking-[2px] text-[var(--accent)]">EVERYTHING ELSE</div>
+                    <h2 class="section-header heading-font">Quick Essentials</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down transition-transform"></i>
+            </summary>
+            <div class="px-6 pb-6">
+                <div class="space-y-3 text-sm">
+                    <div><span class="font-medium">Resort WiFi:</span> Ask front desk for current password</div>
+                    <div><span class="font-medium">Concierge:</span> Dial 0 from your room or visit the lobby</div>
+                    <div><span class="font-medium">Dining Reservations:</span> Use World of Hyatt app or speak to concierge</div>
+                    <div><span class="font-medium">Spa &amp; Activities:</span> Book at the spa desk or through the app</div>
+                    <div><span class="font-medium">Emergency:</span> Dial 0 or go to front desk</div>
+                </div>
+            </div>
+        </details>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-[var(--glass-border)] py-10 text-center text-sm text-[var(--text)]/60">
+        <div>Armin &amp; Christina • August 5, 2026</div>
+        <div class="mt-1">Secrets Moxché Playa del Carmen, Mexico</div>
+    </footer>
+
+    <script>
+        function initTailwind() {
+            // No extra config needed
+        }
+
+        function initSmooth() {
+            document.querySelectorAll('a[href^="#"]').forEach(a => {
+                a.addEventListener('click', e => {
+                    const target = document.querySelector(a.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        }
+
+        function init() {
+            initTailwind();
+            initSmooth();
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
