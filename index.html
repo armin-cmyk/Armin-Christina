@@ -2,62 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armin &amp; Christina • August 5, 2026 • Secrets Moxché</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0b1717">
+    <meta name="description" content="Wedding-week details for Armin and Christina at Secrets Moxche Playa del Carmen on August 5, 2026.">
+    <title>Armin &amp; Christina | August 5, 2026</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Inter:wght@300;400;500&amp;display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
         :root {
-            --bg: #0a0a0a;
-            --text: #f1f1f1;
-            --accent: #7fb3a8;
-            --glass: rgba(0, 0, 0, 0.35);
-            --glass-border: rgba(255, 255, 255, 0.15);
+            --page: #0b1717;
+            --page-deep: #071010;
+            --text: #f7f3ec;
+            --muted: rgba(247, 243, 236, 0.70);
+            --accent: #8fc8bb;
+            --champagne: #d7bd8c;
+            --glass: rgba(12, 29, 29, 0.84);
+            --glass-soft: rgba(19, 42, 41, 0.72);
+            --glass-border: rgba(255, 255, 255, 0.13);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--page-deep);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Inter", system_ui, sans-serif;
-            background: url('/hero-resort.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: scroll;
+            margin: 0;
+            overflow-x: hidden;
             color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+            background:
+                radial-gradient(circle at 12% 8%, rgba(65, 124, 117, 0.25), transparent 34rem),
+                radial-gradient(circle at 88% 38%, rgba(151, 115, 60, 0.13), transparent 30rem),
+                linear-gradient(180deg, var(--page) 0%, var(--page-deep) 100%);
         }
 
-        @media (min-width: 768px) {
-            body {
-                background-attachment: fixed;
-            }
-        }
-        
         .heading-font {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-feature-settings: "tnum";
+            font-family: "Playfair Display", Georgia, serif;
         }
 
-        .apple-section {
-            scroll-margin-top: 80px;
+        .hero {
+            min-height: 520px;
+            height: 68dvh;
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('images/hero-resort.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background:
+                linear-gradient(180deg, rgba(2, 11, 12, 0.18) 0%, rgba(2, 10, 11, 0.18) 44%, rgba(6, 16, 16, 0.87) 100%),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.23), transparent 45%, rgba(0, 0, 0, 0.12));
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 7rem;
+            z-index: -1;
+            background: linear-gradient(180deg, transparent, var(--page));
+        }
+
+        .hero-panel {
+            width: min(92%, 780px);
+            padding: clamp(2rem, 5vw, 3.8rem);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.17);
+            border-radius: 2rem;
+            background: rgba(3, 12, 13, 0.30);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.30);
+            backdrop-filter: blur(10px) saturate(120%);
+            -webkit-backdrop-filter: blur(10px) saturate(120%);
+        }
+
+        .hero-title {
+            font-size: clamp(3.25rem, 8vw, 5.5rem);
+            line-height: 0.94;
+            letter-spacing: -0.055em;
+            text-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
         }
 
         .glass {
-            background: var(--glass);
-            backdrop-filter: blur(12px) saturate(150%);
-            -webkit-backdrop-filter: blur(12px) saturate(150%);
             border: 1px solid var(--glass-border);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background: var(--glass);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.20);
+            backdrop-filter: blur(16px) saturate(130%);
+            -webkit-backdrop-filter: blur(16px) saturate(130%);
         }
 
-        .hero-glass {
-            background: rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(6px) saturate(110%);
-            -webkit-backdrop-filter: blur(6px) saturate(110%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .soft-glass {
+            border: 1px solid var(--glass-border);
+            background: var(--glass-soft);
+            backdrop-filter: blur(12px) saturate(120%);
+            -webkit-backdrop-filter: blur(12px) saturate(120%);
+        }
+
+        .apple-section {
+            scroll-margin-top: 1rem;
+        }
+
+        .section-header {
+            font-size: clamp(1.65rem, 4vw, 2.25rem);
+            line-height: 1.08;
+            letter-spacing: -0.035em;
+            font-weight: 500;
         }
 
         details summary {
             list-style: none;
         }
+
         details summary::-webkit-details-marker {
             display: none;
         }
@@ -66,414 +134,474 @@
             transform: rotate(180deg);
         }
 
-        /* Mobile optimizations */
-        @media (max-width: 640px) {
-            .section-header {
-                font-size: 1.65rem;
-            }
-            .glass {
-                backdrop-filter: blur(8px) saturate(130%);
-            }
-        }
-
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
-        }
-
-        .section-header {
-            font-size: 1.875rem;
-            letter-spacing: -0.04em;
-            font-weight: 500;
-        }
-        
-        @media (min-width: 768px) {
-            .section-header {
-                font-size: 2.25rem;
-            }
-        }
-
-        .apple-card {
-            transition: transform 0.2s cubic-bezier(0.23, 1.0, 0.32, 1), 
-                        box-shadow 0.2s cubic-bezier(0.23, 1.0, 0.32, 1);
-        }
-        
-        .apple-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-
-        .nav-link {
-            transition: opacity 0.2s ease;
-        }
-        
-        .nav-link:hover {
-            opacity: 0.7;
-        }
-
+        .quick-link,
         .liquid-button {
-            transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
         }
 
+        .quick-link:hover,
         .liquid-button:hover {
-            transform: scale(1.02);
+            transform: translateY(-2px);
         }
 
-        .clean-accordion {
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-        
-        .dark .clean-accordion {
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        .quick-link:focus-visible,
+        .liquid-button:focus-visible,
+        summary:focus-visible,
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--champagne);
+            outline-offset: 3px;
         }
 
-        .accordion-content {
-            max-height: 0;
+        .champagne-button {
+            color: #17201d;
+            background: linear-gradient(135deg, #ead8b7, var(--champagne));
+            box-shadow: 0 10px 30px rgba(215, 189, 140, 0.18);
+        }
+
+        .schedule-row {
+            display: grid;
+            grid-template-columns: minmax(96px, 0.35fr) 1fr;
+            gap: 1rem;
+            align-items: baseline;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .map-preview {
+            min-height: 270px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.23, 1.0, 0.32, 1), 
-                        padding 0.4s cubic-bezier(0.23, 1.0, 0.32, 1);
+            position: relative;
+            border-radius: 1.5rem;
+            background:
+                radial-gradient(circle at 24% 26%, rgba(143, 200, 187, 0.30), transparent 10rem),
+                radial-gradient(circle at 74% 65%, rgba(215, 189, 140, 0.22), transparent 12rem),
+                linear-gradient(140deg, rgba(31, 68, 65, 0.98), rgba(10, 28, 29, 0.98));
         }
 
-        .accordion-content.open {
-            max-height: 1200px;
-            padding-top: 0.75rem;
-            padding-bottom: 1rem;
+        .map-preview::before,
+        .map-preview::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+        }
+
+        .map-preview::before {
+            left: -60px;
+            top: -65px;
+        }
+
+        .map-preview::after {
+            right: -55px;
+            bottom: -70px;
+        }
+
+        .mobile-dock {
+            display: none;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                min-height: 500px;
+                height: 66dvh;
+                background-position: 58% center;
+            }
+
+            .hero-panel {
+                padding: 2.2rem 1.35rem;
+                border-radius: 1.6rem;
+            }
+
+            .glass {
+                background: rgba(12, 29, 29, 0.93);
+                backdrop-filter: blur(10px) saturate(115%);
+                -webkit-backdrop-filter: blur(10px) saturate(115%);
+            }
+
+            .schedule-row {
+                grid-template-columns: 88px 1fr;
+                gap: 0.75rem;
+            }
+
+            .mobile-dock {
+                position: fixed;
+                z-index: 50;
+                left: 50%;
+                bottom: calc(0.75rem + env(safe-area-inset-bottom));
+                transform: translateX(-50%);
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                width: min(92%, 420px);
+                padding: 0.45rem;
+                gap: 0.45rem;
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                border-radius: 1.15rem;
+                background: rgba(6, 17, 18, 0.92);
+                box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+            }
+
+            body {
+                padding-bottom: 5.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .quick-link,
+            .liquid-button {
+                transition: none;
+            }
         }
     </style>
 </head>
-<body class="bg-[var(--bg)] text-[var(--text)]">
-
-
-
-    <!-- HERO - Apple style with liquid glass -->
-    <header class="hero-bg h-[80dvh] min-h-[520px] flex items-center justify-center text-white relative">
-        <div class="hero-glass rounded-3xl px-8 py-10 md:px-12 md:py-14 text-center max-w-2xl mx-4">
-            <div class="inline-block px-4 py-1 rounded-full bg-black/20 backdrop-blur text-[10px] tracking-[3px] mb-6 border border-white/20">
+<body>
+    <header class="hero text-white">
+        <div class="hero-panel mx-4">
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/20 px-4 py-1.5 text-[10px] font-medium tracking-[0.24em]">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
                 AUGUST 5, 2026
             </div>
-            
-            <h1 class="heading-font text-6xl md:text-[76px] tracking-[-3.5px] leading-none mb-4" style="text-shadow: 0 2px 10px rgba(0,0,0,0.6);">
-                Armin &amp; Christina
-            </h1>
-            
-            <p class="text-2xl md:text-[28px] text-white/95 tracking-tight" style="text-shadow: 0 1px 6px rgba(0,0,0,0.5);">
-                Secrets Moxché Playa del Carmen
+
+            <h1 class="hero-title heading-font mt-6">Armin &amp; Christina</h1>
+
+            <p class="mt-5 text-xl tracking-tight text-white/95 sm:text-2xl">
+                Secrets Moxche Playa del Carmen
+            </p>
+
+            <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/78 sm:text-base">
+                Everything you need for our wedding week, all in one place.
             </p>
         </div>
     </header>
 
-    <!-- SHORT INTRO -->
-    <div class="max-w-3xl mx-auto px-6 py-12 sm:py-16 text-center">
-        <div class="glass rounded-3xl px-6 py-8 sm:px-8">
-            <p class="text-[17px] leading-relaxed">Welcome to Mexico.</p>
-            <p class="mt-3 text-[15px] text-[var(--text)]/70">We can’t wait to celebrate with you here on this beautiful coast.</p>
-        </div>
-    </div>
-
-    <!-- CONTENT SECTIONS - Apple style -->
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-16 sm:space-y-20 pb-16 sm:pb-20">
-
-        <!-- Restaurants -->
-        <details class="apple-section glass rounded-3xl overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">WHERE TO EAT</div>
-                    <h2 class="section-header heading-font">Restaurants &amp; Dining</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <p class="text-sm text-[var(--text)]/70 mb-4">All-inclusive. Reservations recommended for most à la carte dinners (via concierge or World of Hyatt app).</p>
-                
-                <div class="space-y-3 text-sm">
-                    <div><span class="font-medium">Market Cafe</span> — International buffet<br><span class="text-xs">Dress: Casual | Hours: Breakfast, lunch &amp; dinner</span></div>
-                    <div><span class="font-medium">Dos Almas</span> — Authentic Mexican (tacos, moles, tequila/mezcal bar)<br><span class="text-xs">Dress: Casual Elegance (long pants &amp; collared shirt for men) | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
-                    <div><span class="font-medium">Ember</span> — Steakhouse &amp; open-fire grill<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
-                    <div><span class="font-medium">Allora</span> — Italian (pasta, pizza, classics)<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
-                    <div><span class="font-medium">Suki</span> — Asian &amp; hibachi<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
-                    <div><span class="font-medium">Bisou</span> — French (elegant, tasting menus)<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
-                    <div><span class="font-medium">Seasoul</span> — Fresh seafood (beachfront, open-air)<br><span class="text-xs">Dress: Casual Elegance | Hours: Lunch &amp; dinner</span></div>
-                    <div><span class="font-medium">Bamboo</span> — Casual lunch &amp; vegan options<br><span class="text-xs">Dress: Casual | Hours: Lunch</span></div>
-                    <div><span class="font-medium">Barefoot Grill</span> — Beachside casual grill<br><span class="text-xs">Dress: Casual | Hours: Lunch</span></div>
-                    <div><span class="font-medium">Coco Cafe</span> — Café, coffee, snacks &amp; 24-hour bites<br><span class="text-xs">Dress: Casual | Hours: 24 hours</span></div>
-                    <div><span class="font-medium">Tanoshii</span> — Japanese small plates<br><span class="text-xs">Dress: Casual Elegance | Hours: Dinner 6:00 PM – 11:00 PM</span></div>
-                    <div><span class="font-medium">Observatory</span> — Rooftop elevated dining (Preferred Club)<br><span class="text-xs">Dress: Casual | Hours: Lunch &amp; dinner</span></div>
-                    <div><span class="font-medium">Seaside Beach Club</span> — Beach club casual dining<br><span class="text-xs">Dress: Casual | Hours: Daytime</span></div>
-                </div>
-                <p class="mt-3 text-xs text-[var(--text)]/60">Casual Elegance: long pants &amp; collared shirts for men (no shorts/sleeveless). Full menus in the World of Hyatt app.</p>
-            </div>
-        </details>
-
-        <!-- Wedding Day Schedule -->
-        <details class="apple-section glass rounded-3xl overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">THE DAY</div>
-                    <h2 class="section-header heading-font">Wedding Day Schedule</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <div class="text-xs text-[var(--text)]/70 mb-4">Arrive by 4:50 PM at the rooftop for the 5:00 PM ceremony. Cocktail hour follows. No bridal party or tosses.</div>
-                
-                <div class="space-y-3 text-sm">
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">4:50 PM</span> <span>Arrive at rooftop ceremony area</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">5:00 PM</span> <span>Ceremony (Rooftop)</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">~5:30 PM</span> <span>Cocktail hour</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">~6:30 PM</span> <span>Reception entrance</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">~6:35 PM</span> <span>First Dance</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">~7:00 PM</span> <span>Dinner served</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">7:30 PM</span> <span>Toasts</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">7:45 PM</span> <span>Cake cutting</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">8:00 PM onward</span> <span>Open dancing</span></div>
-                    <div class="flex justify-between border-b border-[var(--glass-border)] pb-2"><span class="font-medium">9:30 PM</span> <span>Reception ends</span></div>
-                </div>
-                
-                <div class="mt-5 pt-4 border-t border-[var(--glass-border)] text-xs text-[var(--text)]/70">
-                    After reception we’ll be hanging out at the resort bars.
-                </div>
-            </div>
-        </details>
-
-        <!-- Attire & Practical Tips -->
-        <details class="apple-section glass rounded-3xl overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">WHAT TO WEAR</div>
-                    <h2 class="section-header heading-font">Attire &amp; Practical Tips</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <ul class="space-y-3 text-sm">
-                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Classy attire — no loud colors</li>
-                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Bring bug spray</li>
-                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Sunscreen and sunglasses (rooftop sun exposure)</li>
-                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Light layer for after sunset</li>
-                    <li class="flex gap-3"><span class="text-[var(--accent)]">•</span> Comfortable shoes for walking and dancing</li>
-                </ul>
-                <div class="mt-5 pt-4 border-t border-[var(--glass-border)] text-xs text-[var(--text)]/70">
-                    Drinks and most items during the event are included.
-                </div>
-            </div>
-        </details>
-
-        <!-- Ceremony Details -->
-        <details class="apple-section glass rounded-3xl overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">CEREMONY DETAILS</div>
-                    <h2 class="section-header heading-font">Sky Rooftop Gazebo</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <div class="mb-6">
-                    <div class="font-medium mb-1">Location</div>
-                    <div class="text-[var(--text)]/90">Sky Rooftop Gazebo – 10th floor, highest point of the resort with panoramic Caribbean views.</div>
-                </div>
-
-                <div class="mb-6">
-                    <div class="font-medium mb-1">How to Get There</div>
-                    <div class="text-sm text-[var(--text)]/85">From the main lobby: Take the elevators to the 10th floor. Follow signs to the Sky Rooftop Gazebo (next to Sky Salon).</div>
-                    <div class="mt-1 text-sm text-[var(--text)]/85">From pools or beach areas: Ask any staff member – they’ll point you to the rooftop elevators or direct you. It’s the top level with the best ocean views.</div>
-                    <div class="mt-1 text-xs text-[var(--text)]/60">Allow 5–10 minutes from most areas. Arrive by 4:50 PM.</div>
-                </div>
-
-                <div class="mb-6">
-                    <div class="font-medium mb-2">Seating &amp; Etiquette</div>
-                    <ul class="list-disc pl-4 space-y-1 text-sm text-[var(--text)]/85">
-                        <li>Open seating</li>
-                        <li>Please silence phones – no pictures or videos during the ceremony (professional photos will be shared later)</li>
-                        <li>Cocktail hour begins right after the ceremony (~5:30 PM)</li>
-                    </ul>
-                </div>
-
-                <div class="mb-6">
-                    <div class="font-medium mb-2">Rooftop Tips</div>
-                    <ul class="list-disc pl-4 space-y-1 text-sm text-[var(--text)]/85">
-                        <li>August is hot and humid (85–90°F / 29–32°C). Brief showers possible but usually quick.</li>
-                        <li>Sunset views are beautiful around 7:00–7:30 PM.</li>
-                        <li>It can be sunny and breezy – sunscreen and sunglasses recommended.</li>
-                        <li>Light layer for after sunset.</li>
-                        <li>Comfortable shoes (some walking involved).</li>
-                    </ul>
-                </div>
-
-                <div class="mb-6">
-                    <div class="font-medium mb-1">After the Reception</div>
-                    <div class="text-sm text-[var(--text)]/85">Reception ends at 9:30 PM. We’ll be hanging out at the bars around the resort — feel free to join us!</div>
-                </div>
-
-                <div>
-                    <div class="font-medium mb-1">Need Help?</div>
-                    <div class="text-sm text-[var(--text)]/85">Speak to the concierge or any staff member – they have all the wedding details.</div>
-                </div>
-            </div>
-        </details>
-
-        <!-- Transportation -->
-        <details class="apple-section glass rounded-3xl overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">GETTING HERE</div>
-                    <h2 class="section-header heading-font">Transportation</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <div class="font-medium mb-2">Amstar Airport Transfers</div>
-                <p class="text-sm text-[var(--text)]/85">Official partner for Secrets resorts. Private or shared rides from Cancun Airport (CUN).</p>
-                <a href="https://www.amstardmc.com/en/destinations/mexico/cancun/cancun-airport-transportation/" target="_blank" 
-                   class="inline-flex items-center mt-3 text-sm font-medium text-[var(--accent)]">Book or view options →</a>
-                
-                <div class="mt-5 pt-4 border-t border-[var(--glass-border)] text-xs text-[var(--text)]/70">
-                    Ask the front desk if you need a ride during your stay.
-                </div>
-            </div>
-        </details>
-
-        <!-- Resort Map -->
-        <details class="apple-section glass rounded-3xl overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">NAVIGATION</div>
-                    <h2 class="section-header heading-font">Resort Map</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <p class="text-sm text-[var(--text)]/70 mb-4">Full resort map of Secrets Moxché Playa del Carmen. The entire property from beach to rooftop.</p>
-                
-                <img src="/resort-map.jpg" alt="Full Resort Map - Secrets Moxché Playa del Carmen" class="w-full rounded-2xl mb-4">
-
-                <div class="grid grid-cols-1 gap-2 text-xs">
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Sky Rooftop Gazebo</span> — Ceremony location (10th floor, highest point with panoramic views)</div>
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Observatory</span> — Rooftop dining &amp; lounge (Preferred Club)</div>
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Main Lagoon Pool</span> — Large central pool with swim-up bars</div>
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Cenote Pools</span> — Man-made cenote-style pools</div>
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Beach &amp; Seaside</span> — Seasoul, Barefoot Grill, private beach access</div>
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Dining Area</span> — Market Cafe, Dos Almas, Ember, Allora, Suki, Bisou, Seasoul, Bamboo, Tanoshii</div>
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Secrets Spa</span> — Full spa, hydrotherapy, fitness center</div>
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Entertainment</span> — Theater, Gypsy Club speakeasy, sports bar, golf simulator</div>
-                    <div class="glass rounded-2xl px-3 py-2"><span class="font-medium">Lobby &amp; Preferred Club</span> — Arrival, rooftop pools &amp; lounge</div>
-                </div>
-                
-                <p class="mt-3 text-xs text-[var(--text)]/60">High-resolution full property map. Printed maps available at the front desk and concierge.</p>
-            </div>
-        </details>
-
-        <!-- Resort Amenities -->
-        <details class="apple-section glass rounded-3xl overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">THE RESORT</div>
-                    <h2 class="section-header heading-font">Amenities &amp; Facilities</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-                    <div class="glass rounded-2xl p-5">
-                        <div class="font-medium">Pools &amp; Beach</div>
-                        <div class="text-xs text-[var(--text)]/70 mt-1">7+ heated pools including large lagoon pool (10ft deep), 3 man-made cenote-style pools, rooftop infinity pools (Preferred Club), multiple swim-up bars, and pristine white-sand beach with calm Caribbean waters.</div>
-                    </div>
-                    <div class="glass rounded-2xl p-5">
-                        <div class="font-medium">Secrets Spa by Pevonia</div>
-                        <div class="text-xs text-[var(--text)]/70 mt-1">16 treatment rooms + 5 VIP double rooms. Hydrotherapy circuit (hot/cold stations), sauna, steam room, couples massages, outdoor hydro pool with jets and waterfalls.</div>
-                    </div>
-                    <div class="glass rounded-2xl p-5">
-                        <div class="font-medium">Fitness &amp; Sports</div>
-                        <div class="text-xs text-[var(--text)]/70 mt-1">Modern fitness center, tennis court, pickleball courts, archery, kayaking, golf simulator, billiards.</div>
-                    </div>
-                    <div class="glass rounded-2xl p-5">
-                        <div class="font-medium">Entertainment &amp; Bars</div>
-                        <div class="text-xs text-[var(--text)]/70 mt-1">Theater with nightly shows, Gypsy Club speakeasy, sports bar, 8–9 bars total (including swim-up), cocktail classes, live music.</div>
-                    </div>
-                    <div class="glass rounded-2xl p-5">
-                        <div class="font-medium">Other Highlights</div>
-                        <div class="text-xs text-[var(--text)]/70 mt-1">24-hour room service, shops, Wine Boutique, Preferred Club rooftop lounge &amp; private pool, lush gardens &amp; cenotes throughout the property.</div>
-                    </div>
-                    <div class="glass rounded-2xl p-5">
-                        <div class="font-medium">All-Inclusive Perks</div>
-                        <div class="text-xs text-[var(--text)]/70 mt-1">Unlimited gourmet dining &amp; premium drinks, WiFi, non-motorized water sports, daily activities, and entertainment.</div>
-                    </div>
-                </div>
-            </div>
-        </details>
-
-        <!-- Share Photos -->
-        <details class="apple-section glass rounded-3xl overflow-hidden">
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="text-sm font-medium tracking-widest text-[var(--accent)]">MEMORIES</div>
-                    <h2 class="section-header heading-font">Share Your Photos</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <p class="text-[15px]">Use <span class="font-medium">#ArminAndChristina2026</span></p>
-                <p class="mt-1 text-sm text-[var(--text)]/80">Upload to the shared album.</p>
-                
-                <a href="#" onclick="alert('Replace this with the real shared album link'); return false" 
-                   class="mt-5 inline-flex items-center px-5 py-2.5 rounded-full bg-[var(--accent)] text-white text-sm font-medium liquid-button">
-                    Open Shared Album
+    <main>
+        <section class="relative z-10 mx-auto -mt-9 max-w-5xl px-4 sm:px-6" aria-label="Quick links">
+            <div class="glass grid grid-cols-2 gap-2 rounded-3xl p-2.5 sm:grid-cols-4 sm:gap-3 sm:p-3">
+                <a href="#schedule" data-open-target="schedule" class="quick-link flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.035] px-3 py-4 text-center">
+                    <i class="fa-regular fa-clock text-xl text-[var(--champagne)]" aria-hidden="true"></i>
+                    <span class="text-xs font-medium sm:text-sm">Wedding Schedule</span>
                 </a>
-                
-                <p class="mt-4 text-xs text-[var(--text)]/60">Professional photos will be shared after the wedding.</p>
+                <a href="#ceremony" data-open-target="ceremony" class="quick-link flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.035] px-3 py-4 text-center">
+                    <i class="fa-solid fa-location-dot text-xl text-[var(--accent)]" aria-hidden="true"></i>
+                    <span class="text-xs font-medium sm:text-sm">Ceremony Location</span>
+                </a>
+                <a href="#photos" data-open-target="photos" class="quick-link flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.035] px-3 py-4 text-center">
+                    <i class="fa-solid fa-camera-retro text-xl text-[var(--champagne)]" aria-hidden="true"></i>
+                    <span class="text-xs font-medium sm:text-sm">Upload Photos</span>
+                </a>
+                <a href="#map" data-open-target="map" class="quick-link flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.035] px-3 py-4 text-center">
+                    <i class="fa-regular fa-map text-xl text-[var(--accent)]" aria-hidden="true"></i>
+                    <span class="text-xs font-medium sm:text-sm">Resort Map</span>
+                </a>
             </div>
-        </details>
+        </section>
 
-        <!-- Quick Essentials -->
-        <details class="apple-section glass rounded-3xl overflow-hidden" open>
-            <summary class="flex items-center justify-between px-6 py-5 cursor-pointer list-none">
-                <div>
-                    <div class="uppercase text-xs tracking-[2px] text-[var(--accent)]">EVERYTHING ELSE</div>
-                    <h2 class="section-header heading-font">Quick Essentials</h2>
-                </div>
-                <i class="fa-solid fa-chevron-down transition-transform"></i>
-            </summary>
-            <div class="px-6 pb-6">
-                <div class="space-y-3 text-sm">
-                    <div><span class="font-medium">Resort WiFi:</span> Ask front desk for current password</div>
-                    <div><span class="font-medium">Concierge:</span> Dial 0 from your room or visit the lobby</div>
-                    <div><span class="font-medium">Dining Reservations:</span> Use World of Hyatt app or speak to concierge</div>
-                    <div><span class="font-medium">Spa &amp; Activities:</span> Book at the spa desk or through the app</div>
-                    <div><span class="font-medium">Emergency:</span> Dial 0 or go to front desk</div>
-                </div>
+        <section class="mx-auto max-w-3xl px-6 py-12 text-center sm:py-16">
+            <div class="glass rounded-3xl px-6 py-8 sm:px-10 sm:py-10">
+                <p class="heading-font text-3xl tracking-tight">We are so happy you made the trip.</p>
+                <p class="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base">
+                    Thank you for joining us in Mexico for such a special week. This page has everything you will need during your stay, from wedding details and dining to the resort map and our shared photo folder.
+                </p>
+                <a href="armin-christina-wedding.ics" download class="liquid-button champagne-button mt-6 inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold">
+                    <i class="fa-regular fa-calendar-plus" aria-hidden="true"></i>
+                    Add Wedding to Calendar
+                </a>
             </div>
-        </details>
+        </section>
 
-    </div>
+        <div class="mx-auto max-w-5xl space-y-5 px-4 pb-20 sm:space-y-6 sm:px-6">
+            <details id="schedule" class="apple-section glass overflow-hidden rounded-3xl" open>
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">THE DAY</div>
+                        <h2 class="section-header heading-font mt-1">Wedding Day Schedule</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="px-6 pb-7 sm:px-7">
+                    <div class="mb-5 rounded-2xl border border-[var(--glass-border)] bg-white/[0.035] p-4 text-sm leading-relaxed text-[var(--muted)]">
+                        Please arrive at the rooftop ceremony area by <strong class="text-white">4:50 PM</strong>. The ceremony begins promptly at 5:00 PM, followed by cocktails, dinner, and dancing.
+                    </div>
 
-    <!-- Footer -->
-    <footer class="border-t border-[var(--glass-border)] py-10 text-center text-sm text-[var(--text)]/60">
-        <div>Armin &amp; Christina • August 5, 2026</div>
-        <div class="mt-1">Secrets Moxché Playa del Carmen, Mexico</div>
+                    <div class="space-y-3 text-sm sm:text-[15px]">
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">4:50 PM</span><span>Arrive at the rooftop ceremony area</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">5:00 PM</span><span>Ceremony at the Sky Rooftop Gazebo</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">About 5:30</span><span>Cocktail hour</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">About 6:30</span><span>Reception entrance</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">About 6:35</span><span>First dance</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">About 7:00</span><span>Dinner served</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">7:30 PM</span><span>Toasts</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">7:45 PM</span><span>Cake cutting</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">8:00 PM</span><span>Open dancing</span></div>
+                        <div class="schedule-row"><span class="font-semibold text-[var(--champagne)]">9:30 PM</span><span>Reception ends</span></div>
+                    </div>
+
+                    <p class="mt-5 border-t border-[var(--glass-border)] pt-4 text-xs leading-relaxed text-[var(--muted)]">
+                        After the reception, we will be hanging out at the resort bars. Come join us.
+                    </p>
+                </div>
+            </details>
+
+            <details id="ceremony" class="apple-section glass overflow-hidden rounded-3xl">
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">CEREMONY DETAILS</div>
+                        <h2 class="section-header heading-font mt-1">Sky Rooftop Gazebo</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="space-y-6 px-6 pb-7 text-sm sm:px-7 sm:text-[15px]">
+                    <div>
+                        <div class="font-semibold text-white">Location</div>
+                        <p class="mt-1 leading-relaxed text-[var(--muted)]">The Sky Rooftop Gazebo is on the 10th floor, at the highest point of the resort, with panoramic Caribbean views.</p>
+                    </div>
+
+                    <div>
+                        <div class="font-semibold text-white">How to Get There</div>
+                        <p class="mt-1 leading-relaxed text-[var(--muted)]">From the main lobby, take the elevators to the 10th floor and follow signs to the Sky Rooftop Gazebo near Sky Salon. From the pool or beach, ask any staff member to direct you to the rooftop elevators.</p>
+                        <p class="mt-2 text-xs text-[var(--muted)]">Allow 5 to 10 minutes from most areas. Please arrive by 4:50 PM.</p>
+                    </div>
+
+                    <div>
+                        <div class="font-semibold text-white">An Unplugged Ceremony</div>
+                        <p class="mt-1 leading-relaxed text-[var(--muted)]">Please silence and put away phones and cameras during the ceremony so everyone can be fully present. We will share the professional photos afterward.</p>
+                    </div>
+
+                    <div>
+                        <div class="font-semibold text-white">Rooftop Tips</div>
+                        <ul class="mt-2 space-y-2 text-[var(--muted)]">
+                            <li class="flex gap-3"><span class="text-[var(--accent)]">•</span><span>It may be sunny, hot, humid, and breezy. Sunscreen and sunglasses are recommended.</span></li>
+                            <li class="flex gap-3"><span class="text-[var(--accent)]">•</span><span>Brief summer showers are possible.</span></li>
+                            <li class="flex gap-3"><span class="text-[var(--accent)]">•</span><span>Wear comfortable shoes for walking and dancing.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="rounded-2xl border border-[var(--glass-border)] bg-white/[0.035] p-4">
+                        <div class="font-semibold text-white">Need Help Finding It?</div>
+                        <p class="mt-1 text-[var(--muted)]">Speak with the concierge or any resort staff member and ask for the Armin and Christina wedding at the Sky Rooftop Gazebo.</p>
+                    </div>
+                </div>
+            </details>
+
+            <details id="attire" class="apple-section glass overflow-hidden rounded-3xl">
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">WHAT TO WEAR</div>
+                        <h2 class="section-header heading-font mt-1">Attire &amp; Practical Tips</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="px-6 pb-7 sm:px-7">
+                    <div class="rounded-2xl border border-[var(--glass-border)] bg-white/[0.035] p-5">
+                        <div class="font-semibold text-white">Dress code: Resort formal / cocktail attire</div>
+                        <p class="mt-2 text-sm leading-relaxed text-[var(--muted)]">Neutral, soft, and muted colors are encouraged.</p>
+                    </div>
+
+                    <ul class="mt-5 space-y-3 text-sm text-[var(--muted)] sm:text-[15px]">
+                        <li class="flex gap-3"><span class="text-[var(--accent)]">•</span><span>Bring bug spray.</span></li>
+                        <li class="flex gap-3"><span class="text-[var(--accent)]">•</span><span>Use sunscreen and bring sunglasses for the rooftop.</span></li>
+                        <li class="flex gap-3"><span class="text-[var(--accent)]">•</span><span>A light layer may be comfortable after sunset.</span></li>
+                        <li class="flex gap-3"><span class="text-[var(--accent)]">•</span><span>Choose comfortable shoes for walking and dancing.</span></li>
+                    </ul>
+                </div>
+            </details>
+
+            <details id="photos" class="apple-section glass overflow-hidden rounded-3xl">
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--champagne)]">MEMORIES</div>
+                        <h2 class="section-header heading-font mt-1">Share Your Photos &amp; Videos</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="px-6 pb-7 sm:px-7">
+                    <p class="max-w-2xl text-[15px] leading-7 text-[var(--muted)]">
+                        Help us capture the entire trip: pool days, dinners, wedding moments, and everything in between. Upload your favorites to our shared Google Drive folder.
+                    </p>
+
+                    <a href="https://drive.google.com/drive/folders/1gBfI49IfP3SRYebnDlKCpT4Dv-A0Dkrv?usp=share_link"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Open the Armin and Christina wedding photo folder in Google Drive"
+                       class="liquid-button champagne-button mt-6 inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold">
+                        <i class="fa-brands fa-google-drive" aria-hidden="true"></i>
+                        Open Shared Photo Folder
+                    </a>
+
+                    <p class="mt-4 text-xs leading-relaxed text-[var(--muted)]">Google may ask you to sign in before uploading. Use <strong class="text-white">#ArminAndChristina2026</strong> when sharing on social media.</p>
+                </div>
+            </details>
+
+            <details id="map" class="apple-section glass overflow-hidden rounded-3xl">
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">NAVIGATION</div>
+                        <h2 class="section-header heading-font mt-1">Resort Map</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="px-6 pb-7 sm:px-7">
+                    <div class="map-preview p-7 text-center">
+                        <div class="relative z-10 max-w-lg">
+                            <i class="fa-regular fa-map text-4xl text-[var(--champagne)]" aria-hidden="true"></i>
+                            <h3 class="heading-font mt-4 text-3xl">Open the Full Property Map</h3>
+                            <p class="mt-3 text-sm leading-relaxed text-white/72">Use the full-size resort layout for orientation, then confirm current directions with the concierge or front desk.</p>
+                            <a href="https://www.resortsmaps.com/map-SecretsMoxchePlayadelCarmen-RivieraMaya.html"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="liquid-button mt-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white">
+                                <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
+                                View Full-Size Map
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 grid gap-2 text-xs sm:grid-cols-2">
+                        <div class="soft-glass rounded-2xl px-4 py-3"><span class="font-semibold text-white">Ceremony:</span> Sky Rooftop Gazebo, 10th floor</div>
+                        <div class="soft-glass rounded-2xl px-4 py-3"><span class="font-semibold text-white">Help:</span> Concierge or any resort staff member</div>
+                    </div>
+                </div>
+            </details>
+
+            <details id="dining" class="apple-section glass overflow-hidden rounded-3xl">
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">WHERE TO EAT</div>
+                        <h2 class="section-header heading-font mt-1">Restaurants &amp; Dining</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="px-6 pb-7 sm:px-7">
+                    <p class="mb-5 text-sm leading-relaxed text-[var(--muted)]">Dining is all-inclusive. Check the World of Hyatt app or concierge for current hours, availability, and any reservation requirements.</p>
+
+                    <div class="grid gap-3 text-sm sm:grid-cols-2">
+                        <div class="soft-glass rounded-2xl p-4"><strong>Market Cafe</strong><p class="mt-1 text-xs text-[var(--muted)]">International buffet for breakfast, lunch, and dinner</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Dos Almas</strong><p class="mt-1 text-xs text-[var(--muted)]">Authentic Mexican cuisine and mezcal</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Ember</strong><p class="mt-1 text-xs text-[var(--muted)]">Steakhouse and open-fire grill</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Allora</strong><p class="mt-1 text-xs text-[var(--muted)]">Italian classics, pasta, and pizza</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Suki</strong><p class="mt-1 text-xs text-[var(--muted)]">Asian cuisine and hibachi</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Bisou</strong><p class="mt-1 text-xs text-[var(--muted)]">Elegant French dining</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Seasoul</strong><p class="mt-1 text-xs text-[var(--muted)]">Fresh seafood in an open-air beachfront setting</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Bamboo</strong><p class="mt-1 text-xs text-[var(--muted)]">Casual lunch and vegan-friendly choices</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Barefoot Grill</strong><p class="mt-1 text-xs text-[var(--muted)]">Relaxed beachside lunch</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Coco Cafe</strong><p class="mt-1 text-xs text-[var(--muted)]">Coffee, snacks, and around-the-clock bites</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Tanoshii</strong><p class="mt-1 text-xs text-[var(--muted)]">Japanese small plates</p></div>
+                        <div class="soft-glass rounded-2xl p-4"><strong>Observatory</strong><p class="mt-1 text-xs text-[var(--muted)]">Elevated rooftop dining for Preferred Club guests</p></div>
+                    </div>
+
+                    <p class="mt-4 text-xs leading-relaxed text-[var(--muted)]">For evening dining, bring resort-elegant clothing. Current restaurant hours and dress rules may change during the stay.</p>
+                </div>
+            </details>
+
+            <details id="transportation" class="apple-section glass overflow-hidden rounded-3xl">
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">GETTING HERE</div>
+                        <h2 class="section-header heading-font mt-1">Transportation</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="px-6 pb-7 sm:px-7">
+                    <div class="font-semibold">Amstar Airport Transfers</div>
+                    <p class="mt-2 text-sm leading-relaxed text-[var(--muted)]">Amstar offers private and shared transportation from Cancun International Airport. Confirm all pickup instructions directly with your transportation provider.</p>
+                    <a href="https://www.amstardmc.com/en/destinations/mexico/cancun/cancun-airport-transportation/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="liquid-button mt-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-5 py-3 text-sm font-semibold text-white">
+                        View Transportation Options
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                    </a>
+                    <p class="mt-4 text-xs text-[var(--muted)]">For transportation during your stay, ask the front desk or concierge.</p>
+                </div>
+            </details>
+
+            <details id="amenities" class="apple-section glass overflow-hidden rounded-3xl">
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">THE RESORT</div>
+                        <h2 class="section-header heading-font mt-1">Amenities &amp; Facilities</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="grid gap-3 px-6 pb-7 text-sm sm:grid-cols-2 sm:px-7">
+                    <div class="soft-glass rounded-2xl p-5"><div class="font-semibold">Pools &amp; Beach</div><p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">Lagoon and cenote-style pools, swim-up bars, rooftop pools for eligible Preferred Club guests, and beach access.</p></div>
+                    <div class="soft-glass rounded-2xl p-5"><div class="font-semibold">Spa</div><p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">Treatments, hydrotherapy, sauna, steam room, and couples services. Reservations are recommended.</p></div>
+                    <div class="soft-glass rounded-2xl p-5"><div class="font-semibold">Fitness &amp; Activities</div><p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">Fitness center, racquet sports, water activities, classes, and daily programming.</p></div>
+                    <div class="soft-glass rounded-2xl p-5"><div class="font-semibold">Entertainment &amp; Bars</div><p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">Nightly entertainment, live music, lounges, a sports bar, and resort nightlife.</p></div>
+                    <div class="soft-glass rounded-2xl p-5"><div class="font-semibold">Dining &amp; Room Service</div><p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">Multiple restaurants and bars, plus room-service options. Check the app for current details.</p></div>
+                    <div class="soft-glass rounded-2xl p-5"><div class="font-semibold">All-Inclusive Stay</div><p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">Dining, drinks, Wi-Fi, activities, and entertainment are generally included according to the resort package.</p></div>
+                </div>
+            </details>
+
+            <details id="essentials" class="apple-section glass overflow-hidden rounded-3xl">
+                <summary class="flex cursor-pointer items-center justify-between gap-5 px-6 py-5 sm:px-7 sm:py-6">
+                    <div>
+                        <div class="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">EVERYTHING ELSE</div>
+                        <h2 class="section-header heading-font mt-1">Quick Essentials</h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform" aria-hidden="true"></i>
+                </summary>
+                <div class="space-y-3 px-6 pb-7 text-sm sm:px-7 sm:text-[15px]">
+                    <div class="soft-glass rounded-2xl px-4 py-3"><span class="font-semibold">Resort Wi-Fi:</span> Ask the front desk for the current network details.</div>
+                    <div class="soft-glass rounded-2xl px-4 py-3"><span class="font-semibold">Concierge:</span> Dial 0 from your room or visit the lobby.</div>
+                    <div class="soft-glass rounded-2xl px-4 py-3"><span class="font-semibold">Dining:</span> Use the World of Hyatt app or speak with the concierge.</div>
+                    <div class="soft-glass rounded-2xl px-4 py-3"><span class="font-semibold">Spa &amp; Activities:</span> Book through the resort app or at the appropriate desk.</div>
+                    <div class="soft-glass rounded-2xl px-4 py-3"><span class="font-semibold">Emergency:</span> Dial 0 or go directly to the front desk.</div>
+                </div>
+            </details>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 px-6 py-12 text-center text-sm text-white/55">
+        <div>Armin &amp; Christina | August 5, 2026</div>
+        <div class="mt-1">Secrets Moxche Playa del Carmen, Mexico</div>
+        <div class="heading-font mt-5 text-lg text-white/75">Made with love for our favorite people. See you in Mexico. ♡</div>
     </footer>
 
+    <nav class="mobile-dock" aria-label="Mobile quick actions">
+        <a href="#schedule" data-open-target="schedule" class="flex items-center justify-center gap-2 rounded-xl bg-white/[0.06] px-3 py-3 text-xs font-semibold">
+            <i class="fa-regular fa-clock text-[var(--accent)]" aria-hidden="true"></i>
+            Schedule
+        </a>
+        <a href="https://drive.google.com/drive/folders/1gBfI49IfP3SRYebnDlKCpT4Dv-A0Dkrv?usp=share_link" target="_blank" rel="noopener noreferrer" class="champagne-button flex items-center justify-center gap-2 rounded-xl px-3 py-3 text-xs font-semibold">
+            <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+            Upload Photos
+        </a>
+    </nav>
+
     <script>
-        function initTailwind() {
-            // No extra config needed
+        function openAndScroll(targetId) {
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            if (target.tagName.toLowerCase() === 'details') {
+                target.open = true;
+            }
+
+            window.setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 30);
         }
 
-        function initSmooth() {
-            document.querySelectorAll('a[href^="#"]').forEach(a => {
-                a.addEventListener('click', e => {
-                    const target = document.querySelector(a.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
+        document.querySelectorAll('[data-open-target]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const targetId = link.getAttribute('data-open-target');
+                if (!targetId) return;
+                event.preventDefault();
+                openAndScroll(targetId);
             });
-        }
-
-        function init() {
-            initTailwind();
-            initSmooth();
-        }
-
-        window.onload = init;
+        });
     </script>
 </body>
 </html>
