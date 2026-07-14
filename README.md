@@ -1,22 +1,47 @@
 # Armin & Christina Wedding Guest Site
 
-Updated liquid-glass wedding guest website for August 5, 2026 at Secrets Moxché Playa del Carmen.
+**Wedding:** August 5, 2026  
+**Location:** Secrets Moxché Playa del Carmen
 
-## Important deployment note
+## Current version
 
-Upload **all root files** to the GitHub repository, especially:
+This build is optimized primarily for phones and uses a warm, natural Liquid Glass design.
+
+### Included
+- Photo-forward mobile hero
+- Compact quick links for schedule, ceremony, map, and photo uploads
+- Wedding-at-a-glance strip
+- Apple Calendar and Google Calendar links
+- Wedding schedule
+- Ceremony directions and unplugged-ceremony note
+- Shared Google Drive photo folder
+- Full-screen resort map viewer
+- Dining grouped by Secrets Moxché, Preferred Club, and Impression access
+- On-property guest essentials
+- Three-button mobile dock
+
+## Files that must be uploaded to GitHub
+
+Upload the contents of this folder, not the ZIP itself:
 
 - `index.html`
+- `hero-resort.jpg`
 - `armin-christina-wedding.ics`
 - `vercel.json`
+- `images/hero-resort.jpg`
+- `images/resort-map.jpg`
 
-The previous `vercel.json` redirected every request to `index.html`, which prevented the hero image and calendar file from loading correctly. The hero is now embedded directly inside `index.html`, and the new Vercel configuration serves the `.ics` file with the correct calendar content type.
+The root-level `hero-resort.jpg`, calendar file, and `vercel.json` are required.
 
-## Apple Calendar
+## Publish
 
-On iPhone, tap **Add to Apple Calendar**, then open the downloaded `.ics` file and choose **Add All**.
+Commit the files to the `main` branch of the GitHub repository connected to Vercel. Vercel should automatically deploy the commit to:
 
-## Photo folder
+`https://armin-christina.vercel.app`
 
-The site links to the shared Google Drive folder:
-`https://drive.google.com/drive/folders/1gBfI49IfP3SRYebnDlKCpT4Dv-A0Dkrv?usp=share_link`
+After deployment, refresh the page on iPhone and confirm:
+- Hero image is visible
+- Apple Calendar downloads or opens the `.ics` event
+- Google Calendar opens correctly
+- Resort map enlarges
+- Google Drive photo folder opens
