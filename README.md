@@ -1,47 +1,24 @@
 # Armin & Christina Wedding Guest Site
 
-**Wedding:** August 5, 2026  
-**Location:** Secrets Moxché Playa del Carmen
+Mobile-first one-page guest guide for the August 5, 2026 wedding at Secrets Moxché Playa del Carmen.
 
-## Current version
-
-This build is optimized primarily for phones and uses a warm, natural Liquid Glass design.
-
-### Included
-- Photo-forward mobile hero
-- Compact quick links for schedule, ceremony, map, and photo uploads
-- Wedding-at-a-glance strip
-- Apple Calendar and Google Calendar links
-- Wedding schedule
-- Ceremony directions and unplugged-ceremony note
-- Shared Google Drive photo folder
-- Full-screen resort map viewer
-- Dining grouped by Secrets Moxché, Preferred Club, and Impression access
+## Included
+- Centered full-photo hero with a local fallback image
+- Wedding-at-a-glance details
+- Apple and Google Calendar links
+- Closed-by-default accordion sections
+- Wedding schedule and ceremony guidance
+- Google Drive guest photo folder
+- High-resolution resort map with official map link
+- Dining access notes for Secrets Moxché, Preferred Club, and Impression Moxché
 - On-property guest essentials
-- Three-button mobile dock
 
-## Files that must be uploaded to GitHub
+## Deploying through GitHub + Vercel
+Upload the contents of this folder to the existing GitHub repository and commit to the `main` branch. Vercel should deploy the new production version automatically.
 
-Upload the contents of this folder, not the ZIP itself:
-
+Important files:
 - `index.html`
-- `hero-resort.jpg`
 - `armin-christina-wedding.ics`
 - `vercel.json`
+- `hero-resort.jpg`
 - `images/hero-resort.jpg`
-- `images/resort-map.jpg`
-
-The root-level `hero-resort.jpg`, calendar file, and `vercel.json` are required.
-
-## Publish
-
-Commit the files to the `main` branch of the GitHub repository connected to Vercel. Vercel should automatically deploy the commit to:
-
-`https://armin-christina.vercel.app`
-
-After deployment, refresh the page on iPhone and confirm:
-- Hero image is visible
-- Apple Calendar downloads or opens the `.ics` event
-- Google Calendar opens correctly
-- Resort map enlarges
-- Google Drive photo folder opens

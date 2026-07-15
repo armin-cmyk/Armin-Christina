@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#4a3b31">
+  <meta name="theme-color" content="#efe7de">
   <meta name="description" content="Wedding-week details for Armin and Christina at Secrets Moxché Playa del Carmen on August 5, 2026.">
   <title>Armin & Christina | August 5, 2026</title>
 
-  <link rel="preload" as="image" href="/hero-resort.jpg?v=8">
+  <link rel="preload" as="image" href="https://alg.widen.net/content/j9ciik8vpj/webp/SEPDC-EXT-Aerial-Resort-2A-CB.webp?download=true&q=80&u=itfpsm">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
@@ -16,30 +16,30 @@
   <style>
     :root {
       --ink: #2e2925;
-      --ink-soft: #71675f;
-      --cream: #f6f0e8;
-      --sand: #ddcbb6;
-      --champagne: #ead8b9;
-      --clay: #a96f58;
-      --cocoa: #4a3b31;
-      --glass: rgba(255, 255, 255, 0.43);
-      --glass-strong: rgba(255, 255, 255, 0.58);
-      --line: rgba(255, 255, 255, 0.74);
-      --shadow: 0 22px 60px rgba(65, 45, 31, 0.14);
-      --shadow-soft: 0 12px 32px rgba(65, 45, 31, 0.10);
+      --ink-soft: #756b63;
+      --cream: #f8f3ed;
+      --sand: #e7d8c8;
+      --champagne: #ead4ae;
+      --clay: #a66f58;
+      --cocoa: #49392f;
+      --glass: rgba(255, 255, 255, .48);
+      --glass-strong: rgba(255, 255, 255, .68);
+      --line: rgba(255, 255, 255, .78);
+      --line-soft: rgba(75, 57, 45, .10);
+      --shadow: 0 18px 48px rgba(72, 50, 35, .13);
+      --shadow-soft: 0 10px 26px rgba(72, 50, 35, .09);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: #e7dbcd; }
+    html { scroll-behavior: smooth; background: #e7dbcf; }
     body {
       margin: 0;
       color: var(--ink);
       font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
       background:
-        radial-gradient(circle at 14% 8%, rgba(255,255,255,.95), transparent 25rem),
-        radial-gradient(circle at 92% 26%, rgba(212,174,147,.20), transparent 25rem),
-        radial-gradient(circle at 40% 78%, rgba(255,255,255,.48), transparent 30rem),
-        linear-gradient(180deg, #eee5db 0%, #e8ddd1 48%, #dfd1c2 100%);
+        radial-gradient(circle at 12% 0%, rgba(255,255,255,.94), transparent 26rem),
+        radial-gradient(circle at 92% 28%, rgba(196,145,112,.18), transparent 24rem),
+        linear-gradient(180deg, #f3ece4 0%, #eadfd4 52%, #e1d2c3 100%);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
@@ -49,41 +49,14 @@
     .serif { font-family: "Playfair Display", Georgia, serif; }
     .muted { color: var(--ink-soft); }
 
-    .liquid-glass {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 12% 0%, rgba(255,255,255,.65), transparent 34%),
-        linear-gradient(145deg, rgba(255,255,255,.54), rgba(255,255,255,.24) 54%, rgba(255,255,255,.38));
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.95),
-        inset 0 -1px 0 rgba(255,255,255,.26),
-        var(--shadow);
-      backdrop-filter: blur(28px) saturate(145%);
-      -webkit-backdrop-filter: blur(28px) saturate(145%);
-    }
-
-    .liquid-glass::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(112deg, transparent 0 41%, rgba(255,255,255,.22) 47%, transparent 54%),
-        linear-gradient(180deg, rgba(255,255,255,.24), transparent 18%);
-      opacity: .72;
-    }
-
     .hero {
       position: relative;
-      min-height: 590px;
-      height: 72svh;
-      max-height: 780px;
+      height: min(76svh, 780px);
+      min-height: 560px;
       overflow: hidden;
       isolation: isolate;
       color: white;
-      background: #836f61;
+      background: #8a7567;
     }
 
     .hero-media {
@@ -93,244 +66,271 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 50% 48%;
-      transform: scale(1.015);
+      object-position: 50% 49%;
+      transform: scale(1.012);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(180deg, rgba(27,20,16,.12) 0%, rgba(27,20,16,.03) 35%, rgba(27,20,16,.18) 70%, rgba(27,20,16,.64) 100%),
+        radial-gradient(circle at 50% 48%, rgba(0,0,0,.08), transparent 45%);
+      pointer-events: none;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      inset: 0;
-      z-index: -3;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 34%;
+      z-index: -2;
+      background: linear-gradient(180deg, transparent, rgba(24,17,13,.62));
       pointer-events: none;
-      background:
-        linear-gradient(180deg, rgba(28,21,17,.03) 0%, rgba(28,21,17,.05) 45%, rgba(38,27,20,.70) 100%),
-        linear-gradient(90deg, rgba(32,22,17,.12), transparent 55%);
     }
 
     .hero-content {
       position: absolute;
-      left: 50%;
-      bottom: clamp(1rem, 3vw, 2rem);
-      transform: translateX(-50%);
-      width: min(calc(100% - 2rem), 820px);
-      padding: clamp(1.25rem, 3.6vw, 2.25rem);
-      border-radius: 2rem;
-      text-align: left;
-      background:
-        radial-gradient(circle at 14% 0%, rgba(255,255,255,.30), transparent 36%),
-        rgba(45,34,27,.20);
-      border: 1px solid rgba(255,255,255,.35);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.52),
-        0 28px 65px rgba(20,12,8,.28);
-      backdrop-filter: blur(22px) saturate(135%);
-      -webkit-backdrop-filter: blur(22px) saturate(135%);
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.25rem 1.25rem;
+      text-align: center;
     }
 
-    .date-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .48rem .78rem;
-      border: 1px solid rgba(255,255,255,.40);
-      border-radius: 999px;
-      background: rgba(255,255,255,.13);
-      font-size: .64rem;
+    .hero-date {
+      margin: 0;
+      font-size: .72rem;
       font-weight: 700;
-      letter-spacing: .16em;
+      letter-spacing: .22em;
       text-transform: uppercase;
+      text-shadow: 0 2px 18px rgba(0,0,0,.55);
     }
 
     .hero-title {
-      margin: 1rem 0 0;
-      font-size: clamp(3.25rem, 8vw, 5.8rem);
-      line-height: .92;
-      letter-spacing: -.055em;
+      margin: .85rem 0 0;
+      font-size: clamp(3.9rem, 9vw, 7.4rem);
+      line-height: .90;
+      letter-spacing: -.06em;
       text-wrap: balance;
-      text-shadow: 0 4px 22px rgba(18,11,7,.38);
+      text-shadow: 0 5px 28px rgba(0,0,0,.52);
     }
 
-    .hero-subtitle {
-      margin: .75rem 0 0;
-      font-size: clamp(1rem, 2.4vw, 1.35rem);
-      font-weight: 500;
-      letter-spacing: -.02em;
-      text-shadow: 0 3px 16px rgba(18,11,7,.38);
+    .hero-location {
+      margin: .95rem 0 0;
+      font-size: clamp(.95rem, 2vw, 1.2rem);
+      font-weight: 600;
+      letter-spacing: .02em;
+      text-shadow: 0 3px 18px rgba(0,0,0,.58);
     }
 
-    .hero-copy {
-      margin: .45rem 0 0;
-      color: rgba(255,255,255,.82);
-      font-size: .86rem;
-      line-height: 1.55;
+    .hero-scroll {
+      position: absolute;
+      left: 50%;
+      bottom: max(1rem, env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .35rem;
+      color: rgba(255,255,255,.88);
+      font-size: .60rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-shadow: 0 2px 12px rgba(0,0,0,.55);
     }
 
     .shell {
-      width: min(calc(100% - 1.25rem), 980px);
+      width: min(calc(100% - 1rem), 960px);
       margin: 0 auto;
-      padding: 1rem 0 6.5rem;
+      padding: .75rem 0 6.75rem;
     }
 
-    .intro {
-      padding: clamp(1.2rem, 3.5vw, 2rem);
-      border-radius: 1.9rem;
-    }
-
-    .intro-top {
+    .welcome {
+      padding: 1.6rem 1.2rem 1rem;
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto;
     }
 
-    .intro h2 {
+    .welcome h2 {
       margin: 0;
-      font-size: clamp(1.9rem, 5vw, 3rem);
-      line-height: 1.05;
-      letter-spacing: -.04em;
+      font-size: clamp(2rem, 5.4vw, 3.2rem);
+      line-height: 1.02;
+      letter-spacing: -.045em;
     }
 
-    .intro p {
+    .welcome p {
+      max-width: 39rem;
       margin: .65rem auto 0;
-      max-width: 40rem;
       color: var(--ink-soft);
       font-size: .91rem;
       line-height: 1.65;
     }
 
-    .quick-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: .68rem;
-      margin-top: 1.2rem;
-    }
-
-    .quick-link {
-      min-height: 78px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: .48rem;
-      padding: .7rem .45rem;
-      border: 1px solid rgba(255,255,255,.77);
-      border-radius: 1.2rem;
-      text-decoration: none;
-      text-align: center;
+    .liquid-glass {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
       background:
-        linear-gradient(145deg, rgba(255,255,255,.65), rgba(255,255,255,.25)),
-        rgba(237,222,207,.30);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.96), var(--shadow-soft);
-      transition: transform .18s ease, box-shadow .18s ease;
+        radial-gradient(circle at 12% 0%, rgba(255,255,255,.76), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,.60), rgba(255,255,255,.27) 58%, rgba(255,255,255,.43));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.98),
+        inset 0 -1px 0 rgba(255,255,255,.26),
+        var(--shadow);
+      backdrop-filter: blur(28px) saturate(135%);
+      -webkit-backdrop-filter: blur(28px) saturate(135%);
     }
 
-    .quick-link:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 white, 0 16px 35px rgba(65,45,31,.14); }
-    .quick-link i { color: var(--clay); font-size: 1.05rem; }
-    .quick-link span { font-size: .72rem; font-weight: 700; line-height: 1.2; }
+    .liquid-glass::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(112deg, transparent 0 40%, rgba(255,255,255,.24) 47%, transparent 54%),
+        linear-gradient(180deg, rgba(255,255,255,.22), transparent 22%);
+      opacity: .62;
+    }
 
     .glance {
-      margin-top: .85rem;
       padding: 1rem;
-      border-radius: 1.65rem;
+      border-radius: 1.8rem;
     }
 
-    .glance-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: .15rem .15rem .8rem;
+    .glance-title {
+      padding: .15rem .15rem .85rem;
+      text-align: center;
     }
 
     .eyebrow {
       color: var(--clay);
       font-size: .62rem;
       font-weight: 800;
-      letter-spacing: .16em;
+      letter-spacing: .17em;
       text-transform: uppercase;
     }
 
-    .glance h2, .section-title {
-      margin: .18rem 0 0;
-      font-size: clamp(1.55rem, 4.5vw, 2.25rem);
+    .glance-title h2,
+    .section-title {
+      margin: .2rem 0 0;
+      font-size: clamp(1.62rem, 4.6vw, 2.35rem);
       line-height: 1.02;
-      letter-spacing: -.035em;
+      letter-spacing: -.04em;
     }
 
-    .glance-strip {
+    .glance-line {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .65rem;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 1.25rem;
+      background: rgba(255,255,255,.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.90);
     }
 
     .glance-item {
-      padding: .9rem;
-      border: 1px solid rgba(255,255,255,.72);
-      border-radius: 1.15rem;
-      background: linear-gradient(145deg, rgba(255,255,255,.58), rgba(255,255,255,.22));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.92);
+      min-height: 88px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: .85rem .65rem;
+      text-align: center;
     }
 
+    .glance-item + .glance-item { border-left: 1px solid var(--line-soft); }
     .glance-item i { color: var(--clay); font-size: .9rem; }
-    .glance-item strong { display: block; margin-top: .38rem; font-size: .88rem; }
-    .glance-item span { display: block; margin-top: .16rem; color: var(--ink-soft); font-size: .72rem; line-height: 1.4; }
+    .glance-item strong { margin-top: .36rem; font-size: .82rem; }
+    .glance-item span { margin-top: .12rem; color: var(--ink-soft); font-size: .68rem; line-height: 1.35; }
 
-    .calendar-row {
+    .calendar-row,
+    .quick-actions {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: .65rem;
-      margin-top: .7rem;
+      gap: .62rem;
+      margin-top: .72rem;
     }
 
-    .button {
-      min-height: 46px;
+    .calendar-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .quick-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .button,
+    .quick-action {
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: .5rem;
-      padding: .72rem .9rem;
-      border: 1px solid rgba(255,255,255,.76);
+      gap: .48rem;
+      padding: .72rem .82rem;
+      border: 1px solid rgba(255,255,255,.78);
       border-radius: 999px;
       text-decoration: none;
       text-align: center;
-      font-size: .77rem;
+      font-size: .76rem;
       font-weight: 700;
       transition: transform .18s ease, box-shadow .18s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .button:hover { transform: translateY(-2px); }
-    .button-primary {
-      background: linear-gradient(145deg, #fff9ef, var(--champagne));
+    .button:hover,
+    .quick-action:hover { transform: translateY(-2px); }
+
+    .button-primary,
+    .quick-action.warm {
+      background: linear-gradient(145deg, #fffaf2, var(--champagne));
       color: #3e3027;
-      box-shadow: inset 0 1px 0 white, 0 12px 28px rgba(93,64,43,.13);
-    }
-    .button-glass {
-      background: linear-gradient(145deg, rgba(255,255,255,.60), rgba(255,255,255,.24));
-      box-shadow: inset 0 1px 0 white;
+      box-shadow: inset 0 1px 0 white, 0 10px 24px rgba(93,64,43,.12);
     }
 
-    .stack { display: grid; gap: .8rem; margin-top: .85rem; }
+    .button-glass,
+    .quick-action {
+      background: linear-gradient(145deg, rgba(255,255,255,.66), rgba(255,255,255,.26));
+      box-shadow: inset 0 1px 0 white, var(--shadow-soft);
+    }
+
+    .quick-action {
+      min-height: 66px;
+      flex-direction: column;
+      gap: .35rem;
+      border-radius: 1.2rem;
+      font-size: .70rem;
+    }
+
+    .quick-action i { color: var(--clay); font-size: 1rem; }
+    .quick-action.warm i { color: var(--cocoa); }
+
+    .stack {
+      display: grid;
+      gap: .68rem;
+      margin-top: .68rem;
+    }
 
     details.card {
-      scroll-margin-top: 1rem;
-      border-radius: 1.65rem;
+      scroll-margin-top: .75rem;
+      border-radius: 1.55rem;
     }
 
     details summary { list-style: none; }
     details summary::-webkit-details-marker { display: none; }
 
     .summary {
-      min-height: 82px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 1.05rem 1.15rem;
+      padding: 1rem 1.1rem;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .summary .chevron {
+    .chevron {
       width: 34px;
       height: 34px;
       flex: 0 0 auto;
@@ -338,158 +338,171 @@
       place-items: center;
       border: 1px solid rgba(255,255,255,.74);
       border-radius: 50%;
-      background: rgba(255,255,255,.28);
+      background: rgba(255,255,255,.30);
       color: var(--cocoa);
       font-size: .72rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.92);
       transition: transform .25s ease;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.90);
     }
 
     details[open] .chevron { transform: rotate(180deg); }
-    .content { padding: 0 1.15rem 1.2rem; }
+    .content { padding: 0 1.1rem 1.15rem; }
 
-    .notice {
-      margin-top: .8rem;
-      padding: .9rem 1rem;
-      border: 1px solid rgba(255,255,255,.70);
-      border-radius: 1.1rem;
-      background: rgba(255,248,236,.46);
-      color: var(--ink-soft);
-      font-size: .76rem;
-      line-height: 1.55;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.90);
-    }
-
-    .schedule-list { display: grid; gap: .52rem; }
+    .schedule-list { border-top: 1px solid var(--line-soft); }
     .schedule-row {
       display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: .8rem;
+      grid-template-columns: 96px 1fr;
+      gap: .75rem;
       align-items: center;
-      padding: .83rem .9rem;
-      border: 1px solid rgba(255,255,255,.69);
-      border-radius: 1.08rem;
-      background: linear-gradient(145deg, rgba(255,255,255,.54), rgba(255,255,255,.20));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.90);
-      font-size: .83rem;
+      padding: .82rem .1rem;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: .82rem;
     }
-    .schedule-row strong { color: var(--cocoa); font-size: .77rem; }
+    .schedule-row strong { color: var(--cocoa); font-size: .76rem; }
     .schedule-row span { color: #4f4740; line-height: 1.4; }
 
-    .grid-2 {
+    .simple-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: .65rem;
+      gap: .6rem;
     }
 
-    .mini-card, .restaurant, .list li, .upload-panel {
-      border: 1px solid rgba(255,255,255,.70);
-      background: linear-gradient(145deg, rgba(255,255,255,.56), rgba(255,255,255,.20));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.92);
+    .info-block,
+    .upload-panel,
+    .notice {
+      border: 1px solid rgba(255,255,255,.72);
+      background: rgba(255,255,255,.30);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.90);
     }
 
-    .mini-card {
-      padding: .95rem;
-      border-radius: 1.15rem;
+    .info-block {
+      padding: .92rem;
+      border-radius: 1.05rem;
     }
-    .mini-card h3 { margin: 0; font-size: .86rem; }
-    .mini-card p { margin: .38rem 0 0; color: var(--ink-soft); font-size: .76rem; line-height: 1.5; }
+    .info-block h3 { margin: 0; font-size: .84rem; }
+    .info-block p { margin: .35rem 0 0; color: var(--ink-soft); font-size: .74rem; line-height: 1.52; }
 
     .upload-panel {
-      padding: 1.25rem 1rem;
-      border-radius: 1.25rem;
+      padding: 1.3rem 1rem;
+      border-radius: 1.2rem;
       text-align: center;
     }
-    .upload-panel h3 { margin: 0; font-size: 1.55rem; letter-spacing: -.03em; }
-    .upload-panel p { max-width: 34rem; margin: .55rem auto 0; color: var(--ink-soft); font-size: .80rem; line-height: 1.58; }
+    .upload-panel h3 { margin: 0; font-size: 1.55rem; letter-spacing: -.035em; }
+    .upload-panel p { max-width: 34rem; margin: .55rem auto 0; color: var(--ink-soft); font-size: .79rem; line-height: 1.58; }
 
     .map-frame {
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,.80);
-      border-radius: 1.2rem;
+      border: 1px solid rgba(255,255,255,.84);
+      border-radius: 1.15rem;
       background: white;
-      box-shadow: inset 0 1px 0 white, 0 14px 35px rgba(74,52,36,.13);
+      box-shadow: inset 0 1px 0 white, 0 14px 34px rgba(74,52,36,.12);
     }
     .map-frame button { display: block; width: 100%; padding: 0; border: 0; background: white; cursor: zoom-in; }
-    .map-frame img { display: block; width: 100%; min-height: 160px; object-fit: cover; background: #f4f0ea; }
+    .map-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+      background: white;
+    }
+    .map-fallback { padding: 2rem 1rem; text-align: center; color: var(--ink-soft); font-size: .78rem; line-height: 1.55; }
     .zoom-chip {
       position: absolute;
-      right: .6rem;
-      bottom: .6rem;
+      right: .55rem;
+      bottom: .55rem;
       display: inline-flex;
       align-items: center;
-      gap: .35rem;
-      padding: .46rem .62rem;
-      border: 1px solid rgba(255,255,255,.55);
+      gap: .34rem;
+      padding: .45rem .62rem;
+      border: 1px solid rgba(255,255,255,.56);
       border-radius: 999px;
-      background: rgba(53,42,34,.68);
+      background: rgba(53,42,34,.72);
       color: white;
-      font-size: .65rem;
+      font-size: .64rem;
       font-weight: 700;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
+    }
+
+    .notice {
+      margin-top: .75rem;
+      padding: .85rem .9rem;
+      border-radius: 1rem;
+      color: var(--ink-soft);
+      font-size: .74rem;
+      line-height: 1.55;
+    }
+
+    .map-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .55rem;
+      margin-top: .65rem;
     }
 
     .access-heading {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: .45rem;
-      margin: 1rem 0 .58rem;
-      font-size: .66rem;
+      gap: .42rem;
+      margin: 1rem 0 .45rem;
+      font-size: .65rem;
       font-weight: 800;
-      letter-spacing: .13em;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
-    .access-heading:first-of-type { margin-top: .3rem; }
+    .access-heading:first-of-type { margin-top: .45rem; }
 
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: .3rem;
-      padding: .3rem .52rem;
-      border: 1px solid rgba(255,255,255,.78);
+      gap: .28rem;
+      padding: .28rem .5rem;
+      border: 1px solid rgba(255,255,255,.80);
       border-radius: 999px;
-      background: linear-gradient(145deg, #fff8ec, #e7d1ad);
+      background: linear-gradient(145deg, #fff8ed, #e7d1ad);
       color: #4a382a;
-      font-size: .58rem;
+      font-size: .57rem;
       letter-spacing: 0;
       text-transform: none;
     }
-    .badge-impression { background: linear-gradient(145deg, #f8e9df, #dcb9a7); }
+    .badge-impression { background: linear-gradient(145deg, #f8e9df, #ddb9a7); }
 
-    .restaurant-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: .56rem;
+    .restaurant-list {
+      border-top: 1px solid var(--line-soft);
     }
     .restaurant {
-      padding: .8rem;
-      border-radius: 1.05rem;
+      display: grid;
+      grid-template-columns: minmax(112px, .85fr) 1.4fr;
+      gap: .8rem;
+      padding: .72rem .05rem;
+      border-bottom: 1px solid var(--line-soft);
     }
-    .restaurant strong { display: block; font-size: .82rem; }
-    .restaurant span { display: block; margin-top: .22rem; color: var(--ink-soft); font-size: .69rem; line-height: 1.42; }
+    .restaurant strong { font-size: .80rem; }
+    .restaurant span { color: var(--ink-soft); font-size: .70rem; line-height: 1.45; }
 
-    .list { display: grid; gap: .56rem; margin: 0; padding: 0; list-style: none; }
+    .list { margin: 0; padding: 0; list-style: none; }
     .list li {
       display: grid;
       grid-template-columns: 25px 1fr;
-      gap: .65rem;
+      gap: .62rem;
       align-items: start;
-      padding: .82rem;
-      border-radius: 1.05rem;
-      font-size: .78rem;
-      line-height: 1.5;
+      padding: .80rem .05rem;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: .76rem;
+      line-height: 1.52;
     }
-    .list i { color: var(--clay); margin-top: .14rem; }
+    .list li:first-child { border-top: 1px solid var(--line-soft); }
+    .list i { color: var(--clay); margin-top: .15rem; }
 
     .map-modal {
       position: fixed;
       inset: 0;
       z-index: 100;
       display: none;
-      background: rgba(29,22,17,.84);
+      background: rgba(29,22,17,.86);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
@@ -501,41 +514,43 @@
       z-index: 102;
       transform: translateX(-50%);
       display: flex;
-      gap: .45rem;
-      padding: .38rem;
+      gap: .4rem;
+      padding: .36rem;
       border: 1px solid rgba(255,255,255,.30);
       border-radius: 999px;
-      background: rgba(48,37,29,.72);
+      background: rgba(48,37,29,.74);
       color: white;
       box-shadow: 0 20px 50px rgba(0,0,0,.28);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
-    .map-modal-toolbar button, .map-modal-toolbar a {
+    .map-modal-toolbar button,
+    .map-modal-toolbar a {
       min-height: 40px;
       display: inline-flex;
       align-items: center;
-      gap: .38rem;
-      padding: .62rem .75rem;
+      gap: .36rem;
+      padding: .62rem .74rem;
       border: 0;
       border-radius: 999px;
       background: rgba(255,255,255,.12);
       color: white;
       text-decoration: none;
       cursor: pointer;
-      font-size: .72rem;
+      font-size: .70rem;
       font-weight: 700;
     }
     .map-scroll {
       position: absolute;
       inset: 0;
       overflow: auto;
-      padding: 5.2rem .4rem 2rem;
+      padding: 5.1rem .4rem 2rem;
       -webkit-overflow-scrolling: touch;
+      touch-action: pan-x pan-y pinch-zoom;
     }
     .map-scroll img {
       display: block;
-      width: max(100%, 1450px);
+      width: max(100%, 1500px);
       height: auto;
       margin: 0 auto;
       border-radius: .9rem;
@@ -544,114 +559,96 @@
     }
 
     footer {
-      padding: 2rem 1rem 7.2rem;
+      padding: 1.8rem 1rem 7.4rem;
       text-align: center;
       color: rgba(63,50,41,.62);
-      font-size: .72rem;
+      font-size: .70rem;
     }
-    footer .love { margin-top: .55rem; font-size: 1rem; color: rgba(63,50,41,.78); }
+    footer .love { margin-top: .48rem; font-size: .98rem; color: rgba(63,50,41,.78); }
 
     .mobile-dock { display: none; }
     :focus-visible { outline: 2px solid var(--clay); outline-offset: 3px; }
 
     @media (max-width: 720px) {
       .hero {
+        height: 70svh;
         min-height: 520px;
-        height: 64svh;
-        max-height: 650px;
+        max-height: 680px;
       }
-      .hero-media { object-position: 58% 48%; transform: scale(1.01); }
-      .hero::after {
-        background:
-          linear-gradient(180deg, rgba(28,21,17,.02) 0%, rgba(28,21,17,.02) 48%, rgba(38,27,20,.72) 100%),
-          linear-gradient(90deg, rgba(32,22,17,.08), transparent 70%);
-      }
-      .hero-content {
-        bottom: .65rem;
-        width: calc(100% - 1rem);
-        padding: 1rem 1.05rem 1.08rem;
-        border-radius: 1.45rem;
-        background: rgba(45,34,27,.18);
-        text-align: left;
-      }
-      .date-pill { padding: .4rem .62rem; font-size: .56rem; letter-spacing: .13em; }
-      .hero-title { margin-top: .72rem; font-size: clamp(2.7rem, 13vw, 3.6rem); line-height: .94; }
-      .hero-subtitle { margin-top: .55rem; font-size: .94rem; }
-      .hero-copy { margin-top: .3rem; font-size: .74rem; }
+      .hero-media { object-position: 52% 50%; transform: scale(1.008); }
+      .hero-content { padding: 2.5rem .85rem 3.5rem; }
+      .hero-date { font-size: .62rem; letter-spacing: .18em; }
+      .hero-title { margin-top: .72rem; font-size: clamp(3.35rem, 17vw, 4.8rem); line-height: .89; }
+      .hero-location { max-width: 18rem; margin-top: .75rem; font-size: .88rem; line-height: 1.35; }
+      .hero-scroll { bottom: calc(.75rem + env(safe-area-inset-bottom)); font-size: .54rem; }
 
-      .shell { width: min(calc(100% - .75rem), 980px); padding-top: .55rem; }
-      .intro { padding: 1.05rem; border-radius: 1.45rem; }
-      .intro h2 { font-size: 1.8rem; }
-      .intro p { font-size: .80rem; line-height: 1.55; }
-      .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; margin-top: .9rem; }
-      .quick-link { min-height: 66px; flex-direction: row; gap: .45rem; padding: .62rem .58rem; border-radius: 1rem; }
-      .quick-link i { font-size: .92rem; }
-      .quick-link span { font-size: .68rem; }
+      .shell { width: min(calc(100% - .7rem), 960px); padding-top: .45rem; }
+      .welcome { padding: 1.25rem .8rem .85rem; }
+      .welcome h2 { font-size: 1.9rem; }
+      .welcome p { font-size: .79rem; line-height: 1.55; }
 
-      .glance { margin-top: .55rem; padding: .82rem; border-radius: 1.35rem; }
-      .glance-header { padding: .05rem .05rem .65rem; }
-      .glance h2 { font-size: 1.55rem; }
-      .glance-strip {
-        display: flex;
-        overflow-x: auto;
-        gap: .5rem;
-        padding-bottom: .15rem;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-      }
-      .glance-strip::-webkit-scrollbar { display: none; }
-      .glance-item { flex: 0 0 145px; min-height: 100px; scroll-snap-align: start; border-radius: 1rem; padding: .76rem; }
-      .glance-item strong { font-size: .79rem; }
-      .glance-item span { font-size: .66rem; }
-      .calendar-row { gap: .5rem; margin-top: .55rem; }
-      .button { min-height: 44px; padding: .62rem .52rem; font-size: .68rem; }
+      .glance { padding: .76rem; border-radius: 1.35rem; }
+      .glance-title { padding: .05rem .1rem .62rem; }
+      .glance-title h2 { font-size: 1.5rem; }
+      .glance-line { border-radius: 1rem; }
+      .glance-item { min-height: 82px; padding: .65rem .32rem; }
+      .glance-item strong { font-size: .70rem; }
+      .glance-item span { font-size: .59rem; }
+      .calendar-row { gap: .45rem; margin-top: .52rem; }
+      .button { min-height: 44px; padding: .62rem .46rem; font-size: .65rem; }
 
-      .stack { gap: .58rem; margin-top: .58rem; }
-      details.card { border-radius: 1.35rem; }
-      .summary { min-height: 74px; padding: .88rem .9rem; }
-      .summary .chevron { width: 31px; height: 31px; }
-      .section-title { font-size: 1.55rem; }
-      .content { padding: 0 .9rem .95rem; }
-      .schedule-row { grid-template-columns: 85px 1fr; gap: .55rem; padding: .72rem; font-size: .75rem; }
-      .schedule-row strong { font-size: .70rem; }
-      .grid-2, .restaurant-grid { grid-template-columns: 1fr; }
-      .mini-card, .restaurant { border-radius: .95rem; }
-      .upload-panel { padding: 1rem .8rem; border-radius: 1rem; }
-      .upload-panel h3 { font-size: 1.42rem; }
+      .quick-actions { gap: .45rem; margin-top: .52rem; }
+      .quick-action { min-height: 60px; padding: .55rem .35rem; border-radius: 1rem; font-size: .62rem; }
+      .quick-action i { font-size: .90rem; }
+
+      .stack { gap: .52rem; margin-top: .52rem; }
+      details.card { border-radius: 1.28rem; }
+      .summary { min-height: 70px; padding: .82rem .86rem; }
+      .chevron { width: 31px; height: 31px; }
+      .section-title { font-size: 1.45rem; }
+      .content { padding: 0 .86rem .92rem; }
+      .schedule-row { grid-template-columns: 82px 1fr; gap: .5rem; padding: .70rem .02rem; font-size: .73rem; }
+      .schedule-row strong { font-size: .67rem; }
+      .simple-grid { grid-template-columns: 1fr; }
+      .info-block { border-radius: .95rem; padding: .82rem; }
+      .upload-panel { padding: 1.05rem .72rem; border-radius: 1rem; }
+      .upload-panel h3 { font-size: 1.35rem; }
       .map-frame { border-radius: 1rem; }
+      .map-frame img { aspect-ratio: 4 / 3; }
+      .map-links { grid-template-columns: 1fr; }
+      .restaurant { grid-template-columns: 105px 1fr; gap: .65rem; }
       .map-modal-toolbar span { display: none; }
-      .restaurant[style*="grid-column"] { grid-column: auto !important; }
 
       .mobile-dock {
         position: fixed;
         left: 50%;
-        bottom: calc(.6rem + env(safe-area-inset-bottom));
+        bottom: calc(.55rem + env(safe-area-inset-bottom));
         z-index: 50;
         transform: translateX(-50%);
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: .34rem;
+        gap: .32rem;
         width: min(95%, 430px);
-        padding: .38rem;
-        border: 1px solid rgba(255,255,255,.66);
-        border-radius: 1.15rem;
+        padding: .36rem;
+        border: 1px solid rgba(255,255,255,.70);
+        border-radius: 1.1rem;
         background:
-          radial-gradient(circle at 12% 0%, rgba(255,255,255,.58), transparent 36%),
-          linear-gradient(145deg, rgba(255,255,255,.56), rgba(255,255,255,.23)),
-          rgba(111,84,65,.20);
-        box-shadow: inset 0 1px 0 rgba(255,255,255,.94), 0 20px 45px rgba(49,34,24,.20);
-        backdrop-filter: blur(26px) saturate(150%);
-        -webkit-backdrop-filter: blur(26px) saturate(150%);
+          radial-gradient(circle at 12% 0%, rgba(255,255,255,.64), transparent 36%),
+          linear-gradient(145deg, rgba(255,255,255,.62), rgba(255,255,255,.28)),
+          rgba(111,84,65,.18);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.96), 0 18px 42px rgba(49,34,24,.20);
+        backdrop-filter: blur(26px) saturate(145%);
+        -webkit-backdrop-filter: blur(26px) saturate(145%);
       }
       .mobile-dock a {
-        min-height: 45px;
+        min-height: 44px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: .35rem;
-        border-radius: .85rem;
+        gap: .32rem;
+        border-radius: .82rem;
         text-decoration: none;
-        font-size: .64rem;
+        font-size: .61rem;
         font-weight: 800;
       }
       .dock-glass { background: rgba(255,255,255,.28); }
@@ -660,9 +657,11 @@
 
     @media (max-width: 380px) {
       .hero { min-height: 500px; }
-      .hero-title { font-size: 2.55rem; }
-      .quick-link { min-height: 62px; }
-      .mobile-dock a { font-size: .60rem; }
+      .hero-title { font-size: 3.2rem; }
+      .glance-item span { display: none; }
+      .glance-item { min-height: 68px; }
+      .quick-action { font-size: .58rem; }
+      .mobile-dock a { font-size: .58rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -673,56 +672,58 @@
 </head>
 <body>
   <header class="hero">
-    <img class="hero-media" src="/hero-resort.jpg?v=8" fetchpriority="high" decoding="async" alt="Beachfront resort at sunset" onerror="this.onerror=null;this.src='/images/hero-resort.jpg?v=8';">
+    <img
+      class="hero-media"
+      src="https://alg.widen.net/content/j9ciik8vpj/webp/SEPDC-EXT-Aerial-Resort-2A-CB.webp?download=true&q=80&u=itfpsm"
+      fetchpriority="high"
+      decoding="async"
+      alt="Aerial view of Secrets Moxché Playa del Carmen"
+      onerror="this.onerror=null;this.src='/hero-resort.jpg?v=10';"
+    >
     <div class="hero-content">
-      <div class="date-pill"><i class="fa-regular fa-calendar"></i> August 5, 2026</div>
-      <h1 class="hero-title serif">Armin &amp; Christina</h1>
-      <p class="hero-subtitle">Secrets Moxché Playa del Carmen</p>
-      <p class="hero-copy">Your wedding-week guide, designed for quick use around the resort.</p>
+      <p class="hero-date">August 5, 2026</p>
+      <h1 class="hero-title serif">Armin &amp;<br>Christina</h1>
+      <p class="hero-location">Secrets Moxché · Playa del Carmen</p>
     </div>
+    <a class="hero-scroll" href="#welcome"><span>Wedding Week Guide</span><i class="fa-solid fa-chevron-down"></i></a>
   </header>
 
   <main class="shell">
-    <section class="intro liquid-glass">
-      <div class="intro-top">
-        <h2 class="serif">We’re so happy you’re here.</h2>
-        <p>Everything you need during the stay—wedding details, the resort map, dining, and our shared photo folder—is right here.</p>
-      </div>
-
-      <div class="quick-grid" aria-label="Quick links">
-        <a href="#schedule" data-open="schedule" class="quick-link"><i class="fa-regular fa-clock"></i><span>Schedule</span></a>
-        <a href="#ceremony" data-open="ceremony" class="quick-link"><i class="fa-solid fa-location-dot"></i><span>Ceremony</span></a>
-        <a href="#map" data-open="map" class="quick-link"><i class="fa-regular fa-map"></i><span>Resort Map</span></a>
-        <a href="#photos" data-open="photos" class="quick-link"><i class="fa-solid fa-camera-retro"></i><span>Upload Photos</span></a>
-      </div>
+    <section id="welcome" class="welcome">
+      <h2 class="serif">We’re so happy you’re here.</h2>
+      <p>This page is your quick guide while you’re at the resort—wedding details, the property map, dining access, and our shared photo folder.</p>
     </section>
 
     <section class="glance liquid-glass" aria-labelledby="glance-title">
-      <div class="glance-header">
-        <div>
-          <div class="eyebrow">Wedding at a Glance</div>
-          <h2 id="glance-title" class="serif">Wednesday, August 5</h2>
-        </div>
+      <div class="glance-title">
+        <div class="eyebrow">Wedding at a Glance</div>
+        <h2 id="glance-title" class="serif">Wednesday, August 5</h2>
       </div>
 
-      <div class="glance-strip">
-        <div class="glance-item"><i class="fa-regular fa-clock"></i><strong>Arrive by 4:50 PM</strong><span>The ceremony begins promptly at 5:00 PM.</span></div>
-        <div class="glance-item"><i class="fa-solid fa-location-dot"></i><strong>Sky Rooftop Gazebo</strong><span>Take the lobby elevators to the 10th floor.</span></div>
-        <div class="glance-item"><i class="fa-solid fa-music"></i><strong>Dancing until 9:30 PM</strong><span>Resort bars afterward for anyone who wants to continue.</span></div>
+      <div class="glance-line">
+        <div class="glance-item"><i class="fa-regular fa-clock"></i><strong>Arrive 4:50 PM</strong><span>Ceremony begins at 5:00.</span></div>
+        <div class="glance-item"><i class="fa-solid fa-location-dot"></i><strong>Sky Rooftop</strong><span>10th-floor gazebo.</span></div>
+        <div class="glance-item"><i class="fa-solid fa-music"></i><strong>Ends 9:30 PM</strong><span>Resort bars afterward.</span></div>
       </div>
 
       <div class="calendar-row">
-        <a href="/armin-christina-wedding.ics?v=7" class="button button-primary">
+        <a href="/armin-christina-wedding.ics?v=9" class="button button-primary">
           <i class="fa-brands fa-apple"></i> Apple Calendar
         </a>
         <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Armin%20%26%20Christina%27s%20Wedding&dates=20260805T215000Z%2F20260806T023000Z&details=Please%20arrive%20by%204%3A50%20PM.%20The%20ceremony%20begins%20at%205%3A00%20PM%20at%20the%20Sky%20Rooftop%20Gazebo%2C%20followed%20by%20cocktails%2C%20dinner%2C%20and%20dancing.&location=Sky%20Rooftop%20Gazebo%2C%20Secrets%20Moxch%C3%A9%20Playa%20del%20Carmen%2C%20Mexico" class="button button-glass" target="_blank" rel="noopener">
           <i class="fa-brands fa-google"></i> Google Calendar
         </a>
       </div>
+
+      <div class="quick-actions" aria-label="Quick actions">
+        <a href="#schedule" data-open="schedule" class="quick-action"><i class="fa-regular fa-clock"></i><span>Wedding Details</span></a>
+        <a href="#map" data-open="map" class="quick-action"><i class="fa-regular fa-map"></i><span>Resort Map</span></a>
+        <a href="#photos" data-open="photos" class="quick-action warm"><i class="fa-solid fa-camera-retro"></i><span>Upload Photos</span></a>
+      </div>
     </section>
 
     <div class="stack">
-      <details id="schedule" class="card liquid-glass" open>
+      <details id="schedule" class="card liquid-glass">
         <summary class="summary">
           <div><div class="eyebrow">The Day</div><h2 class="section-title serif">Wedding Schedule</h2></div>
           <i class="fa-solid fa-chevron-down chevron"></i>
@@ -738,24 +739,24 @@
             <div class="schedule-row"><strong>7:30 PM</strong><span>Toasts</span></div>
             <div class="schedule-row"><strong>7:45 PM</strong><span>Cake cutting</span></div>
             <div class="schedule-row"><strong>8:00 PM</strong><span>Open dancing</span></div>
-            <div class="schedule-row"><strong>9:30 PM</strong><span>Reception ends</span></div>
+            <div class="schedule-row"><strong>9:30 PM</strong><span>Reception ends; resort bars afterward</span></div>
           </div>
-          <div class="notice"><strong>After the reception:</strong> We’ll be hanging out at the resort bars. Come join us.</div>
         </div>
       </details>
 
       <details id="ceremony" class="card liquid-glass">
         <summary class="summary">
-          <div><div class="eyebrow">Ceremony Details</div><h2 class="section-title serif">Sky Rooftop Gazebo</h2></div>
+          <div><div class="eyebrow">Ceremony &amp; Attire</div><h2 class="section-title serif">What Guests Need to Know</h2></div>
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
-          <div class="grid-2">
-            <div class="mini-card"><h3>Getting There</h3><p>From the main lobby, take the elevators to the 10th floor and follow signs for the Sky Rooftop Gazebo. Staff can point you to the correct elevators.</p></div>
-            <div class="mini-card"><h3>Open Seating</h3><p>There is no assigned side. Choose any available seat and settle in before the ceremony begins.</p></div>
-            <div class="mini-card"><h3>Unplugged Ceremony</h3><p>Please silence and put away phones and cameras so everyone can be fully present. Professional photos will be shared afterward.</p></div>
-            <div class="mini-card"><h3>Rooftop Comfort</h3><p>Expect warm weather, sun, and a breeze. Sunglasses, sunscreen, and comfortable shoes are recommended.</p></div>
+          <div class="simple-grid">
+            <div class="info-block"><h3>Getting There</h3><p>Take the main lobby elevators to the 10th floor and follow signs to the Sky Rooftop Gazebo. Allow 5–10 minutes from most resort areas.</p></div>
+            <div class="info-block"><h3>Dress Code</h3><p>Resort formal / cocktail attire. Neutral, soft, and muted colors are encouraged. Comfortable shoes are recommended.</p></div>
+            <div class="info-block"><h3>Unplugged Ceremony</h3><p>Please silence and put away phones and cameras so everyone can be fully present. Professional photos will be shared afterward.</p></div>
+            <div class="info-block"><h3>Rooftop Comfort</h3><p>Expect warm weather, sun, and a breeze. Bring sunglasses, sunscreen, and a light layer for later in the evening.</p></div>
           </div>
+          <div class="notice"><strong>Need directions?</strong> Ask the concierge or any resort staff member for “Armin and Christina’s wedding at the Sky Rooftop Gazebo.”</div>
         </div>
       </details>
 
@@ -771,7 +772,7 @@
             <a href="https://drive.google.com/drive/folders/1gBfI49IfP3SRYebnDlKCpT4Dv-A0Dkrv?usp=share_link" class="button button-primary" style="margin-top:.9rem" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-google-drive"></i> Open Shared Photo Folder
             </a>
-            <p style="font-size:.68rem">Google may ask you to sign in before uploading.</p>
+            <p style="font-size:.67rem">Google may ask you to sign in before uploading.</p>
           </div>
         </div>
       </details>
@@ -782,27 +783,32 @@
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
-          <p class="muted" style="margin:0 0 .75rem; font-size:.78rem; line-height:1.55">Tap the map for a large, scrollable view of Secrets Moxché, the Preferred Club rooftop, and Impression Moxché.</p>
+          <p class="muted" style="margin:0 0 .72rem; font-size:.76rem; line-height:1.55">Tap the high-resolution map to enlarge it. The full layout includes Secrets Moxché, Preferred Club areas, and Impression Moxché.</p>
           <div class="map-frame">
             <button type="button" onclick="openMap()" aria-label="Open the resort map full screen">
-              <img src="https://all-maps.com/wp-content/uploads/2024/08/2025-Impression-Moxche-by-Secrets-Map-Printable-PDF-Official-2024-Edition-scaled.webp" referrerpolicy="no-referrer" alt="Secrets Moxché and Impression Moxché resort map">
+              <img id="mapPreview" src="https://all-maps.com/wp-content/uploads/2024/08/2025-Impression-Moxche-by-Secrets-Map-Printable-PDF-Official-2024-Edition-scaled.webp" referrerpolicy="no-referrer" loading="lazy" decoding="async" alt="Secrets Moxché and Impression Moxché resort map" onerror="showMapFallback()">
+              <div id="mapFallback" class="map-fallback" hidden>Map preview could not load. Use the official resort map button below.</div>
             </button>
             <div class="zoom-chip"><i class="fa-solid fa-magnifying-glass-plus"></i> Enlarge</div>
           </div>
-          <div class="notice"><strong>Wedding location:</strong> Ask for the Sky Rooftop Gazebo on the 10th floor if you are unsure which elevator to use.</div>
+          <div class="map-links">
+            <button type="button" onclick="openMap()" class="button button-primary"><i class="fa-solid fa-expand"></i> Full-Screen Map</button>
+            <a href="https://alg.widen.net/s/lrl9rztm2x/sepdc-rm" class="button button-glass" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"></i> Official Resort Map</a>
+          </div>
+          <div class="notice"><strong>Wedding location:</strong> The Sky Rooftop Gazebo is on the 10th floor. Ask staff which elevator to use if you are unsure.</div>
         </div>
       </details>
 
       <details id="dining" class="card liquid-glass">
         <summary class="summary">
-          <div><div class="eyebrow">Where to Eat</div><h2 class="section-title serif">Restaurants &amp; Dining</h2></div>
+          <div><div class="eyebrow">Where to Eat</div><h2 class="section-title serif">Restaurants &amp; Access</h2></div>
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
-          <p class="muted" style="margin:0; font-size:.77rem; line-height:1.55">Check the World of Hyatt app or ask the concierge for current hours, dress requirements, and reservations.</p>
+          <p class="muted" style="margin:0; font-size:.75rem; line-height:1.55">Check the World of Hyatt app or ask the concierge for today’s hours, dress requirements, and reservation availability.</p>
 
           <div class="access-heading">Secrets Moxché <span class="badge"><i class="fa-solid fa-users"></i> Main resort guests</span></div>
-          <div class="restaurant-grid">
+          <div class="restaurant-list">
             <div class="restaurant"><strong>Market Café</strong><span>International buffet</span></div>
             <div class="restaurant"><strong>Dos Almas</strong><span>Mexican cuisine and regional specialties</span></div>
             <div class="restaurant"><strong>Ember</strong><span>Steakhouse and open-fire grill</span></div>
@@ -817,15 +823,15 @@
           </div>
 
           <div class="access-heading">Preferred Club <span class="badge"><i class="fa-solid fa-crown"></i> Preferred + Impression</span></div>
-          <div class="restaurant-grid">
-            <div class="restaurant" style="grid-column:1/-1"><strong>Observatory Preferred Rooftop</strong><span>Rooftop lounge and dining area for Preferred Club and Impression guests.</span></div>
+          <div class="restaurant-list">
+            <div class="restaurant"><strong>Observatory Preferred Rooftop</strong><span>Rooftop lounge and dining area for Preferred Club and Impression guests.</span></div>
           </div>
 
           <div class="access-heading">Impression Moxché <span class="badge badge-impression"><i class="fa-solid fa-gem"></i> Impression only</span></div>
-          <div class="restaurant-grid">
+          <div class="restaurant-list">
             <div class="restaurant"><strong>Cielo</strong><span>Impression rooftop restaurant and bar</span></div>
             <div class="restaurant"><strong>Seaside Beach Club</strong><span>Beachfront dining in the Impression annex</span></div>
-            <div class="restaurant" style="grid-column:1/-1"><strong>Teodoro</strong><span>Signature tasting experience. Stay-length limits and other terms may apply.</span></div>
+            <div class="restaurant"><strong>Teodoro</strong><span>Signature seven-course tasting experience. Stay-length limits and other terms may apply.</span></div>
           </div>
 
           <div class="notice"><strong>Dress reminder:</strong> Evening restaurants may require resort-elegant clothing. Long pants and a collared shirt for men are the safest choice.</div>
@@ -841,7 +847,7 @@
           <ul class="list">
             <li><i class="fa-solid fa-mobile-screen-button"></i><div><strong>World of Hyatt app:</strong> Check restaurant hours, menus, daily activities, entertainment, spa information, and resort updates.</div></li>
             <li><i class="fa-solid fa-bell-concierge"></i><div><strong>Concierge:</strong> Dial 0 from your room or visit the lobby for dining, spa, directions, or wedding-location help.</div></li>
-            <li><i class="fa-solid fa-shirt"></i><div><strong>Evening dress code:</strong> Keep one resort-elegant outfit ready for à la carte restaurants.</div></li>
+            <li><i class="fa-solid fa-shirt"></i><div><strong>Evening dining:</strong> Keep one resort-elegant outfit ready for à la carte restaurants.</div></li>
             <li><i class="fa-solid fa-wallet"></i><div><strong>Small cash:</strong> The stay is all-inclusive, but small bills are useful for optional gratuities.</div></li>
             <li><i class="fa-solid fa-cloud-sun"></i><div><strong>August weather:</strong> Expect heat, humidity, strong sun, and occasional brief showers. Carry sunscreen and a light layer.</div></li>
             <li><i class="fa-solid fa-circle-info"></i><div><strong>Same-day information:</strong> Resort hours and access rules can change, so the concierge and app are the best sources during the stay.</div></li>
@@ -865,20 +871,35 @@
   <div id="mapModal" class="map-modal" role="dialog" aria-modal="true" aria-label="Full-size resort map">
     <div class="map-modal-toolbar">
       <button type="button" onclick="closeMap()"><i class="fa-solid fa-xmark"></i><span>Close</span></button>
-      <a href="https://all-maps.com/wp-content/uploads/2024/08/2025-Impression-Moxche-by-Secrets-Map-Printable-PDF-Official-2024-Edition-scaled.webp" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i><span>Open Original</span></a>
+      <a href="https://alg.widen.net/s/lrl9rztm2x/sepdc-rm" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"></i><span>Official Map</span></a>
     </div>
     <div class="map-scroll" onclick="event.target === this && closeMap()">
-      <img src="https://all-maps.com/wp-content/uploads/2024/08/2025-Impression-Moxche-by-Secrets-Map-Printable-PDF-Official-2024-Edition-scaled.webp" referrerpolicy="no-referrer" alt="Full-size Secrets Moxché and Impression Moxché resort map">
+      <img id="mapFull" src="https://all-maps.com/wp-content/uploads/2024/08/2025-Impression-Moxche-by-Secrets-Map-Printable-PDF-Official-2024-Edition-scaled.webp" referrerpolicy="no-referrer" alt="Full-size Secrets Moxché and Impression Moxché resort map" onerror="this.style.display='none';">
     </div>
   </div>
 
   <script>
+    const allDetails = Array.from(document.querySelectorAll('details'));
+
+    function closeAllDetails() {
+      allDetails.forEach(detail => { detail.open = false; });
+    }
+
     function openAndScroll(id) {
       const target = document.getElementById(id);
       if (!target) return;
-      if (target.tagName === 'DETAILS') target.open = true;
+      allDetails.forEach(detail => { detail.open = detail === target; });
       requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
     }
+
+    allDetails.forEach(detail => {
+      detail.addEventListener('toggle', () => {
+        if (!detail.open) return;
+        allDetails.forEach(other => {
+          if (other !== detail) other.open = false;
+        });
+      });
+    });
 
     document.querySelectorAll('[data-open]').forEach(link => {
       link.addEventListener('click', event => {
@@ -889,7 +910,19 @@
       });
     });
 
+    function showMapFallback() {
+      const preview = document.getElementById('mapPreview');
+      const fallback = document.getElementById('mapFallback');
+      if (preview) preview.style.display = 'none';
+      if (fallback) fallback.hidden = false;
+    }
+
     function openMap() {
+      const full = document.getElementById('mapFull');
+      if (full && full.style.display === 'none') {
+        window.open('https://alg.widen.net/s/lrl9rztm2x/sepdc-rm', '_blank', 'noopener');
+        return;
+      }
       document.getElementById('mapModal').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -902,6 +935,9 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape') closeMap();
     });
+
+    document.addEventListener('DOMContentLoaded', closeAllDetails);
+    window.addEventListener('pageshow', closeAllDetails);
   </script>
 </body>
 </html>
