@@ -1,24 +1,22 @@
-# Armin & Christina Wedding Guest Site
+# Armin & Christina's Wedding Guest Site
 
-Mobile-first one-page guest guide for the August 5, 2026 wedding at Secrets Moxché Playa del Carmen.
+Mobile-first wedding-week guide for guests at Secrets Moxche Playa del Carmen.
 
 ## Included
-- Centered full-photo hero with a local fallback image
-- Wedding-at-a-glance details
-- Apple and Google Calendar links
-- Closed-by-default accordion sections
-- Wedding schedule and ceremony guidance
-- Google Drive guest photo folder
-- High-resolution resort map with official map link
-- Dining access notes for Secrets Moxché, Preferred Club, and Impression Moxché
-- On-property guest essentials
+- Wedding schedule and rooftop directions
+- Apple and Google calendar links
+- Shared Google Drive photo folder
+- High-resolution resort map and official map link
+- Restaurant access, official hours and live-menu guidance
+- All-inclusive resort benefits by guest level
+- Guest essentials
 
-## Deploying through GitHub + Vercel
-Upload the contents of this folder to the existing GitHub repository and commit to the `main` branch. Vercel should deploy the new production version automatically.
+## Publish
+Upload the contents of this folder to the `main` branch of the existing GitHub repository connected to Vercel. Vercel will redeploy automatically.
 
-Important files:
+Keep these files in the repository root:
 - `index.html`
-- `armin-christina-wedding.ics`
 - `vercel.json`
+- `armin-christina-wedding.ics`
 - `hero-resort.jpg`
 - `images/hero-resort.jpg`

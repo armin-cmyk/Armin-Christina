@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f2e5d9">
-  <meta name="description" content="Wedding-week details for Armin and Christina at Secrets Moxché Playa del Carmen on August 5, 2026.">
-  <title>Armin & Christina | August 5, 2026</title>
+  <meta name="description" content="Armin &amp; Christina's Wedding at Secrets Moxché Playa del Carmen on August 5, 2026.">
+  <meta name="apple-mobile-web-app-title" content="Armin & Christina's Wedding">
+  <meta property="og:title" content="Armin & Christina's Wedding">
+  <meta property="og:description" content="Wedding details, resort map, dining, inclusions and photo sharing for our guests at Secrets Moxché.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://armin-christina.vercel.app/">
+  <meta property="og:image" content="https://armin-christina.vercel.app/hero-resort.jpg">
+  <title>Armin &amp; Christina's Wedding</title>
 
   <link rel="preload" as="image" href="https://alg.widen.net/content/j9ciik8vpj/webp/SEPDC-EXT-Aerial-Resort-2A-CB.webp?download=true&q=80&u=itfpsm">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,8 +61,8 @@
 
     .hero {
       position: relative;
-      height: min(76svh, 780px);
-      min-height: 560px;
+      height: min(86svh, 900px);
+      min-height: 620px;
       overflow: hidden;
       isolation: isolate;
       color: white;
@@ -262,7 +268,7 @@
     }
 
     .calendar-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .quick-actions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .quick-actions { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
     .button,
     .quick-action {
@@ -496,6 +502,59 @@
     .list li:first-child { border-top: 1px solid var(--line-soft); }
     .list i { color: var(--clay); margin-top: .15rem; }
 
+
+
+    .dining-tools {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .55rem;
+      margin: .72rem 0 .2rem;
+    }
+
+    .restaurant span {
+      display: flex;
+      flex-direction: column;
+      gap: .16rem;
+    }
+
+    .restaurant small {
+      color: var(--clay);
+      font-size: .61rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .included-intro {
+      margin: 0 0 .35rem;
+      color: var(--ink-soft);
+      font-size: .75rem;
+      line-height: 1.55;
+    }
+
+    .included-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .included-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: .58rem;
+      align-items: start;
+      padding: .68rem .04rem;
+      border-bottom: 1px solid var(--line-soft);
+      color: #4f4740;
+      font-size: .73rem;
+      line-height: 1.5;
+    }
+
+    .included-list i {
+      color: var(--clay);
+      margin-top: .12rem;
+    }
+
     .map-modal {
       position: fixed;
       inset: 0;
@@ -570,12 +629,12 @@
 
     @media (max-width: 720px) {
       .hero {
-        height: 70svh;
-        min-height: 520px;
-        max-height: 680px;
+        height: 84svh;
+        min-height: 620px;
+        max-height: 820px;
       }
-      .hero-media { object-position: 52% 50%; transform: scale(1.008); }
-      .hero-content { padding: 2.5rem .85rem 3.5rem; }
+      .hero-media { object-position: 52% 50%; transform: scale(1.004); }
+      .hero-content { padding: 2.5rem .85rem 4.25rem; }
       .hero-date { font-size: .62rem; letter-spacing: .18em; }
       .hero-title { margin-top: .72rem; font-size: clamp(3.35rem, 17vw, 4.8rem); line-height: .89; }
       .hero-location { max-width: 18rem; margin-top: .75rem; font-size: .88rem; line-height: 1.35; }
@@ -596,7 +655,7 @@
       .calendar-row { gap: .45rem; margin-top: .52rem; }
       .button { min-height: 44px; padding: .62rem .46rem; font-size: .65rem; }
 
-      .quick-actions { gap: .45rem; margin-top: .52rem; }
+      .quick-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; margin-top: .52rem; }
       .quick-action { min-height: 60px; padding: .55rem .35rem; border-radius: 1rem; font-size: .62rem; }
       .quick-action i { font-size: .90rem; }
 
@@ -615,6 +674,7 @@
       .map-frame img { aspect-ratio: 4 / 3; }
       .map-links { grid-template-columns: 1fr; }
       .restaurant { grid-template-columns: 105px 1fr; gap: .65rem; }
+      .dining-tools { grid-template-columns: 1fr; }
       .map-modal-toolbar span { display: none; }
 
       .mobile-dock {
@@ -624,7 +684,7 @@
         z-index: 50;
         transform: translateX(-50%);
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: .32rem;
         width: min(95%, 430px);
         padding: .36rem;
@@ -654,12 +714,12 @@
     }
 
     @media (max-width: 380px) {
-      .hero { min-height: 500px; }
+      .hero { min-height: 590px; }
       .hero-title { font-size: 3.2rem; }
       .glance-item span { display: none; }
       .glance-item { min-height: 68px; }
       .quick-action { font-size: .58rem; }
-      .mobile-dock a { font-size: .58rem; }
+      .mobile-dock a { font-size: .52rem; gap: .22rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -715,6 +775,7 @@
 
       <div class="quick-actions" aria-label="Quick actions">
         <a href="#schedule" data-open="schedule" class="quick-action"><i class="fa-regular fa-clock"></i><span>Wedding Details</span></a>
+        <a href="#ceremony" data-open="ceremony" class="quick-action"><i class="fa-solid fa-location-dot"></i><span>Location &amp; Directions</span></a>
         <a href="#map" data-open="map" class="quick-action"><i class="fa-regular fa-map"></i><span>Resort Map</span></a>
         <a href="#photos" data-open="photos" class="quick-action"><i class="fa-solid fa-camera-retro"></i><span>Upload Photos</span></a>
       </div>
@@ -744,17 +805,21 @@
 
       <details id="ceremony" class="card liquid-glass">
         <summary class="summary">
-          <div><div class="eyebrow">Ceremony &amp; Attire</div><h2 class="section-title serif">What Guests Need to Know</h2></div>
+          <div><div class="eyebrow">Wedding Location</div><h2 class="section-title serif">Sky Rooftop Gazebo &amp; Directions</h2></div>
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
           <div class="simple-grid">
-            <div class="info-block"><h3>Getting There</h3><p>Take the main lobby elevators to the 10th floor and follow signs to the Sky Rooftop Gazebo. Allow 5–10 minutes from most resort areas.</p></div>
+            <div class="info-block"><h3><i class="fa-solid fa-location-dot"></i> Ceremony Location</h3><p>Sky Rooftop Gazebo on the 10th floor of Secrets Moxché, at the highest point of the resort near Sky Salon.</p></div>
+            <div class="info-block"><h3><i class="fa-solid fa-elevator"></i> From the Main Lobby</h3><p>Take the main lobby elevators to the 10th floor, then follow signs toward the Sky Rooftop Gazebo and Sky Salon.</p></div>
+            <div class="info-block"><h3><i class="fa-solid fa-umbrella-beach"></i> From the Pools or Beach</h3><p>Head toward the main lobby elevator area. Any resort staff member can direct you to the rooftop elevators.</p></div>
+            <div class="info-block"><h3><i class="fa-regular fa-clock"></i> When to Leave</h3><p>Allow 5–10 minutes from most areas of the resort and arrive by 4:50 PM. The ceremony begins promptly at 5:00 PM.</p></div>
+          </div>
+          <div class="notice"><strong>Need help?</strong> Ask the concierge or any resort staff member for “Armin and Christina’s wedding at the Sky Rooftop Gazebo.”</div>
+          <div class="simple-grid" style="margin-top:.7rem">
             <div class="info-block"><h3>Dress Code</h3><p>Resort formal / cocktail attire. Neutral, soft, and muted colors are encouraged. Comfortable shoes are recommended.</p></div>
             <div class="info-block"><h3>Unplugged Ceremony</h3><p>Please silence and put away phones and cameras so everyone can be fully present. Professional photos will be shared afterward.</p></div>
-            <div class="info-block"><h3>Rooftop Comfort</h3><p>Expect warm weather, sun, and a breeze. Bring sunglasses, sunscreen, and a light layer for later in the evening.</p></div>
           </div>
-          <div class="notice"><strong>Need directions?</strong> Ask the concierge or any resort staff member for “Armin and Christina’s wedding at the Sky Rooftop Gazebo.”</div>
         </div>
       </details>
 
@@ -799,40 +864,85 @@
 
       <details id="dining" class="card liquid-glass">
         <summary class="summary">
-          <div><div class="eyebrow">Where to Eat</div><h2 class="section-title serif">Restaurants &amp; Access</h2></div>
+          <div><div class="eyebrow">Where to Eat</div><h2 class="section-title serif">Restaurants, Hours &amp; Access</h2></div>
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
-          <p class="muted" style="margin:0; font-size:.75rem; line-height:1.55">Check the World of Hyatt app or ask the concierge for today’s hours, dress requirements, and reservation availability.</p>
+          <p class="muted" style="margin:0; font-size:.75rem; line-height:1.55">Restaurant openings rotate. Check the World of Hyatt app or ask the concierge for today’s live menus, hours, dress requirements, and availability.</p>
+          <div class="dining-tools">
+            <a href="https://www.hyattinclusivecollection.com/en/resorts-hotels/secrets/mexico/moxche-playa-del-carmen/dining-drinks/" class="button button-glass" target="_blank" rel="noopener"><i class="fa-solid fa-utensils"></i> Official Dining Guide</a>
+            <a href="#essentials" data-open="essentials" class="button button-glass"><i class="fa-solid fa-mobile-screen-button"></i> Where to Find Live Menus</a>
+          </div>
 
           <div class="access-heading">Secrets Moxché <span class="badge"><i class="fa-solid fa-users"></i> Main resort guests</span></div>
           <div class="restaurant-list">
-            <div class="restaurant"><strong>Market Café</strong><span>International buffet</span></div>
-            <div class="restaurant"><strong>Dos Almas</strong><span>Mexican cuisine and regional specialties</span></div>
-            <div class="restaurant"><strong>Ember</strong><span>Steakhouse and open-fire grill</span></div>
-            <div class="restaurant"><strong>Allora</strong><span>Italian classics, pasta, and pizza</span></div>
-            <div class="restaurant"><strong>Suki</strong><span>Asian cuisine and hibachi</span></div>
-            <div class="restaurant"><strong>Tanoshii</strong><span>Japanese small plates</span></div>
-            <div class="restaurant"><strong>Bisou</strong><span>French dining</span></div>
-            <div class="restaurant"><strong>Sea Soul</strong><span>Beachfront seafood</span></div>
-            <div class="restaurant"><strong>Bamboo</strong><span>Casual lunch and vegan-friendly choices</span></div>
-            <div class="restaurant"><strong>Barefoot Grill</strong><span>Relaxed pool-and-beach lunch</span></div>
-            <div class="restaurant"><strong>Coco Café</strong><span>Coffee, snacks, and quick bites</span></div>
+            <div class="restaurant"><strong>Market Café</strong><span>International buffet<small>Breakfast 7–11 · Lunch 12–4 · Dinner 6–11</small></span></div>
+            <div class="restaurant"><strong>Dos Almas</strong><span>Authentic Mexican cuisine, taco tasting bar, tequila and mezcal<small>Dinner 6–11</small></span></div>
+            <div class="restaurant"><strong>Ember</strong><span>Open-fire grill and smokehouse<small>Dinner 6–11</small></span></div>
+            <div class="restaurant"><strong>Allora</strong><span>Italian cuisine served à la carte<small>Dinner 6–11</small></span></div>
+            <div class="restaurant"><strong>Suki</strong><span>Pan-Asian specialties, sushi and Teppanyaki<small>Dinner 6–11 · Reservations required for Teppanyaki and Omakase</small></span></div>
+            <div class="restaurant"><strong>Bisou</strong><span>Formal French dining in a romantic setting<small>Dinner 6–11</small></span></div>
+            <div class="restaurant"><strong>Seasoul</strong><span>Open-air beachfront seafood<small>Lunch 12:30–5 · Dinner 7–11</small></span></div>
+            <div class="restaurant"><strong>Bamboo</strong><span>Southeast Asian lunch with a plant-based menu<small>Lunch 12–5</small></span></div>
+            <div class="restaurant"><strong>Barefoot Grill</strong><span>Casual outdoor lunch by the pool and beach<small>12–6</small></span></div>
+            <div class="restaurant"><strong>Coco Café</strong><span>Coffee, pastries, snacks and quick bites<small>Open 24 hours</small></span></div>
           </div>
 
           <div class="access-heading">Preferred Club <span class="badge"><i class="fa-solid fa-crown"></i> Preferred + Impression</span></div>
           <div class="restaurant-list">
-            <div class="restaurant"><strong>Observatory Preferred Rooftop</strong><span>Rooftop lounge and dining area for Preferred Club and Impression guests.</span></div>
+            <div class="restaurant"><strong>Observatory Preferred Rooftop</strong><span>Exclusive rooftop restaurant and bar with ocean views<small>Breakfast 7–11 · Lunch 1–5 · Bar 1–8</small></span></div>
           </div>
 
           <div class="access-heading">Impression Moxché <span class="badge badge-impression"><i class="fa-solid fa-gem"></i> Impression only</span></div>
           <div class="restaurant-list">
-            <div class="restaurant"><strong>Cielo</strong><span>Impression rooftop restaurant and bar</span></div>
-            <div class="restaurant"><strong>Seaside Beach Club</strong><span>Beachfront dining in the Impression annex</span></div>
-            <div class="restaurant"><strong>Teodoro</strong><span>Signature seven-course tasting experience. Stay-length limits and other terms may apply.</span></div>
+            <div class="restaurant"><strong>Cielo</strong><span>Impression rooftop restaurant and bar<small>Confirm current service hours with your butler or concierge</small></span></div>
+            <div class="restaurant"><strong>Seaside Beach Club</strong><span>Beachfront dining in the Impression annex<small>Impression guests only</small></span></div>
+            <div class="restaurant"><strong>Teodoro</strong><span>Signature tasting-menu experience<small>Reservation and stay-length terms may apply</small></span></div>
           </div>
 
-          <div class="notice"><strong>Dress reminder:</strong> Evening restaurants may require resort-elegant clothing. Long pants and a collared shirt for men are the safest choice.</div>
+          <div class="notice"><strong>About the menus:</strong> I could not find reliable, current public menu PDFs for every restaurant. The resort changes dishes and operating schedules, so the live menus in the Hyatt app or the QR code in your room are the most accurate source.</div>
+          <div class="notice"><strong>Dress reminder:</strong> Allora, Dos Almas, Ember, Suki and evening dining at Seasoul generally require casual elegance. Bisou is formal. Long pants and a collared shirt for men are the safest choice.</div>
+        </div>
+      </details>
+
+
+      <details id="included" class="card liquid-glass">
+        <summary class="summary">
+          <div><div class="eyebrow">Your All-Inclusive Stay</div><h2 class="section-title serif">What’s Included at the Resort</h2></div>
+          <i class="fa-solid fa-chevron-down chevron"></i>
+        </summary>
+        <div class="content">
+          <p class="included-intro">Most of the resort is included with your stay. Your room category determines access to Preferred Club and Impression-only areas.</p>
+
+          <div class="access-heading">All Secrets Moxché Guests <span class="badge"><i class="fa-solid fa-check"></i> Included</span></div>
+          <ul class="included-list">
+            <li><i class="fa-solid fa-utensils"></i><div><strong>Unlimited dining:</strong> Gourmet restaurants, buffet, café, grill and 24-hour in-room dining. Standard restaurant reservations are generally not required.</div></li>
+            <li><i class="fa-solid fa-martini-glass-citrus"></i><div><strong>Unlimited drinks:</strong> Domestic and international top-shelf spirits, cocktails, juices, soft drinks and house selections.</div></li>
+            <li><i class="fa-solid fa-umbrella-beach"></i><div><strong>Pool and beach service:</strong> Food-and-drink service at designated pool and beach areas, plus access to the main pools, beach and cenote-style pools.</div></li>
+            <li><i class="fa-solid fa-bell-concierge"></i><div><strong>Service around the clock:</strong> 24-hour room service and concierge assistance, plus an in-room refreshment bar serviced according to your room category.</div></li>
+            <li><i class="fa-solid fa-wifi"></i><div><strong>Wi-Fi, taxes and gratuities:</strong> Resort Wi-Fi is included, and Hyatt states that standard taxes and gratuities are included.</div></li>
+            <li><i class="fa-solid fa-person-swimming"></i><div><strong>Activities and fitness:</strong> Fitness center, yoga, dance lessons, scheduled daytime activities and selected non-motorized water activities such as kayaking or snorkeling, subject to weather and the daily program.</div></li>
+            <li><i class="fa-solid fa-music"></i><div><strong>Nightlife and entertainment:</strong> Live music, evening shows, karaoke, theater programming, resort bars and the Gypsy music lounge/speakeasy when scheduled.</div></li>
+            <li><i class="fa-solid fa-seedling"></i><div><strong>Dietary options:</strong> Vegetarian and gluten-free choices are available. Tell the restaurant host about allergies or dietary needs.</div></li>
+            <li><i class="fa-solid fa-champagne-glasses"></i><div><strong>Sip, Savor &amp; See:</strong> Eligible guests may arrange a complimentary dinner, drinks and entertainment at a nearby participating resort through the concierge; advance arrangements and terms apply.</div></li>
+          </ul>
+
+          <div class="access-heading">Preferred Club Guests <span class="badge"><i class="fa-solid fa-crown"></i> Additional access</span></div>
+          <ul class="included-list">
+            <li><i class="fa-solid fa-water-ladder"></i><div>Exclusive Preferred Club rooftop pool and rooftop restaurant, along with enhanced room amenities and Preferred Club privileges.</div></li>
+          </ul>
+
+          <div class="access-heading">Impression Guests <span class="badge badge-impression"><i class="fa-solid fa-gem"></i> Additional access</span></div>
+          <ul class="included-list">
+            <li><i class="fa-solid fa-user-tie"></i><div>Dedicated butler service, access to Impression-only pools and restaurants, and elevated in-suite amenities and service. Confirm the exact current benefits for your room with your butler.</div></li>
+          </ul>
+
+          <div class="access-heading">Usually Extra <span class="badge badge-impression"><i class="fa-solid fa-plus"></i> Additional charge</span></div>
+          <ul class="included-list">
+            <li><i class="fa-solid fa-spa"></i><div>Spa and salon treatments, private or romantic dinners, premium bottles and wines, excursions, golf, motorized activities and selected culinary experiences such as tasting menus or Omakase.</div></li>
+          </ul>
+
+          <div class="notice"><strong>Best same-day source:</strong> Resort hours, activities, inclusions and access can change. Check the Hyatt app or ask the concierge before making plans.</div>
         </div>
       </details>
 
@@ -856,12 +966,13 @@
   </main>
 
   <footer>
-    <div>Armin &amp; Christina · August 5, 2026 · Secrets Moxché Playa del Carmen</div>
+    <div>Armin &amp; Christina’s Wedding · August 5, 2026 · Secrets Moxché Playa del Carmen</div>
     <div class="love serif">Made with love for our favorite people. ♡</div>
   </footer>
 
   <nav class="mobile-dock" aria-label="Mobile quick actions">
     <a href="#schedule" data-open="schedule" class="dock-glass"><i class="fa-regular fa-clock"></i> Schedule</a>
+    <a href="#ceremony" data-open="ceremony" class="dock-glass"><i class="fa-solid fa-location-dot"></i> Location</a>
     <a href="#map" data-open="map" class="dock-glass"><i class="fa-regular fa-map"></i> Map</a>
     <a href="https://drive.google.com/drive/folders/1gBfI49IfP3SRYebnDlKCpT4Dv-A0Dkrv?usp=share_link" target="_blank" rel="noopener noreferrer" class="dock-glass"><i class="fa-solid fa-camera-retro"></i> Photos</a>
   </nav>
