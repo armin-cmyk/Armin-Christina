@@ -1,6 +1,6 @@
-# Armin & Christina's Wedding Guest Site
+# Christina & Armin's Wedding Guest Site
 
-Mobile-first wedding-week guide for guests at Secrets Moxche Playa del Carmen.
+Mobile-first, dark wedding-week guide for guests at Secrets Moxche Playa del Carmen.
 
 ## Included
 - Wedding schedule and rooftop directions
@@ -9,7 +9,8 @@ Mobile-first wedding-week guide for guests at Secrets Moxche Playa del Carmen.
 - High-resolution resort map and official map link
 - Restaurant access, official hours and live-menu guidance
 - All-inclusive resort benefits by guest level
-- Guest essentials
+- Hyatt Inclusive Collection app links for iPhone and Android
+- Custom C&A favicon and Apple touch icon
 
 ## Publish
 Upload the contents of this folder to the `main` branch of the existing GitHub repository connected to Vercel. Vercel will redeploy automatically.
@@ -19,4 +20,5 @@ Keep these files in the repository root:
 - `vercel.json`
 - `armin-christina-wedding.ics`
 - `hero-resort.jpg`
-- `images/hero-resort.jpg`
+- `favicon.svg`
+- `apple-touch-icon.png`

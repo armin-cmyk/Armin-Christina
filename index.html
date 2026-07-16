@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#ead9ca">
-  <meta name="description" content="Armin &amp; Christina's Wedding at Secrets Moxché Playa del Carmen on August 5, 2026.">
-  <meta name="apple-mobile-web-app-title" content="Armin & Christina's Wedding">
-  <meta property="og:title" content="Armin & Christina's Wedding">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Christina &amp; Armin's Wedding at Secrets Moxché Playa del Carmen on August 5, 2026.">
+  <meta name="apple-mobile-web-app-title" content="Christina & Armin's Wedding">
+  <meta property="og:title" content="Christina & Armin's Wedding">
   <meta property="og:description" content="Wedding details, resort map, dining, inclusions and photo sharing for our guests at Secrets Moxché.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://armin-christina.vercel.app/">
   <meta property="og:image" content="https://armin-christina.vercel.app/hero-resort.jpg">
-  <title>Armin &amp; Christina's Wedding</title>
+  <title>Christina &amp; Armin's Wedding</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=12">
+  <link rel="alternate icon" href="/favicon.svg?v=12">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=12">
 
   <link rel="preload" as="image" href="/hero-resort.jpg?v=11">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -934,6 +937,316 @@
       details.card { box-shadow: 0 14px 38px rgba(74, 48, 33, .09); }
     }
 
+
+    /* Dark modern edition */
+    :root {
+      --ink: #f4efe9;
+      --ink-soft: #aaa39b;
+      --cream: #171719;
+      --sand: #2a2522;
+      --champagne: #d7b18a;
+      --sunset: #cf8a68;
+      --palm: #8d9a88;
+      --sea-glass: #7f9e98;
+      --clay: #d29a73;
+      --cocoa: #f4efe9;
+      --glass: rgba(19, 19, 21, .66);
+      --glass-strong: rgba(22, 22, 24, .82);
+      --line: transparent;
+      --line-soft: transparent;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .34);
+      --shadow-soft: 0 14px 36px rgba(0, 0, 0, .24);
+    }
+
+    html { background: #09090b; }
+
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 4%, rgba(143, 78, 54, .20), transparent 25rem),
+        radial-gradient(circle at 92% 26%, rgba(53, 91, 83, .13), transparent 24rem),
+        linear-gradient(180deg, #0b0b0d 0%, #111113 48%, #08090a 100%);
+    }
+
+    .hero { background: #111113; }
+
+    .hero::before {
+      background:
+        linear-gradient(180deg, rgba(8,8,10,.05) 0%, rgba(8,8,10,.02) 42%, rgba(8,8,10,.22) 72%, rgba(8,8,10,.78) 100%),
+        radial-gradient(circle at 50% 48%, rgba(0,0,0,.02), transparent 48%);
+    }
+
+    .hero::after {
+      height: 40%;
+      background: linear-gradient(180deg, transparent, rgba(7,7,9,.82));
+    }
+
+    .hero-date,
+    .hero-location { color: rgba(255,255,255,.88); }
+
+    .hero-title { color: #fffaf5; }
+
+    .welcome h2,
+    .glance-title h2,
+    .section-title,
+    .photo-copy h3 { color: #f8f3ee; }
+
+    .welcome p,
+    .muted,
+    .included-intro,
+    .photo-copy p,
+    .notice,
+    .info-block p,
+    .restaurant span,
+    .glance-item span,
+    .list li,
+    .included-list li,
+    .schedule-row span { color: var(--ink-soft); }
+
+    .eyebrow,
+    .glance-item i,
+    .list i,
+    .included-list i,
+    .restaurant small { color: var(--champagne); }
+
+    .liquid-glass {
+      background:
+        radial-gradient(circle at 12% 0%, rgba(255,255,255,.085), transparent 34%),
+        linear-gradient(145deg, rgba(28,28,31,.78), rgba(15,15,17,.60) 58%, rgba(22,20,20,.72));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(28px) saturate(125%);
+      -webkit-backdrop-filter: blur(28px) saturate(125%);
+    }
+
+    .liquid-glass::before {
+      background:
+        linear-gradient(112deg, transparent 0 42%, rgba(255,255,255,.055) 48%, transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.055), transparent 24%);
+      opacity: .82;
+    }
+
+    .glance-item,
+    .info-block,
+    .notice,
+    .schedule-row,
+    .restaurant,
+    .included-list li,
+    .list li {
+      background: rgba(255,255,255,.045);
+      box-shadow: none;
+    }
+
+    .glance-item strong,
+    .info-block h3,
+    .restaurant strong,
+    .schedule-row strong,
+    .photo-copy strong,
+    .list strong,
+    .included-list strong { color: #f5eee7; }
+
+    .button,
+    .quick-action,
+    .button-primary,
+    .button-glass,
+    .quick-action.warm {
+      color: #f4eee8;
+      background: rgba(255,255,255,.065);
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    }
+
+    .button:hover,
+    .quick-action:hover {
+      background: rgba(255,255,255,.105);
+      box-shadow: 0 16px 36px rgba(0,0,0,.24);
+    }
+
+    .quick-action i,
+    .chevron { color: var(--champagne); }
+
+    .badge {
+      color: #ead8c7;
+      background: rgba(215,177,138,.12);
+      box-shadow: none;
+    }
+
+    .badge-impression { background: rgba(207,138,104,.14); }
+
+    .map-frame {
+      background: #f2efe9;
+      box-shadow: 0 20px 54px rgba(0,0,0,.36);
+    }
+
+    .map-frame button,
+    .map-frame img { background: #f2efe9; }
+
+    .zoom-chip {
+      color: #fff;
+      background: rgba(9,9,11,.76);
+      box-shadow: 0 10px 26px rgba(0,0,0,.28);
+    }
+
+    footer {
+      color: rgba(235,227,219,.54);
+      background: #08090a;
+    }
+
+    footer .love { color: rgba(244,239,233,.76); }
+
+    .mobile-dock {
+      background: rgba(10,10,12,.86);
+      box-shadow: 0 -14px 42px rgba(0,0,0,.40);
+      backdrop-filter: blur(26px) saturate(125%);
+      -webkit-backdrop-filter: blur(26px) saturate(125%);
+    }
+
+    .mobile-dock a { color: #f1ebe5; }
+    .dock-glass, .dock-warm { background: transparent; }
+
+    .map-modal { background: rgba(4,4,5,.92); }
+    .map-modal-toolbar { background: rgba(15,15,17,.90); }
+    .map-modal-toolbar button,
+    .map-modal-toolbar a { background: rgba(255,255,255,.08); }
+
+    .app-downloads {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .55rem;
+      margin: 0 0 .75rem;
+    }
+
+    .app-downloads .button {
+      min-height: 52px;
+      justify-content: flex-start;
+      padding: .72rem .85rem;
+      text-align: left;
+    }
+
+    .app-downloads .button i {
+      width: 1.2rem;
+      color: var(--champagne);
+      font-size: 1.08rem;
+      text-align: center;
+    }
+
+    .app-downloads .button span {
+      display: flex;
+      flex-direction: column;
+      gap: .06rem;
+      line-height: 1.15;
+    }
+
+    .app-downloads .button small {
+      color: var(--ink-soft);
+      font-size: .58rem;
+      font-weight: 600;
+    }
+
+    .app-downloads .button strong {
+      color: #f7f1eb;
+      font-size: .72rem;
+    }
+
+    @media (max-width: 420px) {
+      .app-downloads { grid-template-columns: 1fr; }
+    }
+
+
+    /* Visible resort-app shortcut */
+    .app-spotlight {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      margin-top: .56rem;
+      padding: 1rem 1.05rem;
+      background: rgba(20,20,22,.72);
+      box-shadow: 0 18px 50px rgba(0,0,0,.28);
+      backdrop-filter: blur(26px) saturate(120%);
+      -webkit-backdrop-filter: blur(26px) saturate(120%);
+    }
+
+    .app-spotlight-copy {
+      min-width: 0;
+    }
+
+    .app-spotlight-copy .eyebrow { margin-bottom: .22rem; }
+
+    .app-spotlight-copy h2 {
+      margin: 0;
+      color: #f7f1eb;
+      font-size: 1rem;
+      line-height: 1.18;
+      letter-spacing: -.02em;
+    }
+
+    .app-spotlight-copy p {
+      margin: .3rem 0 0;
+      color: var(--ink-soft);
+      font-size: .7rem;
+      line-height: 1.48;
+    }
+
+    .store-links {
+      display: flex;
+      gap: .45rem;
+      align-items: stretch;
+    }
+
+    .store-link {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .62rem .72rem;
+      color: #f6f0ea;
+      background: rgba(255,255,255,.065);
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+      transition: background .18s ease, transform .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .store-link:hover {
+      background: rgba(255,255,255,.11);
+      transform: translateY(-1px);
+    }
+
+    .store-link i {
+      color: var(--champagne);
+      font-size: 1rem;
+    }
+
+    .store-link span {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.08;
+    }
+
+    .store-link small {
+      color: var(--ink-soft);
+      font-size: .5rem;
+      font-weight: 600;
+    }
+
+    .store-link strong {
+      color: #f7f1eb;
+      font-size: .64rem;
+    }
+
+    @media (max-width: 720px) {
+      .app-spotlight {
+        grid-template-columns: 1fr;
+        gap: .7rem;
+        padding: .95rem 1rem;
+      }
+      .store-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .store-link { justify-content: center; }
+    }
+
+    @media (max-width: 360px) {
+      .store-links { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -985,6 +1298,22 @@
         <a href="#ceremony" data-open="ceremony" class="quick-action"><i class="fa-solid fa-location-dot"></i><span>Location &amp; Directions</span></a>
         <a href="#map" data-open="map" class="quick-action"><i class="fa-regular fa-map"></i><span>Resort Map</span></a>
         <a href="#photos" data-open="photos" class="quick-action"><i class="fa-solid fa-camera-retro"></i><span>Upload Photos</span></a>
+      </div>
+    </section>
+
+    <section class="app-spotlight" aria-labelledby="app-title">
+      <div class="app-spotlight-copy">
+        <div class="eyebrow">Resort App</div>
+        <h2 id="app-title">Hyatt Inclusive Collection</h2>
+        <p>Use it for current restaurant menus, activity schedules, entertainment, spa information, and resort updates.</p>
+      </div>
+      <div class="store-links" aria-label="Download the Hyatt Inclusive Collection app">
+        <a class="store-link" href="https://apps.apple.com/us/app/hyatt-inclusive-collection/id1561920692" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-apple"></i><span><small>Download on the</small><strong>App Store</strong></span>
+        </a>
+        <a class="store-link" href="https://play.google.com/store/apps/details?id=amresorts.app" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-google-play"></i><span><small>Get it on</small><strong>Google Play</strong></span>
+        </a>
       </div>
     </section>
 
@@ -1075,7 +1404,7 @@
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
-          <p class="muted" style="margin:0; font-size:.75rem; line-height:1.55">Restaurant openings rotate. Check the World of Hyatt app or ask the concierge for today’s live menus, hours, dress requirements, and availability.</p>
+          <p class="muted" style="margin:0; font-size:.75rem; line-height:1.55">Restaurant openings rotate. Check the Hyatt Inclusive Collection app or ask the concierge for today’s live menus, hours, dress requirements, and availability.</p>
           <div class="dining-tools">
             <a href="https://www.hyattinclusivecollection.com/en/resorts-hotels/secrets/mexico/moxche-playa-del-carmen/dining-drinks/" class="button button-glass" target="_blank" rel="noopener"><i class="fa-solid fa-utensils"></i> Official Dining Guide</a>
             <a href="#essentials" data-open="essentials" class="button button-glass"><i class="fa-solid fa-mobile-screen-button"></i> Where to Find Live Menus</a>
@@ -1107,7 +1436,7 @@
             <div class="restaurant"><strong>Teodoro</strong><span>Signature tasting-menu experience<small>Reservation and stay-length terms may apply</small></span></div>
           </div>
 
-          <div class="notice"><strong>About the menus:</strong> I could not find reliable, current public menu PDFs for every restaurant. The resort changes dishes and operating schedules, so the live menus in the Hyatt app or the QR code in your room are the most accurate source.</div>
+          <div class="notice"><strong>About the menus:</strong> I could not find reliable, current public menu PDFs for every restaurant. The resort changes dishes and operating schedules, so the live menus in the Hyatt Inclusive Collection app or the QR code in your room are the most accurate source.</div>
           <div class="notice"><strong>Dress reminder:</strong> Allora, Dos Almas, Ember, Suki and evening dining at Seasoul generally require casual elegance. Bisou is formal. Long pants and a collared shirt for men are the safest choice.</div>
         </div>
       </details>
@@ -1149,7 +1478,7 @@
             <li><i class="fa-solid fa-spa"></i><div>Spa and salon treatments, private or romantic dinners, premium bottles and wines, excursions, golf, motorized activities and selected culinary experiences such as tasting menus or Omakase.</div></li>
           </ul>
 
-          <div class="notice"><strong>Best same-day source:</strong> Resort hours, activities, inclusions and access can change. Check the Hyatt app or ask the concierge before making plans.</div>
+          <div class="notice"><strong>Best same-day source:</strong> Resort hours, activities, inclusions and access can change. Check the Hyatt Inclusive Collection app or ask the concierge before making plans.</div>
         </div>
       </details>
 
@@ -1159,8 +1488,18 @@
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
+          <div class="app-downloads" aria-label="Download the Hyatt Inclusive Collection app">
+            <a class="button button-glass" href="https://apps.apple.com/us/app/hyatt-inclusive-collection/id1561920692" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-apple"></i>
+              <span><small>Download on the</small><strong>Apple App Store</strong></span>
+            </a>
+            <a class="button button-glass" href="https://play.google.com/store/apps/details?id=amresorts.app" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-google-play"></i>
+              <span><small>Get it on</small><strong>Google Play</strong></span>
+            </a>
+          </div>
           <ul class="list">
-            <li><i class="fa-solid fa-mobile-screen-button"></i><div><strong>World of Hyatt app:</strong> Check restaurant hours, menus, daily activities, entertainment, spa information, and resort updates.</div></li>
+            <li><i class="fa-solid fa-mobile-screen-button"></i><div><strong>Hyatt Inclusive Collection app:</strong> Check restaurant hours, menus, daily activities, entertainment, spa information, and resort updates.</div></li>
             <li><i class="fa-solid fa-bell-concierge"></i><div><strong>Concierge:</strong> Dial 0 from your room or visit the lobby for dining, spa, directions, or wedding-location help.</div></li>
             <li><i class="fa-solid fa-shirt"></i><div><strong>Evening dining:</strong> Keep one resort-elegant outfit ready for à la carte restaurants.</div></li>
             <li><i class="fa-solid fa-wallet"></i><div><strong>Small cash:</strong> The stay is all-inclusive, but small bills are useful for optional gratuities.</div></li>
@@ -1173,7 +1512,7 @@
   </main>
 
   <footer>
-    <div>Armin &amp; Christina’s Wedding · August 5, 2026 · Secrets Moxché Playa del Carmen</div>
+    <div>Christina &amp; Armin’s Wedding · August 5, 2026 · Secrets Moxché Playa del Carmen</div>
     <div class="love serif">Made with love for our favorite people. ♡</div>
   </footer>
 
