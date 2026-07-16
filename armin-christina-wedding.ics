@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Armin and Christina Wedding//Guest Site//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:armin-christina-wedding-20260805@armin-christina.vercel.app
+DTSTAMP:20260715T000000Z
+DTSTART;TZID=America/Cancun:20260805T165000
+DTEND;TZID=America/Cancun:20260805T213000
+SUMMARY:Armin & Christina's Wedding
+LOCATION:Sky Rooftop Gazebo, Secrets Moxche Playa del Carmen, Mexico
+DESCRIPTION:Arrive by 4:50 PM. Ceremony begins at 5:00 PM at the Sky Rooftop Gazebo, followed by cocktails, dinner, and dancing.
+BEGIN:VALARM
+TRIGGER:-PT24H
+ACTION:DISPLAY
+DESCRIPTION:Armin & Christina's wedding is tomorrow.
+END:VALARM
+END:VEVENT
+END:VCALENDAR
