@@ -76,3 +76,11 @@ The HTML build marker is:
 - Button press feedback and reduced-motion accessibility
 - Hyatt official high-resolution resort map embedded in the page and full-screen viewer
 - Google Photos collaboration link preserved
+
+
+## Performance update
+- Local WebP hero image
+- No continuous hero animation
+- No page-wide scroll observers
+- Heavy PDF map loads only after the guest opens it
+- Live backdrop blur removed from repeated cards for smoother phone scrolling
