@@ -67,3 +67,12 @@ The HTML build marker is:
 ```text
 2026-07-16 public-rebuild-v1
 ```
+
+
+## Animated HD Map Edition
+- Tasteful hero drift and staggered title entrance
+- Scroll reveal animations and smooth accordion content
+- Mobile dock appears after the hero
+- Button press feedback and reduced-motion accessibility
+- Hyatt official high-resolution resort map embedded in the page and full-screen viewer
+- Google Photos collaboration link preserved
