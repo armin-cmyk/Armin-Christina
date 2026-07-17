@@ -116,3 +116,7 @@ Accordion sections now use solid, square, shadow-free surfaces with simple open-
 The permanent 7-day forecast appears below Wedding at a Glance. Tap any day to expand a lightweight hourly forecast with temperature, feels-like temperature, rain chance, humidity, and wind.
 
 - Permanent live wedding countdown to August 5, 2026 at 5:00 PM Cancun time
+
+
+## Random official hero photography
+The hero randomly selects one of four official Hyatt gallery photographs on each refresh and avoids showing the same image twice in a row within the same browser tab. A local optimized image remains as a fallback.
