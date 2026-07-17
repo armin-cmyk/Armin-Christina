@@ -14,7 +14,7 @@ This is the complete dark, modern, mobile-first wedding website rebuilt for a Ve
 - High-resolution resort map links
 - Dining access and restaurant information
 - All-inclusive resort benefits
-- Shared Google Drive photo folder
+- Collaborative Google Photos album
 - All accordion sections closed when the page loads
 
 ## Repository structure
