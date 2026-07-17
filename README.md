@@ -120,3 +120,10 @@ The permanent 7-day forecast appears below Wedding at a Glance. Tap any day to e
 
 ## Random official hero photography
 The hero randomly selects one of four official Hyatt gallery photographs on each refresh and avoids showing the same image twice in a row within the same browser tab. A local optimized image remains as a fallback.
+
+
+## Version 12 updates
+- The original sunset hero photo is now one of the five randomly selected hero images, not only a fallback.
+- The map tab now renders page 1 of Hyatt's official high-resolution resort-map PDF on demand.
+- A high-resolution image fallback remains inside the map tab if the PDF renderer is unavailable.
+- The map is deferred until opened so it does not slow the initial page load.

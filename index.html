@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Build: 2026-07-17 random-official-hero-v11 -->
+<!-- Build: 2026-07-17 original-hero-hd-map-v12 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1534,57 +1534,88 @@
     }
 
 
-    /* Lightweight inline map: a static image avoids the heavy PDF viewer that can freeze phones. */
+    /* High-resolution official map rendered only when the tab opens. */
     .map-intro {
       margin: 0 0 .8rem;
       font-size: .75rem;
       line-height: 1.55;
     }
 
-    .inline-map-shell {
+    .hd-map-shell {
       position: relative;
       width: 100%;
-      min-height: 180px;
-      overflow: hidden;
+      min-height: 240px;
+      overflow: auto;
       border: 0;
       border-radius: 0;
-      background: #ebe7df;
+      background: #f4f1eb;
       box-shadow: none;
-      contain: layout paint;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
     }
 
-    .inline-map {
+    .hd-map-canvas,
+    .hd-map-fallback-image {
       display: block;
       width: 100%;
       height: auto;
       border: 0;
-      background: #ebe7df;
+      background: #f4f1eb;
       opacity: 0;
-      transition: opacity .12s ease;
+      transition: opacity .14s ease;
     }
 
-    .inline-map.is-loaded { opacity: 1; }
+    .hd-map-canvas.is-loaded,
+    .hd-map-fallback-image.is-loaded { opacity: 1; }
 
-    .inline-map-loading {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      min-height: 180px;
+    .hd-map-loading,
+    .hd-map-fallback {
+      min-height: 240px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: .5rem;
-      padding: 1.1rem;
+      padding: 1.25rem;
       text-align: center;
       color: #332e2a;
-      background: #ebe7df;
+      background: #f4f1eb;
     }
 
-    .inline-map-loading[hidden] { display: none; }
-    .inline-map-loading i { font-size: 1.45rem; color: #7d694e; }
-    .inline-map-loading strong { font-size: .82rem; }
-    .inline-map-loading span { max-width: 20rem; color: #6f675f; font-size: .68rem; line-height: 1.4; }
+    .hd-map-loading {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    .hd-map-loading[hidden],
+    .hd-map-fallback[hidden] { display: none; }
+    .hd-map-loading i,
+    .hd-map-fallback i { font-size: 1.45rem; color: #7d694e; }
+    .hd-map-loading strong,
+    .hd-map-fallback strong { font-size: .82rem; }
+    .hd-map-loading span,
+    .hd-map-fallback span { max-width: 22rem; color: #6f675f; font-size: .68rem; line-height: 1.45; }
+
+    .map-gesture-note {
+      margin: .55rem 0 0;
+      color: var(--ink-soft);
+      font-size: .66rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .hd-map-shell { min-height: 300px; }
+      .hd-map-canvas,
+      .hd-map-fallback-image {
+        width: 1180px;
+        max-width: none;
+      }
+      .hd-map-loading,
+      .hd-map-fallback { min-height: 300px; }
+    }
 
     /* Flat Wedding at a Glance section. */
     .glance,
@@ -2057,6 +2088,11 @@
       (() => {
         const heroImages = [
           {
+            src: "/hero-resort.jpg?v=original-hero-v12",
+            alt: "Secrets Moxché Playa del Carmen at sunset",
+            position: "50% 50%"
+          },
+          {
             src: "https://alg.widen.net/content/j9ciik8vpj/webp/SEPDC-EXT-Aerial-Resort-2A-CB.webp?download=true&q=80&u=itfpsm",
             alt: "Aerial view of Secrets Moxché with the Caribbean Sea and lagoon pools",
             position: "50% 50%"
@@ -2110,7 +2146,7 @@
           hero.onerror = null;
           hero.style.objectPosition = "50% 50%";
           hero.alt = "Secrets Moxché Playa del Carmen at sunset";
-          hero.src = "/hero-resort.webp?v=20260717fallback";
+          hero.src = "/hero-resort.jpg?v=original-hero-v12";
         };
       })();
     </script>
@@ -2301,25 +2337,31 @@
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
-          <p class="muted map-intro">The resort map is displayed directly inside this tab and loads only when opened, keeping the rest of the wedding guide fast.</p>
-          <div class="inline-map-shell" id="inlineMapShell">
-            <div class="inline-map-loading" id="inlineMapLoading">
+          <p class="muted map-intro">This is Hyatt’s official high-resolution property map. It loads only when this tab opens so the rest of the site stays fast.</p>
+          <div class="hd-map-shell" id="hdMapShell" aria-live="polite">
+            <div class="hd-map-loading" id="hdMapLoading">
               <i class="fa-regular fa-map" aria-hidden="true"></i>
-              <strong>Loading the resort map…</strong>
-              <span>A lightweight version is used for smoother phone performance.</span>
+              <strong>Preparing the high-resolution map…</strong>
+              <span>The map is rendered once and stays available for the rest of your visit.</span>
+            </div>
+            <canvas id="resortMapCanvas" class="hd-map-canvas" aria-label="Official Secrets Moxché resort map"></canvas>
+            <div id="hdMapFallback" class="hd-map-fallback" hidden>
+              <i class="fa-regular fa-map" aria-hidden="true"></i>
+              <strong>Loading the map image…</strong>
+              <span>The official PDF renderer was unavailable, so a high-resolution image is being used instead.</span>
             </div>
             <img
-              id="inlineMap"
-              class="inline-map"
-              data-src="https://www.resortsmaps.com/thumbnails/map-SecretsMoxchePlayadelCarmen-RivieraMaya.jpg"
-              width="1024"
-              height="768"
-              alt="Secrets Moxché Playa del Carmen resort map"
+              id="resortMapFallbackImage"
+              class="hd-map-fallback-image"
+              data-src="https://alg.widen.net/content/rbov0zwoxv/webp/SEPDC-rm.webp?w=2048&quality=92"
+              alt="Official Secrets Moxché Playa del Carmen resort map"
               loading="lazy"
               decoding="async"
-              referrerpolicy="no-referrer">
+              referrerpolicy="no-referrer"
+              hidden>
           </div>
-          <div class="notice"><strong>Wedding location:</strong> The Sky Rooftop Gazebo is on the 10th floor near Sky Salon. Use your phone’s normal pinch-to-zoom if you need a closer look.</div>
+          <p class="map-gesture-note"><i class="fa-solid fa-arrows-left-right"></i> On a phone, swipe left and right to explore the full-resolution map.</p>
+          <div class="notice"><strong>Wedding location:</strong> The Sky Rooftop Gazebo is on the 10th floor near Sky Salon. On the map, the Sky Events Rooftop is location 9.</div>
         </div>
       </details>
 
@@ -2462,7 +2504,7 @@
       if (!detail) return;
       closeAllDetails(shouldOpen ? detail : null);
       detail.open = Boolean(shouldOpen);
-      if (detail.open && detail.id === 'map') ensureInlineMapLoaded();
+      if (detail.open && detail.id === 'map') ensureHdMapLoaded();
       // Force Safari to recalculate the newly revealed content immediately.
       if (detail.open) void detail.offsetHeight;
     }
@@ -2506,15 +2548,91 @@
       });
     });
 
-    function ensureInlineMapLoaded() {
-      const frame = document.getElementById('inlineMap');
-      if (!frame || frame.getAttribute('src')) return;
-      const loading = document.getElementById('inlineMapLoading');
-      frame.addEventListener('load', () => {
-        if (loading) loading.hidden = true;
-        frame.classList.add('is-loaded');
+    const OFFICIAL_MAP_PDF = 'https://alg.widen.net/content/rbov0zwoxv/pdf/SEPDC-rm.pdf';
+    const PDFJS_SCRIPT = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+    const PDFJS_WORKER = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    let hdMapPromise = null;
+
+    function loadScriptOnce(src, id) {
+      return new Promise((resolve, reject) => {
+        if (window.pdfjsLib) { resolve(); return; }
+        const existing = document.getElementById(id);
+        if (existing) {
+          existing.addEventListener('load', resolve, { once: true });
+          existing.addEventListener('error', reject, { once: true });
+          return;
+        }
+        const script = document.createElement('script');
+        script.id = id;
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    function showMapImageFallback() {
+      const loading = document.getElementById('hdMapLoading');
+      const fallback = document.getElementById('hdMapFallback');
+      const image = document.getElementById('resortMapFallbackImage');
+      if (loading) loading.hidden = true;
+      if (fallback) fallback.hidden = false;
+      if (!image || image.getAttribute('src')) return;
+
+      image.hidden = false;
+      image.addEventListener('load', () => {
+        if (fallback) fallback.hidden = true;
+        image.classList.add('is-loaded');
       }, { once: true });
-      frame.src = frame.dataset.src;
+      image.addEventListener('error', () => {
+        image.onerror = null;
+        image.src = 'https://www.resortsmaps.com/thumbnails/map-SecretsMoxchePlayadelCarmen-RivieraMaya.jpg';
+      }, { once: true });
+      image.src = image.dataset.src;
+    }
+
+    function ensureHdMapLoaded() {
+      if (hdMapPromise) return hdMapPromise;
+      hdMapPromise = (async () => {
+        const canvas = document.getElementById('resortMapCanvas');
+        const loading = document.getElementById('hdMapLoading');
+        if (!canvas) return;
+
+        try {
+          await loadScriptOnce(PDFJS_SCRIPT, 'pdfjs-runtime');
+          if (!window.pdfjsLib) throw new Error('PDF renderer unavailable');
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_WORKER;
+
+          const loadingTask = window.pdfjsLib.getDocument({
+            url: OFFICIAL_MAP_PDF,
+            disableAutoFetch: true,
+            disableStream: false,
+            rangeChunkSize: 65536
+          });
+          const pdf = await loadingTask.promise;
+          const page = await pdf.getPage(1);
+          const baseViewport = page.getViewport({ scale: 1 });
+          const targetPixelWidth = Math.min(2200, Math.max(1700, Math.round((window.innerWidth || 390) * 4)));
+          const viewport = page.getViewport({ scale: targetPixelWidth / baseViewport.width });
+          const context = canvas.getContext('2d', { alpha: false });
+
+          canvas.width = Math.round(viewport.width);
+          canvas.height = Math.round(viewport.height);
+          canvas.style.width = window.matchMedia('(max-width: 720px)').matches ? '1180px' : '100%';
+          canvas.style.height = 'auto';
+          context.fillStyle = '#f4f1eb';
+          context.fillRect(0, 0, canvas.width, canvas.height);
+
+          await page.render({ canvasContext: context, viewport }).promise;
+          if (loading) loading.hidden = true;
+          canvas.classList.add('is-loaded');
+        } catch (error) {
+          console.warn('High-resolution map renderer failed; using image fallback.', error);
+          showMapImageFallback();
+        }
+      })();
+      return hdMapPromise;
     }
 
 
