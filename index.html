@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Build: 2026-07-17 permanent-hourly-weather-v9 -->
+<!-- Build: 2026-07-17 permanent-hourly-weather-countdown-v10 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1952,6 +1952,93 @@
       .weather-current-compact > i { display: none; }
     }
 
+
+    /* Permanent flat wedding countdown below Wedding at a Glance. */
+    .countdown-panel {
+      margin-top: .35rem;
+      padding: 1rem 0 .85rem;
+      color: #f5f0eb;
+      background: #101012;
+      border: 0;
+      box-shadow: none;
+      overflow: hidden;
+    }
+
+    .countdown-heading {
+      padding: 0 1rem .82rem;
+      text-align: center;
+    }
+
+    .countdown-heading h2 {
+      margin: .18rem 0 0;
+      color: #f5f0eb;
+      font-size: clamp(1.55rem, 4.8vw, 2.2rem);
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
+    .countdown-heading p {
+      margin: .4rem 0 0;
+      color: #8f8781;
+      font-size: .64rem;
+      line-height: 1.4;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .countdown-unit {
+      min-width: 0;
+      padding: .9rem .25rem .82rem;
+      text-align: center;
+    }
+
+    .countdown-unit + .countdown-unit {
+      border-left: 1px solid rgba(255,255,255,.08);
+    }
+
+    .countdown-value {
+      display: block;
+      color: #fff;
+      font-size: clamp(1.72rem, 7vw, 2.75rem);
+      font-weight: 700;
+      line-height: .95;
+      letter-spacing: -.06em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .countdown-label {
+      display: block;
+      margin-top: .38rem;
+      color: #8d8580;
+      font-size: .52rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .countdown-complete {
+      padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      text-align: center;
+    }
+
+    .countdown-complete[hidden] { display: none; }
+    .countdown-complete strong { color: #fff; font-size: 1.05rem; }
+    .countdown-complete span { display: block; margin-top: .25rem; color: #918983; font-size: .67rem; }
+
+    @media (max-width: 720px) {
+      .countdown-panel { margin-top: .3rem; }
+      .countdown-heading { padding-inline: .86rem; }
+      .countdown-unit { padding-block: .82rem .74rem; }
+      .countdown-value { font-size: clamp(1.62rem, 9.2vw, 2.25rem); }
+    }
+
   </style>
 </head>
 <body>
@@ -2006,6 +2093,25 @@
         <a href="#ceremony" data-open="ceremony" class="quick-action"><i class="fa-solid fa-location-dot"></i><span>Location &amp; Directions</span></a>
         <a href="#map" data-open="map" class="quick-action"><i class="fa-regular fa-map"></i><span>Resort Map</span></a>
         <a href="#photos" data-open="photos" class="quick-action"><i class="fa-solid fa-camera-retro"></i><span>Upload Photos</span></a>
+      </div>
+    </section>
+
+
+    <section id="countdown" class="countdown-panel" aria-labelledby="countdown-title">
+      <div class="countdown-heading">
+        <div class="eyebrow">Countdown to the Wedding</div>
+        <h2 id="countdown-title" class="serif">Until We Say “I Do”</h2>
+        <p id="countdownStatus">Wednesday, August 5 at 5:00 PM · Cancun time</p>
+      </div>
+      <div id="countdownGrid" class="countdown-grid" role="timer" aria-label="Countdown to the wedding ceremony">
+        <div class="countdown-unit"><strong id="countdownDays" class="countdown-value">--</strong><span class="countdown-label">Days</span></div>
+        <div class="countdown-unit"><strong id="countdownHours" class="countdown-value">--</strong><span class="countdown-label">Hours</span></div>
+        <div class="countdown-unit"><strong id="countdownMinutes" class="countdown-value">--</strong><span class="countdown-label">Minutes</span></div>
+        <div class="countdown-unit"><strong id="countdownSeconds" class="countdown-value">--</strong><span class="countdown-label">Seconds</span></div>
+      </div>
+      <div id="countdownComplete" class="countdown-complete" hidden>
+        <strong>We’re married!</strong>
+        <span>Thank you for celebrating this special day with us.</span>
       </div>
     </section>
 
@@ -2580,9 +2686,75 @@
     }
 
 
+    const WEDDING_START_UTC = Date.UTC(2026, 7, 5, 22, 0, 0); // 5:00 PM in Cancun (UTC-5)
+    let weddingCountdownTimer = null;
+
+    function setCountdownValue(id, value) {
+      const element = document.getElementById(id);
+      if (element) element.textContent = String(value).padStart(2, '0');
+    }
+
+    function updateWeddingCountdown() {
+      const grid = document.getElementById('countdownGrid');
+      const complete = document.getElementById('countdownComplete');
+      const status = document.getElementById('countdownStatus');
+      if (!grid || !complete) return;
+
+      const remaining = WEDDING_START_UTC - Date.now();
+      if (remaining <= 0) {
+        grid.hidden = true;
+        complete.hidden = false;
+        if (status) status.textContent = 'The celebration is underway.';
+        if (weddingCountdownTimer) {
+          clearInterval(weddingCountdownTimer);
+          weddingCountdownTimer = null;
+        }
+        return;
+      }
+
+      const totalSeconds = Math.floor(remaining / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      setCountdownValue('countdownDays', days);
+      setCountdownValue('countdownHours', hours);
+      setCountdownValue('countdownMinutes', minutes);
+      setCountdownValue('countdownSeconds', seconds);
+      grid.setAttribute('aria-label', `${days} days, ${hours} hours, ${minutes} minutes until the wedding ceremony`);
+
+      if (status) {
+        status.textContent = days === 0
+          ? 'Today at 5:00 PM · Sky Rooftop Gazebo'
+          : 'Wednesday, August 5 at 5:00 PM · Cancun time';
+      }
+    }
+
+    function startWeddingCountdown() {
+      if (weddingCountdownTimer) clearInterval(weddingCountdownTimer);
+      updateWeddingCountdown();
+      if (WEDDING_START_UTC > Date.now()) {
+        weddingCountdownTimer = setInterval(updateWeddingCountdown, 1000);
+      }
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (weddingCountdownTimer) {
+          clearInterval(weddingCountdownTimer);
+          weddingCountdownTimer = null;
+        }
+      } else {
+        startWeddingCountdown();
+      }
+    });
+
+
     function initializePage() {
       closeAllDetails();
       requestAnimationFrame(() => document.body.classList.add('page-ready'));
+      startWeddingCountdown();
       setTimeout(() => loadResortWeather(), 80);
     }
 
@@ -2595,6 +2767,7 @@
     window.addEventListener('pageshow', () => {
       closeAllDetails();
       document.body.classList.add('page-ready');
+      startWeddingCountdown();
       loadResortWeather();
     });
   </script>
