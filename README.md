@@ -90,3 +90,13 @@ The HTML build marker is:
 - Accordion tabs use an explicit mobile-Safari-safe toggle.
 - Removed content-visibility/containment from accordion panels.
 - Centered the Wedding Week Guide label across the full hero width.
+
+
+## Flat tab update
+Accordion sections now use solid, square, shadow-free surfaces with simple open-state contrast.
+
+
+## Version: flat-tabs-inline-map-v5
+- Accordion tabs use flat, square, borderless dark surfaces.
+- The official Hyatt resort map loads directly inside the Map tab.
+- No map modal, pop-up, PDF button, or external map link is shown to guests.

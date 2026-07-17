@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Build: 2026-07-17 fast-smooth-v3-tabs-fixed -->
+<!-- Build: 2026-07-17 flat-tabs-inline-map-v5 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1459,6 +1459,141 @@
     details.card:not([open]) > .content { display: none; }
     details.card[open] > .content { display: block; }
 
+
+    /* Flat accordion tabs — solid surfaces, no glass, borders, curves, or elevation. */
+    .stack {
+      gap: .38rem !important;
+      margin-top: .65rem !important;
+    }
+
+    details.card,
+    details.card.liquid-glass {
+      background: #121214 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      overflow: hidden;
+    }
+
+    details.card::before,
+    details.card.liquid-glass::before {
+      display: none !important;
+    }
+
+    details.card > .summary {
+      min-height: 72px;
+      padding: .95rem 1rem !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: #121214 !important;
+      box-shadow: none !important;
+      transition: background-color .14s ease !important;
+    }
+
+    details.card > .summary:hover,
+    details.card > .summary:active,
+    details.card[open] > .summary {
+      background: #19191c !important;
+    }
+
+    details.card > .content {
+      padding: 0 1rem 1.05rem !important;
+      border: 0 !important;
+      background: #19191c !important;
+      box-shadow: none !important;
+    }
+
+    details.card .chevron {
+      width: 24px !important;
+      height: 24px !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      color: var(--champagne) !important;
+      font-size: .68rem !important;
+    }
+
+    details.card .eyebrow {
+      color: #bca889 !important;
+    }
+
+    details.card .section-title {
+      color: #f5f0eb !important;
+    }
+
+    @media (max-width: 720px) {
+      .stack { gap: .3rem !important; }
+      details.card > .summary {
+        min-height: 66px;
+        padding: .82rem .86rem !important;
+      }
+      details.card > .content {
+        padding: 0 .86rem .92rem !important;
+      }
+    }
+
+
+    /* Official map stays inside the flat Map tab; no modal or external button. */
+    .map-intro {
+      margin: 0 0 .8rem;
+      font-size: .75rem;
+      line-height: 1.55;
+    }
+
+    .inline-map-shell {
+      position: relative;
+      width: 100%;
+      height: min(72svh, 760px);
+      min-height: 500px;
+      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background: #f1eee8;
+      box-shadow: none;
+    }
+
+    .inline-map {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #f1eee8;
+      opacity: 0;
+      transition: opacity .14s ease;
+    }
+
+    .inline-map.is-loaded { opacity: 1; }
+
+    .inline-map-loading {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      padding: 1.5rem;
+      text-align: center;
+      color: #332e2a;
+      background: #f1eee8;
+    }
+
+    .inline-map-loading[hidden] { display: none; }
+    .inline-map-loading i { font-size: 1.7rem; color: #7d694e; }
+    .inline-map-loading strong { font-size: .86rem; }
+    .inline-map-loading span { max-width: 20rem; color: #6f675f; font-size: .7rem; line-height: 1.45; }
+
+    @media (max-width: 720px) {
+      .inline-map-shell {
+        height: 68svh;
+        min-height: 480px;
+        margin-inline: -.86rem;
+        width: calc(100% + 1.72rem);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1597,22 +1732,22 @@
           <i class="fa-solid fa-chevron-down chevron"></i>
         </summary>
         <div class="content">
-          <p class="muted" style="margin:0 0 .72rem; font-size:.76rem; line-height:1.55">This is Hyatt’s official high-resolution resort map. Open it full screen for the sharpest labels and easiest phone navigation.</p>
-          <div class="map-frame official-map-frame map-launch">
-            <div class="map-launch-content">
-              <i class="fa-regular fa-map map-launch-icon" aria-hidden="true"></i>
-              <strong>Official High-Resolution Resort Map</strong>
-              <span>The large map loads only when you open it, keeping the wedding guide fast on phones.</span>
-              <button type="button" onclick="openMap()" class="button button-primary map-launch-button" aria-label="Open the official resort map full screen">
-                <i class="fa-solid fa-expand"></i> Open HD Map
-              </button>
+          <p class="muted map-intro">Hyatt’s official high-resolution resort map is displayed directly below. It loads only when this tab is opened so the rest of the wedding guide stays fast.</p>
+          <div class="inline-map-shell" id="inlineMapShell">
+            <div class="inline-map-loading" id="inlineMapLoading">
+              <i class="fa-regular fa-map" aria-hidden="true"></i>
+              <strong>Loading the official resort map…</strong>
+              <span>This may take a moment on the resort Wi-Fi.</span>
             </div>
+            <iframe
+              id="inlineMap"
+              class="inline-map"
+              data-src="https://alg.widen.net/s/lrl9rztm2x/sepdc-rm#page=1&zoom=page-width&pagemode=none"
+              title="Official high-resolution Secrets Moxché resort map"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
-          <div class="map-links">
-            <button type="button" onclick="openMap()" class="button button-primary"><i class="fa-solid fa-expand"></i> Full-Screen HD Map</button>
-            <a href="https://alg.widen.net/s/lrl9rztm2x/sepdc-rm" class="button button-glass" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"></i> Open Official PDF</a>
-          </div>
-          <div class="notice"><strong>Wedding location:</strong> The Sky Rooftop Gazebo is on the 10th floor near Sky Salon. Ask staff which elevator to use if you are unsure.</div>
+          <div class="notice"><strong>Using the map:</strong> Scroll inside the map and use pinch-to-zoom on your phone. The Sky Rooftop Gazebo is on the 10th floor near Sky Salon; ask resort staff which elevator to use if you are unsure.</div>
         </div>
       </details>
 
@@ -1741,22 +1876,6 @@
     <a href="https://photos.app.goo.gl/BntGzJuiuHmVkZ1S6" target="_blank" rel="noopener noreferrer" class="dock-glass"><i class="fa-solid fa-camera-retro"></i> Photos</a>
   </nav>
 
-  <div id="mapModal" class="map-modal" role="dialog" aria-modal="true" aria-label="Official high-resolution resort map" aria-hidden="true">
-    <div class="map-modal-toolbar">
-      <button type="button" onclick="closeMap()"><i class="fa-solid fa-xmark"></i><span>Close</span></button>
-      <a href="https://alg.widen.net/s/lrl9rztm2x/sepdc-rm" target="_blank" rel="noopener"><i class="fa-regular fa-file-pdf"></i><span>Open PDF</span></a>
-    </div>
-    <div class="map-scroll map-pdf-shell">
-      <iframe
-        id="mapFull"
-        class="official-map-full"
-        data-src="https://alg.widen.net/s/lrl9rztm2x/sepdc-rm#page=1&zoom=page-width&pagemode=none"
-        title="Official high-resolution Secrets Moxché resort map"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
-  </div>
-
   <script>
     const allDetails = Array.from(document.querySelectorAll('details.card'));
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1771,6 +1890,7 @@
       if (!detail) return;
       closeAllDetails(shouldOpen ? detail : null);
       detail.open = Boolean(shouldOpen);
+      if (detail.open && detail.id === 'map') ensureInlineMapLoaded();
       // Force Safari to recalculate the newly revealed content immediately.
       if (detail.open) void detail.offsetHeight;
     }
@@ -1814,32 +1934,17 @@
       });
     });
 
-    function ensureMapLoaded() {
-      const frame = document.getElementById('mapFull');
-      if (frame && !frame.getAttribute('src')) frame.setAttribute('src', frame.dataset.src);
+    function ensureInlineMapLoaded() {
+      const frame = document.getElementById('inlineMap');
+      if (!frame || frame.getAttribute('src')) return;
+      const loading = document.getElementById('inlineMapLoading');
+      frame.addEventListener('load', () => {
+        if (loading) loading.hidden = true;
+        frame.classList.add('is-loaded');
+      }, { once: true });
+      frame.setAttribute('src', frame.dataset.src);
     }
 
-    function openMap() {
-      ensureMapLoaded();
-      const modal = document.getElementById('mapModal');
-      if (!modal) return;
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => modal.querySelector('button')?.focus({ preventScroll: true }));
-    }
-
-    function closeMap() {
-      const modal = document.getElementById('mapModal');
-      if (!modal) return;
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') closeMap();
-    });
 
     function initializePage() {
       closeAllDetails();
