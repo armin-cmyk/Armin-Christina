@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Build: 2026-07-17 flat-fast-map-weather-v7 -->
+<!-- Build: 2026-07-17 permanent-flat-weather-v8 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1644,260 +1644,209 @@
     }
 
 
-    /* Full, lightweight 7-day resort weather widget. */
-    .weather-widget {
+    /* Permanent, graph-free 7-day weather panel under Wedding at a Glance. */
+    .weather-panel {
+      margin-top: .35rem;
+      padding: 1rem 0 .65rem;
       color: #f5f0eb;
-      background: #19191c;
+      background: #101012;
+      border: 0;
+      box-shadow: none;
+      overflow: hidden;
     }
 
-    .weather-loading,
-    .weather-error {
-      min-height: 220px;
+    .weather-panel-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 1rem .85rem;
+    }
+
+    .weather-panel-heading h2 {
+      margin: .18rem 0 0;
+      color: #f5f0eb;
+      font-size: clamp(1.45rem, 4.6vw, 2rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .weather-current-compact {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: .65rem;
+      min-width: 0;
+      text-align: right;
+    }
+
+    .weather-current-compact > i {
+      color: var(--champagne);
+      font-size: 1.6rem;
+    }
+
+    .weather-current-compact div {
       display: flex;
       flex-direction: column;
+      align-items: flex-end;
+      min-width: 0;
+    }
+
+    .weather-current-compact strong {
+      color: #fff;
+      font-size: 1.55rem;
+      line-height: .95;
+      letter-spacing: -.05em;
+    }
+
+    .weather-current-compact span {
+      max-width: 9rem;
+      margin-top: .18rem;
+      overflow: hidden;
+      color: #a49b94;
+      font-size: .61rem;
+      line-height: 1.25;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .weather-status {
+      min-height: 86px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: .7rem;
-      padding: 1.25rem;
+      gap: .55rem;
+      padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #aaa19a;
+      font-size: .72rem;
       text-align: center;
-      color: #c9bfb5;
     }
 
-    .weather-loading i,
-    .weather-error i {
-      color: var(--champagne);
-      font-size: 1.55rem;
+    .weather-status i { color: var(--champagne); }
+    .weather-status[hidden] { display: none; }
+
+    .weather-status-error {
+      flex-wrap: wrap;
     }
 
-    .weather-loading i { animation: weatherPulse 1.3s ease-in-out infinite; }
-
-    @keyframes weatherPulse {
-      0%, 100% { opacity: .45; transform: translateY(0); }
-      50% { opacity: 1; transform: translateY(-2px); }
-    }
-
-    .weather-error button {
-      min-height: 42px;
-      padding: .65rem 1rem;
+    .weather-status-error button {
+      min-height: 36px;
+      padding: .5rem .8rem;
       border: 0;
       border-radius: 0;
       background: #242428;
       color: #f5f0eb;
       font: inherit;
-      font-size: .72rem;
-      font-weight: 700;
+      font-size: .67rem;
+      font-weight: 800;
       cursor: pointer;
     }
 
-    .weather-current {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-      gap: 1rem;
-      align-items: stretch;
-      padding: .2rem 0 1rem;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
-    .weather-now {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: .9rem;
-      align-items: center;
-      min-width: 0;
-    }
-
-    .weather-now-icon {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      color: var(--champagne);
-      font-size: 2.05rem;
-    }
-
-    .weather-temperature {
-      margin: 0;
-      font-size: clamp(3rem, 9vw, 4.5rem);
-      font-weight: 600;
-      line-height: .88;
-      letter-spacing: -.07em;
-    }
-
-    .weather-condition {
-      margin: .45rem 0 0;
-      color: #f1e8df;
-      font-size: .85rem;
-      font-weight: 700;
-    }
-
-    .weather-subline {
-      margin: .18rem 0 0;
-      color: #9f968e;
-      font-size: .68rem;
-      line-height: 1.4;
-    }
-
-    .weather-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      align-content: center;
+    .weather-details {
+      padding: .72rem 1rem .62rem;
       border-top: 1px solid rgba(255,255,255,.08);
-      border-left: 1px solid rgba(255,255,255,.08);
-    }
-
-    .weather-metric {
-      min-height: 66px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: .65rem .75rem;
-      border-right: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
-    .weather-metric span {
-      color: #938b84;
-      font-size: .58rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .weather-metric strong {
-      margin-top: .23rem;
-      color: #f4eee8;
-      font-size: .82rem;
-      line-height: 1.25;
-    }
-
-    .weather-forecast-heading {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 0 .65rem;
-    }
-
-    .weather-forecast-heading h3 {
-      margin: 0;
-      color: #f5f0eb;
-      font-size: 1rem;
-      letter-spacing: -.025em;
-    }
-
-    .weather-forecast-heading span {
-      color: #8f8780;
-      font-size: .62rem;
-      text-align: right;
+      color: #9a918a;
+      font-size: .66rem;
+      line-height: 1.4;
     }
 
     .weather-days {
       display: grid;
-      grid-template-columns: repeat(7, minmax(92px, 1fr));
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      grid-template-columns: repeat(7, minmax(88px, 1fr));
       overflow-x: auto;
       overscroll-behavior-inline: contain;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
     .weather-days::-webkit-scrollbar { display: none; }
 
     .weather-day {
-      min-width: 92px;
-      padding: .8rem .55rem .75rem;
-      text-align: center;
+      min-width: 88px;
+      padding: .78rem .45rem .72rem;
       border-right: 1px solid rgba(255,255,255,.08);
+      text-align: center;
       scroll-snap-align: start;
     }
 
     .weather-day:last-child { border-right: 0; }
-    .weather-day.today { background: rgba(230,200,167,.07); }
+    .weather-day.today { background: rgba(230,200,167,.06); }
 
     .weather-day-name {
       color: #f2ebe5;
-      font-size: .68rem;
+      font-size: .67rem;
       font-weight: 800;
     }
 
     .weather-day-date {
-      margin-top: .12rem;
-      color: #8f8780;
-      font-size: .57rem;
+      margin-top: .08rem;
+      color: #7f7872;
+      font-size: .54rem;
     }
 
     .weather-day-icon {
+      height: 36px;
       display: grid;
       place-items: center;
-      height: 40px;
-      margin-top: .48rem;
+      margin-top: .35rem;
       color: var(--champagne);
-      font-size: 1.25rem;
-    }
-
-    .weather-day-condition {
-      min-height: 2.2em;
-      margin-top: .25rem;
-      color: #aaa19a;
-      font-size: .57rem;
-      line-height: 1.25;
+      font-size: 1.18rem;
     }
 
     .weather-high-low {
       display: flex;
       justify-content: center;
-      gap: .35rem;
-      margin-top: .4rem;
-      font-size: .71rem;
+      gap: .34rem;
+      margin-top: .22rem;
+      color: #f4eee8;
+      font-size: .69rem;
       font-weight: 800;
     }
 
-    .weather-high-low span:last-child { color: #8d8580; }
+    .weather-high-low span:last-child { color: #817a74; }
 
     .weather-rain {
-      margin-top: .32rem;
+      margin-top: .28rem;
       color: #9db8c4;
-      font-size: .57rem;
+      font-size: .55rem;
       font-weight: 700;
     }
 
-    .weather-rain i { margin-right: .2rem; }
+    .weather-rain i { margin-right: .18rem; }
 
     .weather-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      padding: .72rem 0 .05rem;
-      color: #817a74;
-      font-size: .58rem;
-      line-height: 1.45;
+      gap: .75rem;
+      padding: .62rem 1rem .05rem;
+      color: #76706a;
+      font-size: .55rem;
+      line-height: 1.4;
     }
 
     .weather-footer a { color: #bca889; text-decoration: none; }
 
     @media (max-width: 720px) {
-      .quick-actions .weather-quick-action { grid-column: 1 / -1; }
-      .weather-current { grid-template-columns: 1fr; gap: .8rem; }
-      .weather-now { padding-top: .1rem; }
-      .weather-now-icon { width: 52px; height: 52px; font-size: 1.8rem; }
-      .weather-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .weather-metric { min-height: 58px; padding: .55rem .35rem; text-align: center; }
-      .weather-metric span { font-size: .48rem; letter-spacing: .06em; }
-      .weather-metric strong { font-size: .68rem; }
-      .weather-days {
-        grid-template-columns: repeat(7, 98px);
-        margin-inline: -.86rem;
-        padding-left: .86rem;
-        scroll-snap-type: x proximity;
-      }
-      .weather-day { min-width: 98px; }
-      .weather-footer { align-items: flex-start; flex-direction: column; gap: .3rem; }
+      .weather-panel { margin-top: .3rem; }
+      .weather-panel-heading { padding: 0 .86rem .75rem; }
+      .weather-current-compact > i { font-size: 1.4rem; }
+      .weather-current-compact strong { font-size: 1.35rem; }
+      .weather-current-compact span { max-width: 7.5rem; font-size: .56rem; }
+      .weather-details { padding-inline: .86rem; }
+      .weather-days { grid-template-columns: repeat(7, 92px); }
+      .weather-day { min-width: 92px; }
+      .weather-footer { padding-inline: .86rem; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .weather-loading i { animation: none; }
+    @media (max-width: 370px) {
+      .weather-panel-heading { align-items: flex-end; }
+      .weather-current-compact { gap: .4rem; }
+      .weather-current-compact > i { display: none; }
     }
 
   </style>
@@ -1954,7 +1903,43 @@
         <a href="#ceremony" data-open="ceremony" class="quick-action"><i class="fa-solid fa-location-dot"></i><span>Location &amp; Directions</span></a>
         <a href="#map" data-open="map" class="quick-action"><i class="fa-regular fa-map"></i><span>Resort Map</span></a>
         <a href="#photos" data-open="photos" class="quick-action"><i class="fa-solid fa-camera-retro"></i><span>Upload Photos</span></a>
-        <a href="#weather" data-open="weather" class="quick-action weather-quick-action"><i class="fa-solid fa-cloud-sun"></i><span>7-Day Weather</span></a>
+      </div>
+    </section>
+
+
+    <section id="weather" class="weather-panel" aria-labelledby="weather-title">
+      <div class="weather-panel-heading">
+        <div>
+          <div class="eyebrow">Live Resort Weather</div>
+          <h2 id="weather-title" class="serif">7-Day Forecast</h2>
+        </div>
+        <div class="weather-current-compact" aria-live="polite">
+          <i id="weatherNowIcon" class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+          <div>
+            <strong id="weatherTemperature">--°</strong>
+            <span id="weatherCondition">Loading…</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="weatherLoading" class="weather-status">
+        <i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i>
+        <span>Loading the forecast for Secrets Moxché…</span>
+      </div>
+
+      <div id="weatherError" class="weather-status weather-status-error" hidden>
+        <i class="fa-solid fa-cloud-bolt" aria-hidden="true"></i>
+        <span>Weather is temporarily unavailable.</span>
+        <button type="button" onclick="loadResortWeather(true)">Retry</button>
+      </div>
+
+      <div id="weatherContent" hidden>
+        <div id="weatherDetails" class="weather-details">Secrets Moxché · Playa del Carmen</div>
+        <div id="weatherDays" class="weather-days" aria-label="Seven-day resort weather forecast"></div>
+        <div class="weather-footer">
+          <span id="weatherUpdated">Updates automatically.</span>
+          <span>Forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
+        </div>
       </div>
     </section>
 
@@ -2145,56 +2130,6 @@
         </div>
       </details>
 
-
-      <details id="weather" class="card liquid-glass">
-        <summary class="summary">
-          <div><div class="eyebrow">Live Resort Forecast</div><h2 class="section-title serif">7-Day Weather</h2></div>
-          <i class="fa-solid fa-chevron-down chevron"></i>
-        </summary>
-        <div class="content">
-          <div id="weatherWidget" class="weather-widget" aria-live="polite">
-            <div id="weatherLoading" class="weather-loading">
-              <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
-              <strong>Loading the resort forecast…</strong>
-              <span>Current conditions and the next seven days at Secrets Moxché.</span>
-            </div>
-            <div id="weatherError" class="weather-error" hidden>
-              <i class="fa-solid fa-cloud-bolt" aria-hidden="true"></i>
-              <strong>Weather is temporarily unavailable.</strong>
-              <span>Check your connection, then try again.</span>
-              <button type="button" onclick="loadResortWeather(true)">Try Again</button>
-            </div>
-            <div id="weatherContent" hidden>
-              <div class="weather-current">
-                <div class="weather-now">
-                  <div id="weatherNowIcon" class="weather-now-icon" aria-hidden="true"></div>
-                  <div>
-                    <p id="weatherTemperature" class="weather-temperature">--°</p>
-                    <p id="weatherCondition" class="weather-condition">Loading</p>
-                    <p id="weatherSubline" class="weather-subline">Secrets Moxché · Playa del Carmen</p>
-                  </div>
-                </div>
-                <div class="weather-metrics">
-                  <div class="weather-metric"><span>Feels Like</span><strong id="weatherFeels">--°</strong></div>
-                  <div class="weather-metric"><span>Humidity</span><strong id="weatherHumidity">--%</strong></div>
-                  <div class="weather-metric"><span>Wind</span><strong id="weatherWind">-- mph</strong></div>
-                  <div class="weather-metric"><span>UV Today</span><strong id="weatherUv">--</strong></div>
-                </div>
-              </div>
-              <div class="weather-forecast-heading">
-                <h3>Next 7 Days</h3>
-                <span id="weatherSunTimes">Sunrise -- · Sunset --</span>
-              </div>
-              <div id="weatherDays" class="weather-days" aria-label="Seven-day weather forecast"></div>
-              <div class="weather-footer">
-                <span id="weatherUpdated">Updates automatically.</span>
-                <span>Forecast data by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </details>
-
       <details id="essentials" class="card liquid-glass">
         <summary class="summary">
           <div><div class="eyebrow">Useful While You’re Here</div><h2 class="section-title serif">Guest Essentials</h2></div>
@@ -2251,7 +2186,6 @@
       closeAllDetails(shouldOpen ? detail : null);
       detail.open = Boolean(shouldOpen);
       if (detail.open && detail.id === 'map') ensureInlineMapLoaded();
-      if (detail.open && detail.id === 'weather') loadResortWeather();
       // Force Safari to recalculate the newly revealed content immediately.
       if (detail.open) void detail.offsetHeight;
     }
@@ -2307,9 +2241,9 @@
     }
 
 
-    const WEATHER_CACHE_KEY = 'secrets-moxche-weather-v1';
-    const WEATHER_CACHE_MS = 15 * 60 * 1000;
-    const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=20.660029&longitude=-87.042857&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,wind_gusts_10m,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_probability_max,precipitation_sum,sunrise,sunset,uv_index_max,wind_speed_10m_max&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FCancun&forecast_days=7';
+    const WEATHER_CACHE_KEY = 'secrets-moxche-weather-v2';
+    const WEATHER_CACHE_MS = 30 * 60 * 1000;
+    const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=20.660029&longitude=-87.042857&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&timezone=America%2FCancun&forecast_days=7';
     let weatherRequest = null;
 
     const weatherCodes = {
@@ -2322,43 +2256,22 @@
       51: ['Light drizzle', 'fa-cloud-rain'],
       53: ['Drizzle', 'fa-cloud-rain'],
       55: ['Heavy drizzle', 'fa-cloud-showers-heavy'],
-      56: ['Freezing drizzle', 'fa-cloud-rain'],
-      57: ['Freezing drizzle', 'fa-cloud-rain'],
       61: ['Light rain', 'fa-cloud-rain'],
       63: ['Rain', 'fa-cloud-showers-heavy'],
       65: ['Heavy rain', 'fa-cloud-showers-heavy'],
-      66: ['Freezing rain', 'fa-cloud-rain'],
-      67: ['Freezing rain', 'fa-cloud-rain'],
-      71: ['Light snow', 'fa-snowflake'],
-      73: ['Snow', 'fa-snowflake'],
-      75: ['Heavy snow', 'fa-snowflake'],
-      77: ['Snow grains', 'fa-snowflake'],
       80: ['Light showers', 'fa-cloud-sun-rain'],
       81: ['Showers', 'fa-cloud-showers-heavy'],
       82: ['Heavy showers', 'fa-cloud-showers-heavy'],
-      85: ['Snow showers', 'fa-snowflake'],
-      86: ['Heavy snow showers', 'fa-snowflake'],
       95: ['Thunderstorms', 'fa-cloud-bolt'],
-      96: ['Storms with hail', 'fa-cloud-bolt'],
+      96: ['Storms', 'fa-cloud-bolt'],
       99: ['Severe storms', 'fa-cloud-bolt']
     };
 
     function weatherInfo(code, isDay = true) {
-      const fallback = ['Variable', 'fa-cloud-sun'];
-      const info = weatherCodes[Number(code)] || fallback;
+      const info = weatherCodes[Number(code)] || ['Variable', 'fa-cloud-sun'];
       if (!isDay && (Number(code) === 0 || Number(code) === 1)) return [info[0], 'fa-moon'];
       if (!isDay && Number(code) === 2) return [info[0], 'fa-cloud-moon'];
       return info;
-    }
-
-    function formatWeatherTime(value) {
-      if (!value) return '--';
-      const zoned = /[zZ]|[+-]\d{2}:?\d{2}$/.test(value) ? value : `${value}-05:00`;
-      return new Intl.DateTimeFormat('en-US', {
-        hour: 'numeric',
-        minute: '2-digit',
-        timeZone: 'America/Cancun'
-      }).format(new Date(zoned));
     }
 
     function formatForecastDate(value, options) {
@@ -2366,40 +2279,23 @@
         .format(new Date(`${value}T12:00:00-05:00`));
     }
 
-    function uvLabel(value) {
-      const uv = Number(value);
-      if (!Number.isFinite(uv)) return '--';
-      if (uv < 3) return `${Math.round(uv)} Low`;
-      if (uv < 6) return `${Math.round(uv)} Moderate`;
-      if (uv < 8) return `${Math.round(uv)} High`;
-      if (uv < 11) return `${Math.round(uv)} Very High`;
-      return `${Math.round(uv)} Extreme`;
-    }
-
     function renderResortWeather(data, fromCache = false) {
-      if (!data || !data.current || !data.daily || !Array.isArray(data.daily.time)) {
-        throw new Error('Incomplete weather response');
-      }
+      if (!data?.current || !Array.isArray(data?.daily?.time)) throw new Error('Incomplete weather response');
 
       const current = data.current;
       const daily = data.daily;
-      const nowInfo = weatherInfo(current.weather_code, Boolean(current.is_day));
+      const currentInfo = weatherInfo(current.weather_code, Boolean(current.is_day));
+      const icon = document.getElementById('weatherNowIcon');
       const loading = document.getElementById('weatherLoading');
       const error = document.getElementById('weatherError');
       const content = document.getElementById('weatherContent');
 
-      document.getElementById('weatherNowIcon').innerHTML = `<i class="fa-solid ${nowInfo[1]}"></i>`;
+      if (icon) icon.className = `fa-solid ${currentInfo[1]}`;
       document.getElementById('weatherTemperature').textContent = `${Math.round(current.temperature_2m)}°`;
-      document.getElementById('weatherCondition').textContent = nowInfo[0];
-      document.getElementById('weatherSubline').textContent = `Secrets Moxché · Feels like ${Math.round(current.apparent_temperature)}°`;
-      document.getElementById('weatherFeels').textContent = `${Math.round(current.apparent_temperature)}°`;
-      document.getElementById('weatherHumidity').textContent = `${Math.round(current.relative_humidity_2m)}%`;
-      document.getElementById('weatherWind').textContent = `${Math.round(current.wind_speed_10m)} mph`;
-      document.getElementById('weatherUv').textContent = uvLabel(daily.uv_index_max?.[0]);
-      document.getElementById('weatherSunTimes').textContent = `Sunrise ${formatWeatherTime(daily.sunrise?.[0])} · Sunset ${formatWeatherTime(daily.sunset?.[0])}`;
+      document.getElementById('weatherCondition').textContent = currentInfo[0];
+      document.getElementById('weatherDetails').textContent = `Feels like ${Math.round(current.apparent_temperature)}° · Humidity ${Math.round(current.relative_humidity_2m)}% · Secrets Moxché, Playa del Carmen`;
 
-      const days = document.getElementById('weatherDays');
-      days.innerHTML = daily.time.slice(0, 7).map((date, index) => {
+      document.getElementById('weatherDays').innerHTML = daily.time.slice(0, 7).map((date, index) => {
         const info = weatherInfo(daily.weather_code?.[index], true);
         const dayName = index === 0 ? 'Today' : formatForecastDate(date, { weekday: 'short' });
         const dayDate = formatForecastDate(date, { month: 'short', day: 'numeric' });
@@ -2410,7 +2306,6 @@
           <div class="weather-day-name">${dayName}</div>
           <div class="weather-day-date">${dayDate}</div>
           <div class="weather-day-icon"><i class="fa-solid ${info[1]}" aria-hidden="true"></i></div>
-          <div class="weather-day-condition">${info[0]}</div>
           <div class="weather-high-low"><span>${high}°</span><span>${low}°</span></div>
           <div class="weather-rain"><i class="fa-solid fa-droplet" aria-hidden="true"></i>${rain}%</div>
         </article>`;
@@ -2418,11 +2313,9 @@
 
       const stamp = data._savedAt || Date.now();
       const updated = new Intl.DateTimeFormat('en-US', {
-        hour: 'numeric',
-        minute: '2-digit',
-        timeZone: 'America/Cancun'
+        hour: 'numeric', minute: '2-digit', timeZone: 'America/Cancun'
       }).format(new Date(stamp));
-      document.getElementById('weatherUpdated').textContent = `${fromCache ? 'Last saved' : 'Updated'} ${updated} resort time.`;
+      document.getElementById('weatherUpdated').textContent = `${fromCache ? 'Saved' : 'Updated'} ${updated} resort time.`;
 
       if (loading) loading.hidden = true;
       if (error) error.hidden = true;
@@ -2431,9 +2324,9 @@
 
     async function fetchResortWeather() {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 9000);
+      const timeout = setTimeout(() => controller.abort(), 8000);
       try {
-        const response = await fetch(WEATHER_URL, { signal: controller.signal, cache: 'no-store' });
+        const response = await fetch(WEATHER_URL, { signal: controller.signal, cache: 'no-cache' });
         if (!response.ok) throw new Error(`Weather request failed: ${response.status}`);
         const data = await response.json();
         data._savedAt = Date.now();
@@ -2451,27 +2344,30 @@
       const content = document.getElementById('weatherContent');
       if (!loading || !error || !content) return Promise.resolve();
 
-      if (!force) {
-        try {
-          const cached = JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY) || 'null');
-          if (cached && cached._savedAt && Date.now() - cached._savedAt < WEATHER_CACHE_MS) {
-            renderResortWeather(cached, true);
-            return Promise.resolve(cached);
-          }
-        } catch (_) {}
+      let cached = null;
+      try { cached = JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY) || 'null'); } catch (_) {}
+
+      if (cached?.current && cached?.daily) {
+        try { renderResortWeather(cached, true); } catch (_) { cached = null; }
+        if (!force && cached?._savedAt && Date.now() - cached._savedAt < WEATHER_CACHE_MS) {
+          return Promise.resolve(cached);
+        }
       }
 
       if (weatherRequest && !force) return weatherRequest;
-      loading.hidden = false;
+      if (!cached) loading.hidden = false;
       error.hidden = true;
-      if (force) content.hidden = true;
 
       weatherRequest = fetchResortWeather().catch(() => {
-        loading.hidden = true;
-        if (content.hidden) error.hidden = false;
-      }).finally(() => {
-        weatherRequest = null;
-      });
+        if (!cached) {
+          loading.hidden = true;
+          content.hidden = true;
+          error.hidden = false;
+        } else {
+          document.getElementById('weatherUpdated').textContent = 'Showing the last saved forecast.';
+        }
+      }).finally(() => { weatherRequest = null; });
+
       return weatherRequest;
     }
 
@@ -2479,9 +2375,7 @@
     function initializePage() {
       closeAllDetails();
       requestAnimationFrame(() => document.body.classList.add('page-ready'));
-      const warmWeather = () => loadResortWeather();
-      if ('requestIdleCallback' in window) requestIdleCallback(warmWeather, { timeout: 4500 });
-      else setTimeout(warmWeather, 2500);
+      setTimeout(() => loadResortWeather(), 80);
     }
 
     if (document.readyState === 'loading') {
@@ -2493,6 +2387,7 @@
     window.addEventListener('pageshow', () => {
       closeAllDetails();
       document.body.classList.add('page-ready');
+      loadResortWeather();
     });
   </script>
 </body>

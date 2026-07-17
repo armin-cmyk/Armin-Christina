@@ -102,3 +102,11 @@ Accordion sections now use solid, square, shadow-free surfaces with simple open-
 - No map modal, pop-up, PDF button, or external map link is shown to guests.
 
 - Live current conditions and 7-day resort weather forecast powered by Open-Meteo
+
+
+## Permanent weather update
+- The seven-day resort forecast is always visible directly below Wedding at a Glance.
+- No graph and no weather accordion.
+- Compact current conditions plus seven daily high/low and rain cards.
+- Cached forecast appears immediately while fresh data updates in the background.
+- Version: permanent-flat-weather-v8
