@@ -110,3 +110,7 @@ Accordion sections now use solid, square, shadow-free surfaces with simple open-
 - Compact current conditions plus seven daily high/low and rain cards.
 - Cached forecast appears immediately while fresh data updates in the background.
 - Version: permanent-flat-weather-v8
+
+
+## Weather
+The permanent 7-day forecast appears below Wedding at a Glance. Tap any day to expand a lightweight hourly forecast with temperature, feels-like temperature, rain chance, humidity, and wind.

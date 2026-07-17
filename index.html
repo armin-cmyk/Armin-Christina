@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Build: 2026-07-17 permanent-flat-weather-v8 -->
+<!-- Build: 2026-07-17 permanent-hourly-weather-v9 -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -1768,13 +1768,27 @@
     .weather-day {
       min-width: 88px;
       padding: .78rem .45rem .72rem;
+      border: 0;
       border-right: 1px solid rgba(255,255,255,.08);
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
       text-align: center;
       scroll-snap-align: start;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background-color .16s ease, color .16s ease;
     }
 
     .weather-day:last-child { border-right: 0; }
     .weather-day.today { background: rgba(230,200,167,.06); }
+    .weather-day:hover,
+    .weather-day:focus-visible { background: rgba(255,255,255,.055); }
+    .weather-day.is-selected {
+      background: rgba(230,200,167,.11);
+      box-shadow: inset 0 -2px 0 var(--champagne);
+    }
 
     .weather-day-name {
       color: #f2ebe5;
@@ -1818,6 +1832,93 @@
 
     .weather-rain i { margin-right: .18rem; }
 
+    .weather-hourly {
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: #0d0d0f;
+    }
+
+    .weather-hourly[hidden] { display: none; }
+
+    .weather-hourly-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .8rem;
+      padding: .72rem 1rem .6rem;
+    }
+
+    .weather-hourly-heading strong {
+      color: #f2ebe5;
+      font-size: .72rem;
+      letter-spacing: -.01em;
+    }
+
+    .weather-hourly-heading span {
+      color: #77706a;
+      font-size: .56rem;
+      text-align: right;
+    }
+
+    .weather-hours {
+      display: flex;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .weather-hours::-webkit-scrollbar { display: none; }
+
+    .weather-hour {
+      flex: 0 0 86px;
+      min-width: 86px;
+      padding: .72rem .42rem .76rem;
+      border-right: 1px solid rgba(255,255,255,.07);
+      text-align: center;
+      scroll-snap-align: start;
+    }
+
+    .weather-hour:last-child { border-right: 0; }
+    .weather-hour.is-now { background: rgba(230,200,167,.08); }
+
+    .weather-hour-time {
+      color: #a89f98;
+      font-size: .57rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .weather-hour-icon {
+      height: 31px;
+      display: grid;
+      place-items: center;
+      margin-top: .28rem;
+      color: var(--champagne);
+      font-size: 1rem;
+    }
+
+    .weather-hour-temp {
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .weather-hour-feels,
+    .weather-hour-meta {
+      margin-top: .18rem;
+      color: #77716b;
+      font-size: .5rem;
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    .weather-hour-meta {
+      color: #91aab6;
+    }
+
     .weather-footer {
       display: flex;
       align-items: center;
@@ -1840,6 +1941,8 @@
       .weather-details { padding-inline: .86rem; }
       .weather-days { grid-template-columns: repeat(7, 92px); }
       .weather-day { min-width: 92px; }
+      .weather-hourly-heading { padding-inline: .86rem; }
+      .weather-hour { flex-basis: 82px; min-width: 82px; }
       .weather-footer { padding-inline: .86rem; }
     }
 
@@ -1936,6 +2039,13 @@
       <div id="weatherContent" hidden>
         <div id="weatherDetails" class="weather-details">Secrets Moxché · Playa del Carmen</div>
         <div id="weatherDays" class="weather-days" aria-label="Seven-day resort weather forecast"></div>
+        <div id="weatherHourly" class="weather-hourly" hidden>
+          <div class="weather-hourly-heading">
+            <strong id="weatherHourlyTitle">Hourly forecast</strong>
+            <span>Swipe to see more</span>
+          </div>
+          <div id="weatherHours" class="weather-hours" aria-label="Hourly weather details"></div>
+        </div>
         <div class="weather-footer">
           <span id="weatherUpdated">Updates automatically.</span>
           <span>Forecast by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
@@ -2241,10 +2351,12 @@
     }
 
 
-    const WEATHER_CACHE_KEY = 'secrets-moxche-weather-v2';
+    const WEATHER_CACHE_KEY = 'secrets-moxche-weather-v3-hourly';
     const WEATHER_CACHE_MS = 30 * 60 * 1000;
-    const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=20.660029&longitude=-87.042857&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&timezone=America%2FCancun&forecast_days=7';
+    const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=20.660029&longitude=-87.042857&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,is_day&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation_probability,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FCancun&forecast_days=7';
     let weatherRequest = null;
+    let currentWeatherData = null;
+    let selectedWeatherDate = null;
 
     const weatherCodes = {
       0: ['Clear', 'fa-sun'],
@@ -2279,8 +2391,103 @@
         .format(new Date(`${value}T12:00:00-05:00`));
     }
 
+    function formatHourLabel(timeValue) {
+      const hour = Number(String(timeValue).slice(11, 13));
+      if (!Number.isFinite(hour)) return '';
+      const suffix = hour >= 12 ? 'PM' : 'AM';
+      const display = hour % 12 || 12;
+      return `${display} ${suffix}`;
+    }
+
+    function cancunHourNow() {
+      const parts = new Intl.DateTimeFormat('en-US', {
+        hour: '2-digit', hourCycle: 'h23', timeZone: 'America/Cancun'
+      }).formatToParts(new Date());
+      return Number(parts.find(part => part.type === 'hour')?.value ?? 0);
+    }
+
+    function renderHourlyForecast(date, dayIndex) {
+      const shell = document.getElementById('weatherHourly');
+      const title = document.getElementById('weatherHourlyTitle');
+      const hoursContainer = document.getElementById('weatherHours');
+      const dayButtons = Array.from(document.querySelectorAll('.weather-day'));
+      if (!shell || !title || !hoursContainer || !currentWeatherData?.hourly) return;
+
+      if (selectedWeatherDate === date && !shell.hidden) {
+        selectedWeatherDate = null;
+        shell.hidden = true;
+        hoursContainer.innerHTML = '';
+        dayButtons.forEach(button => {
+          button.classList.remove('is-selected');
+          button.setAttribute('aria-expanded', 'false');
+        });
+        return;
+      }
+
+      const hourly = currentWeatherData.hourly;
+      const indices = (hourly.time || []).map((time, index) => ({ time, index }))
+        .filter(item => String(item.time).startsWith(date));
+
+      if (!indices.length) {
+        title.textContent = 'Hourly forecast unavailable';
+        hoursContainer.innerHTML = '<div class="weather-status">Hourly details are temporarily unavailable.</div>';
+        shell.hidden = false;
+        return;
+      }
+
+      selectedWeatherDate = date;
+      const todayDate = currentWeatherData.daily?.time?.[0];
+      const currentHour = cancunHourNow();
+      const visibleIndices = date === todayDate
+        ? indices.filter(item => Number(String(item.time).slice(11, 13)) >= Math.max(0, currentHour - 1))
+        : indices;
+      const rows = visibleIndices.length ? visibleIndices : indices;
+
+      dayButtons.forEach(button => {
+        const selected = button.dataset.date === date;
+        button.classList.toggle('is-selected', selected);
+        button.setAttribute('aria-expanded', selected ? 'true' : 'false');
+      });
+
+      title.textContent = `${dayIndex === 0 ? 'Today' : formatForecastDate(date, { weekday: 'long' })} · Hourly`;
+      hoursContainer.innerHTML = rows.map(({ time, index }) => {
+        const hour = Number(String(time).slice(11, 13));
+        const isNow = date === todayDate && hour === currentHour;
+        const info = weatherInfo(hourly.weather_code?.[index], hour >= 6 && hour < 19);
+        const temperature = Math.round(hourly.temperature_2m?.[index]);
+        const feels = Math.round(hourly.apparent_temperature?.[index]);
+        const rain = Math.round(hourly.precipitation_probability?.[index] ?? 0);
+        const humidity = Math.round(hourly.relative_humidity_2m?.[index] ?? 0);
+        const wind = Math.round(hourly.wind_speed_10m?.[index] ?? 0);
+        return `<article class="weather-hour${isNow ? ' is-now' : ''}">
+          <div class="weather-hour-time">${isNow ? 'Now' : formatHourLabel(time)}</div>
+          <div class="weather-hour-icon"><i class="fa-solid ${info[1]}" aria-hidden="true"></i></div>
+          <div class="weather-hour-temp">${temperature}°</div>
+          <div class="weather-hour-feels">Feels ${feels}°</div>
+          <div class="weather-hour-meta"><i class="fa-solid fa-droplet" aria-hidden="true"></i> ${rain}% · ${humidity}%</div>
+          <div class="weather-hour-feels">Wind ${wind} mph</div>
+        </article>`;
+      }).join('');
+
+      shell.hidden = false;
+      hoursContainer.scrollLeft = 0;
+    }
+
+    function handleWeatherDayClick(event) {
+      const button = event.target.closest('.weather-day');
+      if (!button) return;
+      renderHourlyForecast(button.dataset.date, Number(button.dataset.index));
+    }
+
     function renderResortWeather(data, fromCache = false) {
       if (!data?.current || !Array.isArray(data?.daily?.time)) throw new Error('Incomplete weather response');
+
+      currentWeatherData = data;
+      selectedWeatherDate = null;
+      const hourlyShell = document.getElementById('weatherHourly');
+      const hourlyContainer = document.getElementById('weatherHours');
+      if (hourlyShell) hourlyShell.hidden = true;
+      if (hourlyContainer) hourlyContainer.innerHTML = '';
 
       const current = data.current;
       const daily = data.daily;
@@ -2302,14 +2509,15 @@
         const high = Math.round(daily.temperature_2m_max?.[index]);
         const low = Math.round(daily.temperature_2m_min?.[index]);
         const rain = Math.round(daily.precipitation_probability_max?.[index] ?? 0);
-        return `<article class="weather-day${index === 0 ? ' today' : ''}">
+        return `<button type="button" class="weather-day${index === 0 ? ' today' : ''}" data-date="${date}" data-index="${index}" aria-expanded="false" aria-controls="weatherHourly" aria-label="Show hourly forecast for ${dayName}, ${dayDate}">
           <div class="weather-day-name">${dayName}</div>
           <div class="weather-day-date">${dayDate}</div>
           <div class="weather-day-icon"><i class="fa-solid ${info[1]}" aria-hidden="true"></i></div>
           <div class="weather-high-low"><span>${high}°</span><span>${low}°</span></div>
           <div class="weather-rain"><i class="fa-solid fa-droplet" aria-hidden="true"></i>${rain}%</div>
-        </article>`;
+        </button>`;
       }).join('');
+      document.getElementById('weatherDays').onclick = handleWeatherDayClick;
 
       const stamp = data._savedAt || Date.now();
       const updated = new Intl.DateTimeFormat('en-US', {
