@@ -84,3 +84,9 @@ The HTML build marker is:
 - No page-wide scroll observers
 - Heavy PDF map loads only after the guest opens it
 - Live backdrop blur removed from repeated cards for smoother phone scrolling
+
+
+## Fast-smooth v3 fixes
+- Accordion tabs use an explicit mobile-Safari-safe toggle.
+- Removed content-visibility/containment from accordion panels.
+- Centered the Wedding Week Guide label across the full hero width.
