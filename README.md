@@ -100,3 +100,5 @@ Accordion sections now use solid, square, shadow-free surfaces with simple open-
 - Accordion tabs use flat, square, borderless dark surfaces.
 - The official Hyatt resort map loads directly inside the Map tab.
 - No map modal, pop-up, PDF button, or external map link is shown to guests.
+
+- Live current conditions and 7-day resort weather forecast powered by Open-Meteo
